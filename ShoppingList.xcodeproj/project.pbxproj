@@ -22,6 +22,7 @@
 		7BB1BA6525DFF356007FA08B /* CreateListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA6425DFF356007FA08B /* CreateListUseCase.swift */; };
 		7BB1BAA625DFF6AB007FA08B /* AddItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAA525DFF6AB007FA08B /* AddItemOnListUseCase.swift */; };
 		7BB1BAAB25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAAA25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift */; };
+		7BB1BAB325DFF84A007FA08B /* EditItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAB225DFF84A007FA08B /* EditItemOnListUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7BB1BA6425DFF356007FA08B /* CreateListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCase.swift; sourceTree = "<group>"; };
 		7BB1BAA525DFF6AB007FA08B /* AddItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCase.swift; sourceTree = "<group>"; };
 		7BB1BAAA25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemfromListUseCase.swift; sourceTree = "<group>"; };
+		7BB1BAB225DFF84A007FA08B /* EditItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemOnListUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				7BB1BA6425DFF356007FA08B /* CreateListUseCase.swift */,
 				7BB1BAA525DFF6AB007FA08B /* AddItemOnListUseCase.swift */,
 				7BB1BAAA25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift */,
+				7BB1BAB225DFF84A007FA08B /* EditItemOnListUseCase.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				7BB1BAAB25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift in Sources */,
 				7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */,
 				7BB1BA4D25DFEF2B007FA08B /* List.swift in Sources */,
+				7BB1BAB325DFF84A007FA08B /* EditItemOnListUseCase.swift in Sources */,
 				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
 				7BB1BAA625DFF6AB007FA08B /* AddItemOnListUseCase.swift in Sources */,
 				7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */,
