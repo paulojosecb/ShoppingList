@@ -16,6 +16,9 @@
 		7BB1BA2225DFEECF007FA08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BB1BA2025DFEECF007FA08B /* LaunchScreen.storyboard */; };
 		7BB1BA2D25DFEECF007FA08B /* ShoppingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA2C25DFEECF007FA08B /* ShoppingListTests.swift */; };
 		7BB1BA3825DFEECF007FA08B /* ShoppingListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA3725DFEECF007FA08B /* ShoppingListUITests.swift */; };
+		7BB1BA4D25DFEF2B007FA08B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA4C25DFEF2B007FA08B /* List.swift */; };
+		7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA5125DFEF81007FA08B /* Item.swift */; };
+		7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA5B25DFF08D007FA08B /* ItemOnList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		7BB1BA3325DFEECF007FA08B /* ShoppingListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB1BA3725DFEECF007FA08B /* ShoppingListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListUITests.swift; sourceTree = "<group>"; };
 		7BB1BA3925DFEECF007FA08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB1BA4C25DFEF2B007FA08B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		7BB1BA5125DFEF81007FA08B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		7BB1BA5B25DFF08D007FA08B /* ItemOnList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOnList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		7BB1BA1125DFEECC007FA08B /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				7BB1BA4825DFEEF7007FA08B /* Domain */,
 				7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */,
 				7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */,
 				7BB1BA1625DFEECC007FA08B /* ViewController.swift */,
@@ -129,6 +136,48 @@
 				7BB1BA3925DFEECF007FA08B /* Info.plist */,
 			);
 			path = ShoppingListUITests;
+			sourceTree = "<group>";
+		};
+		7BB1BA4825DFEEF7007FA08B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7BB1BA4B25DFEF19007FA08B /* Interfaces */,
+				7BB1BA4A25DFEF0F007FA08B /* UseCases */,
+				7BB1BA4925DFEEFF007FA08B /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7BB1BA4925DFEEFF007FA08B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7BB1BA4C25DFEF2B007FA08B /* List.swift */,
+				7BB1BA5125DFEF81007FA08B /* Item.swift */,
+				7BB1BA5B25DFF08D007FA08B /* ItemOnList.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		7BB1BA4A25DFEF0F007FA08B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				7BB1BA6325DFF301007FA08B /* Interfaces */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		7BB1BA4B25DFEF19007FA08B /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		7BB1BA6325DFF301007FA08B /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +313,9 @@
 				7BB1BA1725DFEECC007FA08B /* ViewController.swift in Sources */,
 				7BB1BA1D25DFEECC007FA08B /* ShoppingList.xcdatamodeld in Sources */,
 				7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */,
+				7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */,
+				7BB1BA4D25DFEF2B007FA08B /* List.swift in Sources */,
+				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
 				7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
