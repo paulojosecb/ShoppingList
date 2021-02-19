@@ -21,6 +21,7 @@
 		7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA5B25DFF08D007FA08B /* ItemOnList.swift */; };
 		7BB1BA6525DFF356007FA08B /* CreateListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA6425DFF356007FA08B /* CreateListUseCase.swift */; };
 		7BB1BAA625DFF6AB007FA08B /* AddItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAA525DFF6AB007FA08B /* AddItemOnListUseCase.swift */; };
+		7BB1BAAB25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAAA25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7BB1BA5B25DFF08D007FA08B /* ItemOnList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOnList.swift; sourceTree = "<group>"; };
 		7BB1BA6425DFF356007FA08B /* CreateListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCase.swift; sourceTree = "<group>"; };
 		7BB1BAA525DFF6AB007FA08B /* AddItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCase.swift; sourceTree = "<group>"; };
+		7BB1BAAA25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemfromListUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				7BB1BA6425DFF356007FA08B /* CreateListUseCase.swift */,
 				7BB1BAA525DFF6AB007FA08B /* AddItemOnListUseCase.swift */,
+				7BB1BAAA25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				7BB1BA1D25DFEECC007FA08B /* ShoppingList.xcdatamodeld in Sources */,
 				7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */,
 				7BB1BA6525DFF356007FA08B /* CreateListUseCase.swift in Sources */,
+				7BB1BAAB25DFF7E3007FA08B /* RemoveItemfromListUseCase.swift in Sources */,
 				7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */,
 				7BB1BA4D25DFEF2B007FA08B /* List.swift in Sources */,
 				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
