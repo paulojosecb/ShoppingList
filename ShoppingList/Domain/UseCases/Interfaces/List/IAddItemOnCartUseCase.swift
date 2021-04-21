@@ -8,8 +8,8 @@
 import Foundation
 
 struct IAddItemOnCartUseCaseRequest {
-    let cartUID: UUID
-    let itemUID: UUID
+    let listUUID: UUID
+    let itemUUID: UUID
     let quantity: Int
 }
 

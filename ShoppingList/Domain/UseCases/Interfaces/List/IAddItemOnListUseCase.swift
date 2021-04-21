@@ -8,8 +8,8 @@
 import Foundation
 
 struct IAddItemOnListUseCaseRequest {
-    let listUID: UUID
-    let itemUID: UUID
+    let listUUID: UUID
+    let itemUUID: UUID
     let quantity: Int
 }
 

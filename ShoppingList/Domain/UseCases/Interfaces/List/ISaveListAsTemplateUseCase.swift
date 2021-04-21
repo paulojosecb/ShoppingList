@@ -8,7 +8,7 @@
 import Foundation
 
 struct ISaveListAsTemplateUseCaseRequest {
-    let uid: UUID
+    let uuid: UUID
 }
 
 struct ISaveListAsTemplateUseCaseResponse {

@@ -8,25 +8,16 @@
 import Foundation
 
 class List {
-    var uid: UUID
+    var uuid: UUID
     var name: String
     var items: [ItemOnList]
-    var cart: List?
-    var isCart: Bool
+    var cart: Cart
     
     init(name: String) {
-        self.uid = UUID()
+        self.uuid = UUID()
         self.name = name
         self.items = []
-        self.cart = List(listName: name)
-        self.isCart = false
+        self.cart = Cart(listUUID: self.uuid)
     }
     
-    init(listName: String) {
-        self.uid = UUID()
-        self.name = "Cart of \(listName)"
-        self.items = []
-        self.cart = nil
-        self.isCart = true
-    }
 }

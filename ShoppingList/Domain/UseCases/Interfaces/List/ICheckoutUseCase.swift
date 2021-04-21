@@ -8,7 +8,7 @@
 import Foundation
 
 struct ICheckoutUseCaseRequest {
-    let listUID: UUID
+    let listUUID: UUID
 }
 
 struct ICheckoutUseCaseResponse {
@@ -17,6 +17,7 @@ struct ICheckoutUseCaseResponse {
 
 enum ICheckoutUseCaseRequestError: Error {
     case listNotFound
+    case cartEmpty
     case unknownError
 }
 

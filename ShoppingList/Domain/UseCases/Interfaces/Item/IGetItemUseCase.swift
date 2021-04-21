@@ -17,6 +17,7 @@ struct IGetItemUseCaseResponse {
 
 enum IGetItemUseCaseError: Error {
     case itemNotFound
+    case invalidUUID
     case unknownError
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 struct IDeleteListUseCaseRequest {
-    let uid: UUID
+    let uuid: UUID
 }
 
 struct IDeleteListUseCaseResponse {

@@ -8,8 +8,8 @@
 import Foundation
 
 struct IRemoveItemFromCartUseCaseRequest {
-    let cartUID: UUID
-    let itemUID: UUID
+    let listUUID: UUID
+    let itemUUID: UUID
 }
 
 struct IRemoveItemFromCartUseCaseResponse {
