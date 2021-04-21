@@ -18,7 +18,7 @@ protocol ICRUDTemplateUseCase {
     
     func fetch<T: Fetchable>(uuid: UUID, next: @escaping (T) throws -> ()) throws
     func create<T: Fetchable>(_ item: T, next: @escaping (T) throws -> ()) throws
-    func update<T: Fetchable>(_ item: T, next: @escaping (Bool) throws -> ()) throws
+    func update<T: Fetchable>(_ item: T, next: @escaping (T) throws -> ()) throws
     func delete<T: Fetchable>(_ item: T, next: @escaping (Bool) throws -> ()) throws
     
 }
@@ -57,11 +57,11 @@ extension ICRUDTemplateUseCase {
         }
     }
 
-    func update<T: Fetchable>(_ item: T, next: @escaping (Bool) throws -> ()) throws {
+    func update<T: Fetchable>(_ item: T, next: @escaping (T) throws -> ()) throws {
         self.repository.update(item) { (result: ICRUDRepositoryResult<T> ) in
             switch result {
-            case .success(_):
-                try next(true)
+            case .success(let item):
+                try next(item)
             case .failure(let error):
                 switch error {
                 case .errorOnOperaration:
