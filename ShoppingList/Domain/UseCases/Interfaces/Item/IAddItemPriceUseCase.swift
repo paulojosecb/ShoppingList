@@ -8,7 +8,7 @@
 import Foundation
 
 struct IAddItemPriceUseCaseRequest {
-    let listUID: UUID
+    let itemUUID: UUID
     let newPrice: Double
     let location: Location
 }
