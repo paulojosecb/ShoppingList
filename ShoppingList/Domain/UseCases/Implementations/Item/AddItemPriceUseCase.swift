@@ -25,19 +25,21 @@ class AddItemPriceUseCase: IAddItemPriceUseCase, ICRUDTemplateUseCase {
         
         do {
             
-            try self.fetch(uuid: <#T##UUID#>, next: <#T##(Fetchable) throws -> ()#>)
-            
-            try self.fetchItemFor(uuid: request.itemUUID) { (item) in
+            try self.fetch(uuid: request.itemUUID, next: { (item: Item) in
                 
                 try self.add(price: request.newPrice, item: item) { (item) in
                     
-                    try self.update(item: item) { (item) in
-                        completion(.success(.init(item: item)))
-                    }
+                    try self.update(item, next: { (item) in
+                        completion(.success(IAddItemPriceUseCaseResponse.init(item: item)))
+                    })
                     
                 }
-            }
+            })
             
+        } catch ICRUDTemplateUseCaseError.notFound {
+            completion(.failure(.itemNotFound))
+        } catch ICRUDTemplateUseCaseError.errorOnOperaration {
+            completion(.failure(.unknownError))
         } catch let error {
             
             guard let error = error as? IAddItemPriceUseCaseError else {
@@ -48,6 +50,17 @@ class AddItemPriceUseCase: IAddItemPriceUseCase, ICRUDTemplateUseCase {
             completion(.failure(error))
         }
         
+    }
+    
+    private func add(price: Double, item: Item, next: @escaping (Item) throws ->()) throws {
+        item.prices.append(self.getNewPrice(price: price))
+        try next(item)
+    }
+    
+    private func getNewPrice(price: Double) -> ItemPrice {
+        return ItemPrice(price: price,
+                         location: Location(latitude: 0, longitude: 0),
+                         timeStamp: Date())
     }
     
 }
