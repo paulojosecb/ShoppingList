@@ -7,9 +7,16 @@
 
 import Foundation
 
-struct ItemOnList {
-    var uid: UUID
-    var quantity: Int
-    var item: Item
-    var list: List
+class ItemOnList {
+    let uuid: UUID
+    let quantity: Int
+    let item: Item
+    let list: List
+    
+    init(item: Item, on list: List, quantity: Int, uuid: UUID) {
+        self.uuid = uuid
+        self.item = item
+        self.list = list
+        self.quantity = quantity
+    }
 }

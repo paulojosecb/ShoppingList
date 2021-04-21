@@ -7,9 +7,22 @@
 
 import Foundation
 
-struct Item {
-    var uid: UUID
+class Item {
+    var uuid: UUID
     var name: String
-    var pricePerUnit: String
+    var prices: [ItemPrice]
     var isBulk: Bool
+    
+    init(name: String, isBulk: Bool = false, initialPrice: ItemPrice?, uuid: UUID) {
+        self.name = name
+        self.isBulk = isBulk
+        
+        if let initialPrice = initialPrice {
+            self.prices = [initialPrice]
+        } else {
+            self.prices = []
+        }
+            
+        self.uuid = uuid
+    }
 }
