@@ -37,6 +37,8 @@
 		7BCD9D9B263099C3001E7354 /* IAddItemPriceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D9A263099C3001E7354 /* IAddItemPriceUseCase.swift */; };
 		7BCD9DA626309CCB001E7354 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9DA526309CCB001E7354 /* Cart.swift */; };
 		7BCD9DB026309E69001E7354 /* GetItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9DAF26309E69001E7354 /* GetItemUseCase.swift */; };
+		7BCD9DB62630AA97001E7354 /* AddItemPriceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9DB52630AA97001E7354 /* AddItemPriceUseCase.swift */; };
+		7BCD9DBE2630AC35001E7354 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9DBD2630AC35001E7354 /* IRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		7BCD9D9A263099C3001E7354 /* IAddItemPriceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAddItemPriceUseCase.swift; sourceTree = "<group>"; };
 		7BCD9DA526309CCB001E7354 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		7BCD9DAF26309E69001E7354 /* GetItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemUseCase.swift; sourceTree = "<group>"; };
+		7BCD9DB52630AA97001E7354 /* AddItemPriceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPriceUseCase.swift; sourceTree = "<group>"; };
+		7BCD9DBD2630AC35001E7354 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,9 +257,19 @@
 		7BCD9DAE26309E57001E7354 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
-				7BCD9DAF26309E69001E7354 /* GetItemUseCase.swift */,
+				7BCD9DB42630AA40001E7354 /* Item */,
+				7BCD9DBD2630AC35001E7354 /* IRepository.swift */,
 			);
 			path = Implementations;
+			sourceTree = "<group>";
+		};
+		7BCD9DB42630AA40001E7354 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				7BCD9DAF26309E69001E7354 /* GetItemUseCase.swift */,
+				7BCD9DB52630AA97001E7354 /* AddItemPriceUseCase.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +406,7 @@
 				7BB1BA1D25DFEECC007FA08B /* ShoppingList.xcdatamodeld in Sources */,
 				7BB1BADA25E00153007FA08B /* IAddItemOnCartUseCase.swift in Sources */,
 				7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */,
+				7BCD9DB62630AA97001E7354 /* AddItemPriceUseCase.swift in Sources */,
 				7BB1BAC825DFFA44007FA08B /* IGetItemUseCase.swift in Sources */,
 				7BB1BA6525DFF356007FA08B /* ICreateListUseCase.swift in Sources */,
 				7BB1BAAB25DFF7E3007FA08B /* IRemoveItemfromListUseCase.swift in Sources */,
@@ -406,6 +421,7 @@
 				7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */,
 				7BB1BAA625DFF6AB007FA08B /* IAddItemOnListUseCase.swift in Sources */,
 				7BCD9DB026309E69001E7354 /* GetItemUseCase.swift in Sources */,
+				7BCD9DBE2630AC35001E7354 /* IRepository.swift in Sources */,
 				7BB1BAEF25E0028C007FA08B /* ICheckoutUseCase.swift in Sources */,
 				7BCD9D9B263099C3001E7354 /* IAddItemPriceUseCase.swift in Sources */,
 				7BB1BAD025E00070007FA08B /* ISaveListAsTemplateUseCase.swift in Sources */,
