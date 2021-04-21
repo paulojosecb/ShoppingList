@@ -8,7 +8,7 @@
 import Foundation
 
 struct IGetItemUseCaseRequest {
-    let uid: UUID
+    let uuid: UUID
 }
 
 struct IGetItemUseCaseResponse {
