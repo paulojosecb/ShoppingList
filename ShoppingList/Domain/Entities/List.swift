@@ -7,7 +7,7 @@
 
 import Foundation
 
-class List {
+class List: Fetchable {
     var uuid: UUID
     var name: String
     var items: [ItemOnList]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ItemOnList {
+class ItemOnList: Fetchable {
     let uuid: UUID
     let quantity: Int
     let item: Item

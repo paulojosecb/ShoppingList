@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Item {
+class Item: Fetchable {
     var uuid: UUID
     var name: String
     var prices: [ItemPrice]
