@@ -7,16 +7,12 @@
 
 import Foundation
 
-protocol IAddItemPriceUseCaseRepository: IRepository {
-    
-}
 
-class AddItemPriceUseCase: IAddItemPriceUseCase {
+class AddItemPriceUseCase: IAddItemPriceUseCase, ICRUDTemplateUseCase {
 
+    var repository: ICRUDRepository
     
-    let repository: IAddItemPriceUseCaseRepository
-    
-    init(repository: IAddItemPriceUseCaseRepository) {
+    init(repository: ICRUDRepository) {
         self.repository = repository
     }
     
@@ -28,6 +24,8 @@ class AddItemPriceUseCase: IAddItemPriceUseCase {
         }
         
         do {
+            
+            try self.fetch(uuid: <#T##UUID#>, next: <#T##(Fetchable) throws -> ()#>)
             
             try self.fetchItemFor(uuid: request.itemUUID) { (item) in
                 
@@ -50,55 +48,6 @@ class AddItemPriceUseCase: IAddItemPriceUseCase {
             completion(.failure(error))
         }
         
-    }
-    
-    private func fetchItemFor(uuid: UUID, next: @escaping (Item) throws -> ()) throws {
-        
-        self.repository.fetch(uuid: uuid) { (result: Result<Item, IRepositoryError>) in
-            switch result {
-            case .success(let item):
-                try next(item)
-            case .failure(let error):
-                throw self.handle(error: error)
-            }
-        }
-        
-    }
-    
-    private func add(price: Double, item: Item, next: @escaping (Item) throws -> ()) throws {
-        
-        item.prices.append(getNewPrice(for: price))
-        try next(item)
-        
-    }
-    
-    private func update(item: Item, next: @escaping (Item) throws -> ()) throws {
-        
-        self.repository.update(item) { (result) in
-            
-            switch result {
-            case .success(let item):
-                try next(item)
-            case .failure(let error):
-                throw self.handle(error: error)
-            }
-        }
-        
-    }
-    
-    private func getNewPrice(for price: Double) -> ItemPrice {
-        return ItemPrice(price: price,
-                         location: Location(latitude: 0, longitude: 0),
-                         timeStamp: Date())
-    }
-    
-    private func handle(error: IRepositoryError) -> IAddItemPriceUseCaseError {
-        switch error {
-        case .notFound:
-            return .itemNotFound
-        default:
-            return .unknownError
-        }
     }
     
 }
