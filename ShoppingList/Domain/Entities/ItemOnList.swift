@@ -9,7 +9,7 @@ import Foundation
 
 class ItemOnList: Fetchable {
     let uuid: UUID
-    let quantity: Int
+    var quantity: Int
     let item: Item
     let list: List
     

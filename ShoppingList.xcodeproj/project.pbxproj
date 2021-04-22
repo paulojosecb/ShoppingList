@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B8209842631028200003819 /* EditItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209832631028200003819 /* EditItemOnCartUseCase.swift */; };
 		7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */; };
 		7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */; };
 		7BB1BA1725DFEECC007FA08B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1625DFEECC007FA08B /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B8209832631028200003819 /* EditItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemOnCartUseCase.swift; sourceTree = "<group>"; };
 		7BB1BA0F25DFEECC007FA08B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B820982263100E700003819 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7B8209832631028200003819 /* EditItemOnCartUseCase.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		7BB1BA0625DFEECC007FA08B = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +274,7 @@
 		7BCD9DAE26309E57001E7354 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				7B820982263100E700003819 /* List */,
 				7BCD9DB42630AA40001E7354 /* Item */,
 			);
 			path = Implementations;
@@ -435,6 +446,7 @@
 				7BB1BAD025E00070007FA08B /* ISaveListAsTemplateUseCase.swift in Sources */,
 				7BB1BABE25DFF929007FA08B /* IDeleteListUseCase.swift in Sources */,
 				7BB1BADF25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift in Sources */,
+				7B8209842631028200003819 /* EditItemOnCartUseCase.swift in Sources */,
 				7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */,
 				7BCD9D9226309931001E7354 /* IEditListNameUseCase.swift in Sources */,
 			);
