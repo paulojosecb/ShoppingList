@@ -22,7 +22,6 @@ class AddItemOnCartUseCase: IAddItemOnCartUseCase, ICRUDTemplateUseCase {
                                     
                 try self.addToCart(item: request.itemUUID,
                                    on: list,
-                                   quantity: request.quantity,
                                    next: { (list: List) in
                     
                     try self.update(list,
@@ -51,7 +50,7 @@ class AddItemOnCartUseCase: IAddItemOnCartUseCase, ICRUDTemplateUseCase {
         
     }
     
-    private func addToCart(item: UUID, on list: List, quantity: Int, next: @escaping (List) throws -> Void) throws {
+    private func addToCart(item: UUID, on list: List, next: @escaping (List) throws -> Void) throws {
         
         if (list is Cart) {
             throw IAddItemOnCartUseCaseError.listNotFound
