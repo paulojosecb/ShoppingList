@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B8209842631028200003819 /* EditItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209832631028200003819 /* EditItemOnCartUseCase.swift */; };
+		7B8209892631061F00003819 /* AddItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */; };
 		7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */; };
 		7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */; };
 		7BB1BA1725DFEECC007FA08B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1625DFEECC007FA08B /* ViewController.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		7B8209832631028200003819 /* EditItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemOnCartUseCase.swift; sourceTree = "<group>"; };
+		7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnCartUseCase.swift; sourceTree = "<group>"; };
 		7BB1BA0F25DFEECC007FA08B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8209832631028200003819 /* EditItemOnCartUseCase.swift */,
+				7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				7BE150B62630B90C0015693C /* Fetchable.swift in Sources */,
 				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
 				7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */,
+				7B8209892631061F00003819 /* AddItemOnCartUseCase.swift in Sources */,
 				7BB1BAA625DFF6AB007FA08B /* IAddItemOnListUseCase.swift in Sources */,
 				7BCD9DB026309E69001E7354 /* GetItemUseCase.swift in Sources */,
 				7BCD9DBE2630AC35001E7354 /* ICRUDRepository.swift in Sources */,

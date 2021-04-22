@@ -19,7 +19,9 @@ struct IAddItemOnCartUseCaseResponse {
 
 enum IAddItemOnCartUseCaseError: Error {
     case cartNotFound
+    case listNotFound
     case itemNotFound
+    case itemNotInList
     case invalidQuantity
     case unknownError
 }
