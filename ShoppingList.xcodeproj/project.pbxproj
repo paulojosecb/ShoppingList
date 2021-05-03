@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22F95E0D63D5DE61D398016C /* Pods_ShoppingList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF885986906ECAFCDD908F0 /* Pods_ShoppingList.framework */; };
+		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
 		7B794AEF2632286A009BA004 /* CreateListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B794AEE2632286A009BA004 /* CreateListUseCase.swift */; };
 		7B8209842631028200003819 /* EditItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209832631028200003819 /* EditItemOnCartUseCase.swift */; };
 		7B8209892631061F00003819 /* AddItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		2D83C78E6C6D8C5A4AA08DD8 /* Pods-ShoppingList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.release.xcconfig"; path = "Target Support Files/Pods-ShoppingList/Pods-ShoppingList.release.xcconfig"; sourceTree = "<group>"; };
 		5E9F87679C95DEC06335922B /* Pods-ShoppingList-ShoppingListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList-ShoppingListUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingList-ShoppingListUITests/Pods-ShoppingList-ShoppingListUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B794AEE2632286A009BA004 /* CreateListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCase.swift; sourceTree = "<group>"; };
 		7B8209832631028200003819 /* EditItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemOnCartUseCase.swift; sourceTree = "<group>"; };
 		7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnCartUseCase.swift; sourceTree = "<group>"; };
@@ -174,6 +176,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7B507D63263313A3000EE3B2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7B507D64263313AC000EE3B2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7B507D65263313BB000EE3B2 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7B507D65263313BB000EE3B2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		7B820982263100E700003819 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +235,7 @@
 		7BB1BA1125DFEECC007FA08B /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				7B507D63263313A3000EE3B2 /* Data */,
 				7BB1BA4825DFEEF7007FA08B /* Domain */,
 				7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */,
 				7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */,
@@ -226,6 +252,7 @@
 		7BB1BA2B25DFEECF007FA08B /* ShoppingListTests */ = {
 			isa = PBXGroup;
 			children = (
+				7B507D64263313AC000EE3B2 /* Domain */,
 				7BB1BA2C25DFEECF007FA08B /* ShoppingListTests.swift */,
 				7BB1BA2E25DFEECF007FA08B /* Info.plist */,
 			);
@@ -635,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BB1BA2D25DFEECF007FA08B /* ShoppingListTests.swift in Sources */,
+				7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
