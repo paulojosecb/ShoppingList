@@ -20,6 +20,10 @@ class CreateListUseCase: ICreateListUseCase {
         
         let promise = Promise<ICreateListUseCaseResponse> { fulfill, reject in
             
+            if (request.name == "") {
+                reject(ICreateListUseCaseError.invalidName)
+            }
+            
             self.repository.create(List(name: request.name)).then { list in
                 fulfill(.init(list: list))
             }.catch { (error) in

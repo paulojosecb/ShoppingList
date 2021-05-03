@@ -17,8 +17,8 @@ typealias ICRUDRepositoryResult<T: Fetchable> = Result<T, ICRUDRepositoryError>
 typealias ICRUDRepositoryResultBool = Result<Bool, ICRUDRepositoryError>
 
 protocol ICRUDRepository {
-    func fetch<T: Fetchable>(uuid: UUID) -> Promise<T>
+    func fetch<T: Fetchable>(uuid: String) -> Promise<T>
     func create<T: Fetchable>(_ item: T) -> Promise<T>
-    func update<T: Fetchable>(_ item: T, completion: @escaping(ICRUDRepositoryResult<T>) throws -> Void)
-    func delete<T: Fetchable>(_ item: T, completion: @escaping(ICRUDRepositoryResultBool) throws -> Void)
+    func update<T: Fetchable>(_ item: T) -> Promise<T>
+    func delete<T: Fetchable>(_ item: T) -> Promise<Bool>
 }

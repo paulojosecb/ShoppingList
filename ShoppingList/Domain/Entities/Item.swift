@@ -8,12 +8,12 @@
 import Foundation
 
 class Item: Fetchable {
-    var uuid: UUID
+    var uuid: String
     var name: String
     var prices: [ItemPrice]
     var isBulk: Bool
     
-    init(name: String, isBulk: Bool = false, initialPrice: ItemPrice?, uuid: UUID) {
+    init(name: String, isBulk: Bool = false, initialPrice: ItemPrice?, uuid: String) {
         self.name = name
         self.isBulk = isBulk
         
