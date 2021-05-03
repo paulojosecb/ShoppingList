@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Promises
 
 struct IRemoveItemFromCartUseCaseRequest {
-    let listUUID: UUID
-    let itemUUID: UUID
+    let listUUID: String
+    let itemUUID: String
 }
 
 struct IRemoveItemFromCartUseCaseResponse {
@@ -24,5 +25,5 @@ enum IRemoveItemFromCartUseCaseError: Error {
 }
 
 protocol IRemoveItemFromCartUseCase {
-    func execute(request: IRemoveItemFromCartUseCaseRequest, completion: @escaping (Result<IRemoveItemFromCartUseCaseResponse, IRemoveItemFromCartUseCaseError>) -> Void)
+    func execute(request: IRemoveItemFromCartUseCaseRequest) -> Promise<IRemoveItemFromCartUseCaseResponse>
 }
