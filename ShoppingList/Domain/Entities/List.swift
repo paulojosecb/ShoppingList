@@ -8,12 +8,6 @@
 import Foundation
 
 class List: Fetchable {
-<<<<<<< Updated upstream
-    var uuid: UUID
-    var name: String
-    var items: [ItemOnList]
-    var cart: Cart
-=======
     
     enum CustomError: Error {
         case invalidListUUID
@@ -26,10 +20,9 @@ class List: Fetchable {
     private var name: String
     private var items: [ItemOnList]
     private var cart: Cart
->>>>>>> Stashed changes
     
     init(name: String) {
-        self.uuid = UUID()
+        self.uuid = UUID().uuidString
         self.name = name
         self.items = []
         self.cart = Cart(listUUID: self.uuid)

@@ -1,25 +1,3 @@
-<<<<<<< Updated upstream
-//
-//  RemoveItemFromCartUseCase.swift
-//  ShoppingList
-//
-//  Created by Paulo José on 21/04/21.
-//
-
-import Foundation
-
-class RemoveItemFromCartUseCase: IRemoveItemFromCartUseCase, ICRUDTemplateUseCase {
-    
-    var repository: ICRUDRepository
-
-=======
-////
-////  RemoveItemFromCartUseCase.swift
-////  ShoppingList
-////
-////  Created by Paulo José on 21/04/21.
-////
-
 import Foundation
 import Promises
 
@@ -27,12 +5,10 @@ class RemoveItemFromCartUseCase: IRemoveItemFromCartUseCase {
     
     let repository: ICRUDRepository
     
->>>>>>> Stashed changes
     init(repository: ICRUDRepository) {
         self.repository = repository
     }
     
-<<<<<<< Updated upstream
     func execute(request: IRemoveItemFromCartUseCaseRequest, completion: @escaping (Result<IRemoveItemFromCartUseCaseResponse, IRemoveItemFromCartUseCaseError>) -> Void) {
         
         do {
@@ -87,7 +63,6 @@ class RemoveItemFromCartUseCase: IRemoveItemFromCartUseCase {
     }
     
 
-=======
     func execute(request: IRemoveItemFromCartUseCaseRequest) -> Promise<IRemoveItemFromCartUseCaseResponse> {
         return Promise { fulfill, reject in
             
@@ -125,5 +100,4 @@ class RemoveItemFromCartUseCase: IRemoveItemFromCartUseCase {
         }
     }
     
->>>>>>> Stashed changes
 }

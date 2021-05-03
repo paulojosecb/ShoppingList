@@ -7,11 +7,14 @@
 
 import Foundation
 
-class Cart: List {
-    let listUUID: UUID
+class Cart {
+    var uuid: String
+    var listUUID: String
+    var items: [ItemOnList]
     
-    init(listUUID: UUID) {
+    init(listUUID: String) {
+        self.uuid = UUID().uuidString
         self.listUUID = listUUID
-        super.init(name: "")
+        self.items = []
     }
 }
