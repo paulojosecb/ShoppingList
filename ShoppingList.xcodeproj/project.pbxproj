@@ -272,7 +272,6 @@
 		7BB1BA4825DFEEF7007FA08B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				7BB1BA4B25DFEF19007FA08B /* Interfaces */,
 				7BB1BA4A25DFEF0F007FA08B /* UseCases */,
 				7BB1BA4925DFEEFF007FA08B /* Entities */,
 			);
@@ -300,13 +299,6 @@
 				7BB1BA6325DFF301007FA08B /* Interfaces */,
 			);
 			path = UseCases;
-			sourceTree = "<group>";
-		};
-		7BB1BA4B25DFEF19007FA08B /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		7BB1BA6325DFF301007FA08B /* Interfaces */ = {
