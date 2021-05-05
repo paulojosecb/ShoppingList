@@ -3,4 +3,134 @@
    uuid = "571EA891-F313-447E-B590-9C4CA850D1DE"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F34038B2-05C0-4F93-84EA-D038D4333D6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingListTests/UnitTests/Domain/UseCases/RemoveItemFromCartUseCaseTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "testRemoveItemFromCartThatExistsTest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2BB35DB-C488-4E93-B648-7C0E259C298B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingList/Domain/UseCases/Implementations/List/RemoveItemFromCartUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "execute(request:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B2BB35DB-C488-4E93-B648-7C0E259C298B - e0ddcd76ef56cd10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((ShoppingList.IRemoveItemFromCartUseCaseResponse) -&gt; (), (Swift.Error) -&gt; ()) -&gt; () in ShoppingList.RemoveItemFromCartUseCase.execute(request: ShoppingList.IRemoveItemFromCartUseCaseRequest) -&gt; Promises.Promise&lt;ShoppingList.IRemoveItemFromCartUseCaseResponse&gt;"
+                  moduleName = "ShoppingList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulojosecb/Documents/GitHub/ShoppingList/ShoppingList/Domain/UseCases/Implementations/List/RemoveItemFromCartUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "B2BB35DB-C488-4E93-B648-7C0E259C298B - 3700d010ff1d9346"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ShoppingList.List) -&gt; () in closure #1 ((ShoppingList.IRemoveItemFromCartUseCaseResponse) -&gt; (), (Swift.Error) -&gt; ()) -&gt; () in ShoppingList.RemoveItemFromCartUseCase.execute(request: ShoppingList.IRemoveItemFromCartUseCaseRequest) -&gt; Promises.Promise&lt;ShoppingList.IRemoveItemFromCartUseCaseResponse&gt;"
+                  moduleName = "ShoppingList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulojosecb/Documents/GitHub/ShoppingList/ShoppingList/Domain/UseCases/Implementations/List/RemoveItemFromCartUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30677B7D-39B6-4608-8592-C94000CFE1D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingList/Domain/UseCases/Implementations/List/RemoveItemFromCartUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "execute(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1F75ACC-0504-44CF-9D2D-D68406D56008"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingList/Domain/UseCases/Implementations/List/RemoveItemFromCartUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "execute(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD165A4B-EACB-4909-A77F-2F6866980465"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingList/Domain/UseCases/Implementations/List/RemoveItemFromCartUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "execute(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6805E656-5BB8-4556-8873-6484E97391D5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingList/Domain/UseCases/Implementations/List/RemoveItemFromCartUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "execute(request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

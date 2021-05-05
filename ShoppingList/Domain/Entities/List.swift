@@ -14,18 +14,21 @@ class List: Fetchable {
         case itemNotFoundOnList
         case itemNotFoundOnCart
         case itemAlreadyOnList
+        case itemAlreadyOnCart
     }
     
     var uuid: String
-    private var name: String
+    
+    var name: String
+    
     private var items: [ItemOnList]
     private var cart: Cart
     
-    init(name: String) {
+    init(_ nam: String) {
         self.uuid = UUID().uuidString
-        self.name = name
         self.items = []
         self.cart = Cart(listUUID: self.uuid)
+        self.name = nam
     }
     
     public func addItemToList(_ item: ItemOnList) throws {
@@ -44,30 +47,35 @@ class List: Fetchable {
     
     public func moveItemToCart(itemUUID: String) throws {
         
-        if (doesListContain(itemUUID: itemUUID) && !doesCartContain(itemUUID: itemUUID)) {
-            
-            guard let item = self.getItemFromList(itemUUID: itemUUID) else {
-                throw List.CustomError.itemNotFoundOnList
-            }
-            
-            self.removeItemFromList(itemUUID: itemUUID)
-            self.cart.items.append(item)
+        if (doesCartContain(itemUUID: itemUUID)) {
+            throw List.CustomError.itemAlreadyOnCart
         }
         
+        if (!doesListContain(itemUUID: itemUUID)) {
+            throw List.CustomError.itemNotFoundOnList
+        }
+        
+        guard let item = self.getItemFromList(itemUUID: itemUUID) else {
+            throw List.CustomError.itemNotFoundOnList
+        }
+        
+        self.removeItemFromList(itemUUID: itemUUID)
+        self.cart.items.append(item)
+
     }
     
     public func moveItemOutOfCart(itemUUID: String) throws {
-        if (!doesListContain(itemUUID: itemUUID) && doesCartContain(itemUUID: itemUUID)) {
-            
-            guard let item = self.getItemFromCart(itemUUID: itemUUID) else {
-                throw List.CustomError.itemNotFoundOnCart
-            }
-            
-            self.removeItemFromCart(itemUUID: itemUUID)
-            self.cart.items.append(item)
-        } else {
+        
+        if (!doesCartContain(itemUUID: itemUUID)) {
             throw List.CustomError.itemNotFoundOnCart
         }
+                    
+        guard let item = self.getItemFromCart(itemUUID: itemUUID) else {
+            throw List.CustomError.itemNotFoundOnCart
+        }
+        
+        self.removeItemFromCart(itemUUID: itemUUID)
+        self.items.append(item)
     }
     
     public func removeItemFromList(itemUUID: String) {
@@ -83,7 +91,7 @@ class List: Fetchable {
     }
     
     private func removeItemFromCart(itemUUID: String) {
-        self.items = self.cart.items.filter { $0.itemUUID != itemUUID }
+        self.cart.items = self.cart.items.filter { $0.itemUUID != itemUUID }
     }
     
     private func doesListContain(itemUUID: String) -> Bool {
@@ -91,7 +99,7 @@ class List: Fetchable {
     }
     
     private func doesCartContain(itemUUID: String) -> Bool {
-        return self.items.filter { $0.itemUUID == itemUUID }.count > 0
+        return self.cart.items.filter { $0.itemUUID == itemUUID }.count > 0
     }
     
     private func getItemFromList(itemUUID: String) -> ItemOnList? {

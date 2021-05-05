@@ -13,7 +13,7 @@ class Item: Fetchable {
     var prices: [ItemPrice]
     var isBulk: Bool
     
-    init(name: String, isBulk: Bool = false, initialPrice: ItemPrice?, uuid: String) {
+    init(name: String, isBulk: Bool = false, initialPrice: ItemPrice?, uuid: String = UUID().uuidString) {
         self.name = name
         self.isBulk = isBulk
         

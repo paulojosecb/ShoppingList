@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		22F95E0D63D5DE61D398016C /* Pods_ShoppingList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF885986906ECAFCDD908F0 /* Pods_ShoppingList.framework */; };
+		7B00C5A12643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B00C5A02643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift */; };
+		7B00C5AA26435AE90000ABC2 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B00C5A926435AE90000ABC2 /* ListTests.swift */; };
 		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
 		7B794AEF2632286A009BA004 /* CreateListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B794AEE2632286A009BA004 /* CreateListUseCase.swift */; };
 		7B8209842631028200003819 /* EditItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209832631028200003819 /* EditItemOnCartUseCase.swift */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		2D83C78E6C6D8C5A4AA08DD8 /* Pods-ShoppingList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.release.xcconfig"; path = "Target Support Files/Pods-ShoppingList/Pods-ShoppingList.release.xcconfig"; sourceTree = "<group>"; };
 		5E9F87679C95DEC06335922B /* Pods-ShoppingList-ShoppingListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList-ShoppingListUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingList-ShoppingListUITests/Pods-ShoppingList-ShoppingListUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B00C5A02643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemFromCartUseCaseTest.swift; sourceTree = "<group>"; };
+		7B00C5A926435AE90000ABC2 /* ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTests.swift; sourceTree = "<group>"; };
 		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B794AEE2632286A009BA004 /* CreateListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCase.swift; sourceTree = "<group>"; };
 		7B8209832631028200003819 /* EditItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemOnCartUseCase.swift; sourceTree = "<group>"; };
@@ -176,6 +180,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7B00C59F264350E80000ABC2 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B507D64263313AC000EE3B2 /* Domain */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		7B00C5A826435AD10000ABC2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7B00C5A926435AE90000ABC2 /* ListTests.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		7B507D63263313A3000EE3B2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +207,7 @@
 		7B507D64263313AC000EE3B2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7B00C5A826435AD10000ABC2 /* Entities */,
 				7B507D65263313BB000EE3B2 /* UseCases */,
 			);
 			path = Domain;
@@ -196,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */,
+				7B00C5A02643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -253,7 +275,7 @@
 		7BB1BA2B25DFEECF007FA08B /* ShoppingListTests */ = {
 			isa = PBXGroup;
 			children = (
-				7B507D64263313AC000EE3B2 /* Domain */,
+				7B00C59F264350E80000ABC2 /* UnitTests */,
 				7BB1BA2C25DFEECF007FA08B /* ShoppingListTests.swift */,
 				7BB1BA2E25DFEECF007FA08B /* Info.plist */,
 			);
@@ -654,6 +676,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BB1BA2D25DFEECF007FA08B /* ShoppingListTests.swift in Sources */,
+				7B00C5AA26435AE90000ABC2 /* ListTests.swift in Sources */,
+				7B00C5A12643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift in Sources */,
 				7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

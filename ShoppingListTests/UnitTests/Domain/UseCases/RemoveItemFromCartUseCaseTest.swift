@@ -1,19 +1,22 @@
 //
-//  CreateListUseCaseTest.swift
+//  RemoveItemFromCartUseCaseTest.swift
 //  ShoppingListTests
 //
-//  Created by Paulo José on 23/04/21.
+//  Created by Paulo José on 05/05/21.
 //
 
 import XCTest
 import Promises
 @testable import ShoppingList
 
-class CreateListUseCaseTest: XCTestCase {
+class RemoveItemFromCartUseCaseTest: XCTestCase {
     
-    var mockRepository: MockCreateListRepository? = nil
+    var list: List? = nil
+    var item: Item? = nil
     
-    class MockCreateListRepository: ICRUDRepository {
+    var mockRepository: MockRemoveItemFromCartRepository? = nil
+    
+    class MockRemoveItemFromCartRepository: ICRUDRepository {
         
         var errorMock = false
         var list: [List] = []
@@ -59,13 +62,17 @@ class CreateListUseCaseTest: XCTestCase {
     }
     
     override func setUp() {
-        mockRepository = MockCreateListRepository()
+        mockRepository = MockRemoveItemFromCartRepository()
+        
+        list = List("My list")
+        item = Item(name: "My Item", initialPrice: nil)
+        
     }
     
     override func tearDown() {
         mockRepository = nil
     }
-    
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -74,60 +81,56 @@ class CreateListUseCaseTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testCreateWithoutError() {
+    func testRemoveItemFromCartThatExistsTest() {
         let expectation = XCTestExpectation(description: "List with name")
-        let createUseCase = CreateListUseCase(repository: mockRepository!)
+        let useCase = RemoveItemFromCartUseCase(repository: mockRepository!)
+        let itemOnList = ItemOnList(item: item!.uuid, on: list!.uuid, quantity: 1)
         
-        createUseCase.execute(request: .init(name: "Lista 1")).then { response in
-            assert(response.list.name == "Lista 1")
-            assert(response.list.items.isEmpty)
-            expectation.fulfill()
-        }
-        .catch { error in
-            XCTFail()
+        try! list?.addItemToList(itemOnList)
+        try! list?.moveItemToCart(itemUUID: item!.uuid)
+        
+        mockRepository?.create(list!).then { (list: List) in
+            
+            let request = IRemoveItemFromCartUseCaseRequest(listUUID: list.uuid, itemUUID: self.item!.uuid)
+            
+            useCase.execute(request: request).then { response in
+                
+                let listContainsItem = response.list.getItemsFromList().contains { $0.itemUUID == self.item?.uuid }
+                let cartContainsItem = response.list.getItemsFromCart().contains { $0.itemUUID == self.item?.uuid }
+                
+                XCTAssertTrue(listContainsItem)
+                XCTAssertTrue(!cartContainsItem)
+                
+                expectation.fulfill()
+                
+            }.catch { (error) in
+                XCTFail()
+            }
+    
         }
         
-        wait(for: [expectation], timeout: 1.0)
+//        wait(for: [expectation], timeout: 1.0)
     }
     
-    func testCreateWithInvalidName() {
-        let expectation = XCTestExpectation(description: "CreateList with name invalidName")
-        let createUseCase = CreateListUseCase(repository: mockRepository!)
-        
-        createUseCase.execute(request: .init(name: "")).then { response in
-            XCTFail()
-        }
-        .catch { error in
-            guard let error = error as? ICreateListUseCaseError else {
-                XCTFail()
-                return
-            }
-            
-            if (error == ICreateListUseCaseError.invalidName) {
-                expectation.fulfill()
-            }
-        }
-        
-        wait(for: [expectation], timeout: 1.0)
-    }
-    
-    func testCreateWithError() {
-        mockRepository?.errorMock = true
+    func testRemoveItemFromCartThatDoesNotExistsTest() {
         let expectation = XCTestExpectation(description: "List with name")
-        let createUseCase = CreateListUseCase(repository: mockRepository!)
+        let useCase = RemoveItemFromCartUseCase(repository: mockRepository!)
+        let itemOnList = ItemOnList(item: item!.uuid, on: list!.uuid, quantity: 1)
         
-        createUseCase.execute(request: .init(name: "Lista 1")).then { response in
-            XCTFail()
-        }
-        .catch { error in
-            guard let error = error as? ICreateListUseCaseError else {
-                XCTFail()
-                return
-            }
+        try! list?.addItemToList(itemOnList)
+        
+        mockRepository?.create(list!).then { (list: List) in
             
-            if (error == ICreateListUseCaseError.unknownError) {
+            let request = IRemoveItemFromCartUseCaseRequest(listUUID: list.uuid, itemUUID: self.item!.uuid)
+            
+            useCase.execute(request: request).then { response in
+                
+                XCTFail()
+                
+            }.catch { (error) in
                 expectation.fulfill()
             }
+    
         }
         
         wait(for: [expectation], timeout: 1.0)

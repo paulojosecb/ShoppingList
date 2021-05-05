@@ -24,7 +24,7 @@ class CreateListUseCase: ICreateListUseCase {
                 reject(ICreateListUseCaseError.invalidName)
             }
             
-            self.repository.create(List(name: request.name)).then { list in
+            self.repository.create(List(request.name)).then { list in
                 fulfill(.init(list: list))
             }.catch { (error) in
                 reject(self.handle(error))
