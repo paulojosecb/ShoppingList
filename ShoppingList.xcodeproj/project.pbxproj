@@ -284,13 +284,7 @@
 				7B00C5BC264363AC0000ABC2 /* Infrastructure */,
 				7B507D63263313A3000EE3B2 /* Data */,
 				7BB1BA4825DFEEF7007FA08B /* Domain */,
-				7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */,
-				7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */,
-				7BB1BA1625DFEECC007FA08B /* ViewController.swift */,
-				7BB1BA1825DFEECC007FA08B /* Main.storyboard */,
-				7BB1BA1E25DFEECF007FA08B /* Assets.xcassets */,
-				7BB1BA2025DFEECF007FA08B /* LaunchScreen.storyboard */,
-				7BB1BA2325DFEECF007FA08B /* Info.plist */,
+				7BD222CB2645A7B3006938BD /* Presentation */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -401,6 +395,20 @@
 				7BCD9DB52630AA97001E7354 /* AddItemPriceUseCase.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		7BD222CB2645A7B3006938BD /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */,
+				7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */,
+				7BB1BA1625DFEECC007FA08B /* ViewController.swift */,
+				7BB1BA1825DFEECC007FA08B /* Main.storyboard */,
+				7BB1BA1E25DFEECF007FA08B /* Assets.xcassets */,
+				7BB1BA2025DFEECF007FA08B /* LaunchScreen.storyboard */,
+				7BB1BA2325DFEECF007FA08B /* Info.plist */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		7BE8CE2026457A410090955D /* Data */ = {
