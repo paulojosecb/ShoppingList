@@ -1,20 +1,18 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  ShoppingList
 //
-//  Created by Paulo José on 19/02/21.
+//  Created by Paulo José on 07/05/21.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
+        self.view = HomeView()
         // Do any additional setup after loading the view.
     }
 
-
 }
-
