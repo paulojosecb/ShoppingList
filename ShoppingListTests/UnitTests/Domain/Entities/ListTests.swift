@@ -128,7 +128,7 @@ class ListTests: XCTestCase {
     func testMoveItemToCartThatDoesExistOnList() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, uuid: nil)
+        _ = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, uuid: nil)
                 
         do {
             try list.moveItemToCart(itemUUID: item.uuid)
@@ -172,7 +172,7 @@ class ListTests: XCTestCase {
         
         do {
             try list.moveItemOutOfCart(itemUUID: item.uuid)
-        } catch let error {
+        } catch _ {
             XCTFail()
         }
         
@@ -183,7 +183,7 @@ class ListTests: XCTestCase {
     func testMoveItemOutOfCartThatIsNotOnCart() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, uuid: nil)
+        _ = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, uuid: nil)
                         
         do {
             try list.moveItemOutOfCart(itemUUID: item.uuid)

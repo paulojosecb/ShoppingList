@@ -98,10 +98,10 @@ open class CoreDataStack {
     public func fetchItemsOnList(by uuids: [String]) -> [CDItemOnList]? {
         do {
             let request: NSFetchRequest<CDItemOnList>  = CDItemOnList.fetchRequest()
-            request.predicate = NSPredicate(format: "uuid == %@", uuids)
             
             let item = try self.mainContext.fetch(request)
-            return item
+
+            return item.filter { uuids.contains($0.uuid!) }
         } catch _ {
             return nil
         }

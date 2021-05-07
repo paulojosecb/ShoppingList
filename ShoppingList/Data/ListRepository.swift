@@ -27,26 +27,22 @@ class ListRepository: ICRUDRepository {
             let fetchRequest: NSFetchRequest<CDList> = CDList.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid)
             
-            do {
-                let cdList: CDList? = self.coreDataStack.fetch(by: uuid)
-                let cdCart: CDCart? = self.coreDataStack.fetch(by: cdList!.uuid!)
-                
-                let cdItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdList?.items as? [String]) ?? [])
-                let cartItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdCart?.items as? [String]) ?? [])
-                
-                let itemsOnList = cdItemsOnList?.map { ItemOnList.make(from: $0)} ?? []
-                
-                let cart = Cart.make(from: cdCart!, and: cartItemsOnList ?? [])
-                
-                let list = List(uuid: cdList!.uuid!,
-                                name: cdList!.name!,
-                                items: itemsOnList,
-                                cart: cart)
-                
-                fulfill(list as! T)
-            } catch _ {
-                reject(ICRUDRepositoryError.errorOnOperaration)
-            }
+            let cdList: CDList? = self.coreDataStack.fetch(by: uuid)
+            let cdCart: CDCart? = self.coreDataStack.fetch(by: cdList!.uuid!)
+            
+            let cdItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdList?.items as? [String]) ?? [])
+            let cartItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdCart?.items as? [String]) ?? [])
+            
+            let itemsOnList = cdItemsOnList?.map { ItemOnList.make(from: $0)} ?? []
+            
+            let cart = Cart.make(from: cdCart!, and: cartItemsOnList ?? [])
+            
+            let list = List(uuid: cdList!.uuid!,
+                            name: cdList!.name!,
+                            items: itemsOnList,
+                            cart: cart)
+            
+            fulfill(list as! T)
         }
     }
     
@@ -64,12 +60,21 @@ class ListRepository: ICRUDRepository {
                 cdList.uuid = list.uuid
                 cdList.items = list.getItemsFromList().map { $0.uuid } as NSObject
                 cdList.cartUUID = list.cart.uuid
-
+                
+                _ = list.getItemsFromList().map { itemOnList -> CDItemOnList in
+                    let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
+                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList)
+                }
+ 
                 let cdCart = CDCart(context: self.managedObjectContext)
                 cdCart.uuid = list.cart.uuid
                 cdCart.listUUID = list.uuid
                 cdCart.items = list.getItemsFromCart().map { $0.uuid } as NSObject
             
+                _ = list.getItemsFromCart().map { itemOnList -> CDItemOnList in
+                    let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
+                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList)
+                }
                 
                 try self.managedObjectContext.save()
                 

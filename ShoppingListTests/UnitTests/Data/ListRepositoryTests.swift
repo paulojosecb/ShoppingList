@@ -69,33 +69,63 @@ class ListRepositoryTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
+    func testFetchList() {
+        let list = List("My list")
+        let expectation = XCTestExpectation(description: "List with name")
+        
+        let item = Item(name: "My Item", initialPrice: nil)
+        let itemTwo = Item(name: "My Item Two", initialPrice: nil)
+        
+        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, uuid: nil)
+        let itemOnListTwo = ItemOnList(item: itemTwo.uuid, on: list.uuid, quantity: 1, uuid: nil)
+        
+        try! list.addItemToList(itemOnList)
+        try! list.addItemToList(itemOnListTwo)
+        
+        try! list.moveItemToCart(itemUUID: itemTwo.uuid)
+        
+        repository.create(list).then { (createdList: List) in
+            self.repository.fetch(uuid: createdList.uuid)
+        }.then { (fetchedList: List) in
+            XCTAssertTrue(fetchedList.getItemsFromList().count == 1)
+            XCTAssertTrue(fetchedList.getItemsFromCart().count == 1)
+            
+            XCTAssertTrue(fetchedList.getItemsFromList().first?.itemUUID == itemOnList.itemUUID)
+            XCTAssertTrue(fetchedList.getItemsFromList().first?.listUUID == itemOnList.listUUID)
+
+            XCTAssertTrue(fetchedList.getItemsFromCart().first?.itemUUID == itemOnListTwo.itemUUID)
+            XCTAssertTrue(fetchedList.getItemsFromList().first?.listUUID == itemOnListTwo.listUUID)
+            
+            XCTAssertTrue(fetchedList.uuid == list.uuid)
+            XCTAssertTrue(fetchedList.name == list.name)
+            
+            expectation.fulfill()
+        }.catch { _ in
+            XCTFail()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
     private func fetchListWith(uuid: String) -> Promise<CDList> {
         return Promise<CDList> { fulfill, reject in
-            do {
-                let request: NSFetchRequest<CDList> = CDList.fetchRequest()
-                request.predicate = NSPredicate(format: "uuid == %@", uuid)
-                
-                let cdList = try? self.coreDataStack.mainContext.fetch(request).first
-                
-                fulfill(cdList!)
-            } catch _ {
-                reject(ICRUDRepositoryError.notFound)
-            }
+            let request: NSFetchRequest<CDList> = CDList.fetchRequest()
+            request.predicate = NSPredicate(format: "uuid == %@", uuid)
+            
+            let cdList = try? self.coreDataStack.mainContext.fetch(request).first
+            
+            fulfill(cdList!)
         }
     }
     
     private func fetchCartWith(listUUID: String) -> Promise<CDCart> {
         return Promise<CDCart> { fulfill, reject in
-            do {
-                let request: NSFetchRequest<CDCart> = CDCart.fetchRequest()
-                request.predicate = NSPredicate(format: "listUUID == %@", listUUID)
-                
-                let cdCart = try? self.coreDataStack.mainContext.fetch(request).first
-                
-                fulfill(cdCart!)
-            } catch _ {
-                reject(ICRUDRepositoryError.notFound)
-            }
+            let request: NSFetchRequest<CDCart> = CDCart.fetchRequest()
+            request.predicate = NSPredicate(format: "listUUID == %@", listUUID)
+            
+            let cdCart = try? self.coreDataStack.mainContext.fetch(request).first
+            
+            fulfill(cdCart!)
         }
     }
 
