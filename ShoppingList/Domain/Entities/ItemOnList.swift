@@ -13,8 +13,8 @@ class ItemOnList: Fetchable {
     let itemUUID: String
     let listUUID: String
 
-    init(item: String, on list: String, quantity: Int, uuid: String = UUID().uuidString) {
-        self.uuid = uuid
+    init(item: String, on list: String, quantity: Int, uuid: String?) {
+        self.uuid = uuid ?? UUID().uuidString
         self.itemUUID = item
         self.listUUID = list
         self.quantity = quantity

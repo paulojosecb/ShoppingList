@@ -22,13 +22,20 @@ class List: Fetchable {
     var name: String
     
     private var items: [ItemOnList]
-    private var cart: Cart
+    var cart: Cart
     
     init(_ nam: String) {
         self.uuid = UUID().uuidString
         self.items = []
         self.cart = Cart(listUUID: self.uuid)
         self.name = nam
+    }
+    
+    init(uuid: String, name: String, items: [ItemOnList], cart: Cart) {
+        self.uuid = uuid
+        self.name = name
+        self.items = items
+        self.cart = cart
     }
     
     public func addItemToList(_ item: ItemOnList) throws {
