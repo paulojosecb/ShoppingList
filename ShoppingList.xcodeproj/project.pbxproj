@@ -50,6 +50,8 @@
 		7BD222E32645B40D006938BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD222E22645B40D006938BD /* HomeViewController.swift */; };
 		7BD222EB2645B41B006938BD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD222EA2645B41B006938BD /* HomeView.swift */; };
 		7BD222FC2645B600006938BD /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD222FB2645B600006938BD /* ViewCode.swift */; };
+		7BD223012645B68E006938BD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD223002645B68E006938BD /* HomeViewModel.swift */; };
+		7BD223072645BB8D006938BD /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD223062645BB8D006938BD /* CustomTabBarView.swift */; };
 		7BE140BE264036C900967853 /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE140BD264036C900967853 /* ListRepository.swift */; };
 		7BE150B62630B90C0015693C /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE150B52630B90C0015693C /* Fetchable.swift */; };
 		7BE8CE2226457A550090955D /* ListRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CE2126457A550090955D /* ListRepositoryTests.swift */; };
@@ -129,6 +131,8 @@
 		7BD222E22645B40D006938BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BD222EA2645B41B006938BD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7BD222FB2645B600006938BD /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		7BD223002645B68E006938BD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7BD223062645BB8D006938BD /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		7BE140BD264036C900967853 /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
 		7BE150B52630B90C0015693C /* Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		7BE8CE2126457A550090955D /* ListRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepositoryTests.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 		7BD222CB2645A7B3006938BD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7BD223052645BB81006938BD /* Components */,
 				7BD222EF2645B436006938BD /* Utils */,
 				7BD222DF2645B3E0006938BD /* Scenes */,
 				7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */,
@@ -429,6 +434,7 @@
 			children = (
 				7BD222E22645B40D006938BD /* HomeViewController.swift */,
 				7BD222EA2645B41B006938BD /* HomeView.swift */,
+				7BD223002645B68E006938BD /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -447,6 +453,14 @@
 				7BD222FB2645B600006938BD /* ViewCode.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7BD223052645BB81006938BD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7BD223062645BB8D006938BD /* CustomTabBarView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		7BE8CE2026457A410090955D /* Data */ = {
@@ -751,7 +765,9 @@
 				7BCD9D8C263096AC001E7354 /* Location.swift in Sources */,
 				7BB1BAC325DFF9BD007FA08B /* IGetListUseCase.swift in Sources */,
 				7BE150B62630B90C0015693C /* Fetchable.swift in Sources */,
+				7BD223072645BB8D006938BD /* CustomTabBarView.swift in Sources */,
 				7B794AEF2632286A009BA004 /* CreateListUseCase.swift in Sources */,
+				7BD223012645B68E006938BD /* HomeViewModel.swift in Sources */,
 				7BD222E32645B40D006938BD /* HomeViewController.swift in Sources */,
 				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
 				7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */,

@@ -8,9 +8,24 @@
 import UIKit
 
 class HomeView: UIView {
+    
+    let tableViewDelegate: UITableViewDelegate
+    let tableViewDataSource: UITableViewDataSource
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self.tableViewDelegate
+        tableView.dataSource = self.tableViewDataSource
+        tableView.separatorStyle = .none
+        return tableView
+    }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(tableViewDelegate: UITableViewDelegate, tableViewDataSource: UITableViewDataSource) {
+        self.tableViewDataSource = tableViewDataSource
+        self.tableViewDelegate = tableViewDelegate
+        
+        super.init(frame: .zero)
         self.setupView()
     }
     
@@ -22,10 +37,14 @@ class HomeView: UIView {
 extension HomeView: ViewCode {
     func buildViewHierarchy() {
         self.backgroundColor = .red
+        addSubview(tableView)
     }
     
     func setupConstraints() {
-        
+        self.tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
     
     func setupAdditionalConfiguration() {
