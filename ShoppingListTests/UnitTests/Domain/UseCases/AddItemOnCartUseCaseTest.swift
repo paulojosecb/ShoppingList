@@ -1,25 +1,26 @@
 //
-//  RemoveItemFromCartUseCaseTest.swift
+//  AddItemOnCartUseCaseTest.swift
 //  ShoppingListTests
 //
-//  Created by Paulo José on 05/05/21.
+//  Created by Paulo José on 20/05/21.
 //
 
 import XCTest
 import Promises
 @testable import ShoppingList
 
-class RemoveItemFromCartUseCaseTest: XCTestCase {
+class AddItemOnCartUseCaseTest: XCTestCase {
     
     var list: List? = nil
     var item: Item? = nil
     
-    var mockRepository: MockRemoveItemFromCartRepository? = nil
+    var mockRepository: MockAddItemOnCartRepository? = nil
     
-    class MockRemoveItemFromCartRepository: ICRUDRepository {
+    class MockAddItemOnCartRepository: ICRUDRepository {
         
         var errorMock = false
         var list: [List] = []
+        var items: [Item] = []
         
         func fetch<T: Fetchable>(uuid: String) -> Promise<T> {
             return Promise { fullfill, reject in
@@ -62,78 +63,71 @@ class RemoveItemFromCartUseCaseTest: XCTestCase {
     }
     
     override func setUp() {
-        mockRepository = MockRemoveItemFromCartRepository()
+        mockRepository = MockAddItemOnCartRepository()
         
         list = List("My list")
         item = Item(name: "My Item", initialPrice: nil)
+        
     }
     
     override func tearDown() {
         mockRepository = nil
     }
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
     
-    func testRemoveItemFromCartThatExistsTest() {
+    func testAddExistingItemOnCart() {
         let expectation = XCTestExpectation(description: "List with name")
-        let useCase = RemoveItemFromCartUseCase(repository: mockRepository!)
+        let useCase = AddItemOnCartUseCase(repository: mockRepository!)
         let itemOnList = ItemOnList(item: item!.uuid, on: list!.uuid, quantity: 1, uuid: nil)
         
+        
         try! list?.addItemToList(itemOnList)
-        try! list?.moveItemToCart(itemUUID: item!.uuid)
         
         mockRepository?.create(list!).then { (list: List) in
             
-            let request = IRemoveItemFromCartUseCaseRequest(listUUID: list.uuid, itemUUID: self.item!.uuid)
+            let request = IAddItemOnCartUseCaseRequest(listUUID: self.list!.uuid, itemUUID: self.item!.uuid)
             
-            useCase.execute(request: request).then { response in
+            useCase.execute(request: request).then { (response: IAddItemOnCartUseCaseResponse) in
                 
-                let listContainsItem = response.list.getItemsFromList().contains { $0.itemUUID == self.item?.uuid }
                 let cartContainsItem = response.list.getItemsFromCart().contains { $0.itemUUID == self.item?.uuid }
                 
-                XCTAssertTrue(listContainsItem)
-                XCTAssertTrue(!cartContainsItem)
-                
+                XCTAssertTrue(cartContainsItem)
                 expectation.fulfill()
-                
-            }.catch { (error) in
+            }.catch { (_) in
                 XCTFail()
             }
-    
-        }
+            
+        }.catch({ (_) in
+            XCTFail()
+        })
         
-        wait(for: [expectation], timeout: 5.0)
+        wait(for: [expectation], timeout: 5)
     }
     
-    func testRemoveItemFromCartThatDoesNotExistsTest() {
+    func testAddThatDoesNotExistOnItemOnCart() {
         let expectation = XCTestExpectation(description: "List with name")
-        let useCase = RemoveItemFromCartUseCase(repository: mockRepository!)
-        let itemOnList = ItemOnList(item: item!.uuid, on: list!.uuid, quantity: 1, uuid: nil)
-        
-        try! list?.addItemToList(itemOnList)
-        
+        let useCase = AddItemOnCartUseCase(repository: mockRepository!)
+                        
         mockRepository?.create(list!).then { (list: List) in
             
-            let request = IRemoveItemFromCartUseCaseRequest(listUUID: list.uuid, itemUUID: self.item!.uuid)
+            let request = IAddItemOnCartUseCaseRequest(listUUID: self.list!.uuid, itemUUID: self.item!.uuid)
             
-            useCase.execute(request: request).then { response in
+            useCase.execute(request: request).then { (response: IAddItemOnCartUseCaseResponse) in
                 
                 XCTFail()
                 
             }.catch { (error) in
-                expectation.fulfill()
+                if let error = error as? IAddItemOnCartUseCaseError,
+                   error == .itemNotInList {
+                    expectation.fulfill()
+                }
             }
-    
-        }
+            
+        }.catch({ (_) in
+            XCTFail()
+        })
         
-        wait(for: [expectation], timeout: 1.0)
+        wait(for: [expectation], timeout: 5)
     }
 
-
+    
 }
