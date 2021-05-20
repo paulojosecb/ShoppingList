@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Promises
+
 
 struct IAddItemOnCartUseCaseRequest {
-    let listUUID: UUID
-    let itemUUID: UUID
+    let listUUID: String
+    let itemUUID: String
     let quantity: Int
 }
 
@@ -27,5 +29,5 @@ enum IAddItemOnCartUseCaseError: Error {
 }
 
 protocol IAddItemOnCartUseCase {
-    func execute(request: IAddItemOnCartUseCaseRequest, completion: @escaping (Result<IAddItemOnCartUseCaseResponse, IAddItemOnCartUseCaseError>) -> Void)
+    func execute(request: IAddItemOnCartUseCaseRequest) -> Promise<IAddItemOnCartUseCaseResponse>
 }
