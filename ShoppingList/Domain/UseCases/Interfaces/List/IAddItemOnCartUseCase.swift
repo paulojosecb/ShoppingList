@@ -12,7 +12,6 @@ import Promises
 struct IAddItemOnCartUseCaseRequest {
     let listUUID: String
     let itemUUID: String
-    let quantity: Int
 }
 
 struct IAddItemOnCartUseCaseResponse {

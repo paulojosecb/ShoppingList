@@ -20,27 +20,23 @@ class AddItemOnCartUseCase: IAddItemOnCartUseCase {
         
         return Promise<IAddItemOnCartUseCaseResponse> { fulfill, reject in
             
-            if (request.quantity == 0) {
-                reject(IAddItemOnCartUseCaseError.invalidQuantity)
-                return
-            }
-            
             self.repository.fetch(uuid: request.listUUID).then { (list: List) in
                 
                 do {
                     try list.moveItemToCart(itemUUID: request.itemUUID)
-                } catch _ {
+                } catch let error {
                     reject(IAddItemOnCartUseCaseError.itemNotInList)
                 }
                 
                 
             }.then { (list: List) in
-                self.repository.update(list).catch { (error) in
-                    reject(error)
-                }
-            }.catch { (_) in
-                reject(IAddItemOnCartUseCaseError.listNotFound)
+                self.repository.update(list)
+            }.then { (list: List) in
+                fulfill(.init(list: list))
+            }.catch { _ in
+                reject(IAddItemOnCartUseCaseError.itemNotInList)
             }
+                    
         
         }
         
