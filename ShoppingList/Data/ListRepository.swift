@@ -22,10 +22,9 @@ class ListRepository: ICRUDRepository {
     
     var list: [List] = []
     
+    
     func fetch<T>(uuid: String) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
-            let fetchRequest: NSFetchRequest<CDList> = CDList.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid)
             
             let cdList: CDList? = self.coreDataStack.fetch(by: uuid)
             let cdCart: CDCart? = self.coreDataStack.fetch(by: cdList!.uuid!)

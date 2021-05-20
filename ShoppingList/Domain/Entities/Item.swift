@@ -25,4 +25,11 @@ class Item: Fetchable {
             
         self.uuid = uuid
     }
+    
+    convenience init(name: String, isBulk: Bool = false, prices: [ItemPrice], uuid: String = UUID().uuidString) {
+        self.init(name: name, isBulk: isBulk, initialPrice: prices.first, uuid: uuid)
+        self.prices = prices
+    }
+    
+    
 }

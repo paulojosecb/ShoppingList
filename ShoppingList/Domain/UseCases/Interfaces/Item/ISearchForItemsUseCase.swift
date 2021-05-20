@@ -19,6 +19,7 @@ struct ISearchForItemsUseCaseResponse {
 enum ISearchForItemsUseCaseError: Error {
     case itemNotFound
     case unknownError
+    case invalidQuery
 }
 
 protocol ISearchForItemsUseCase {
