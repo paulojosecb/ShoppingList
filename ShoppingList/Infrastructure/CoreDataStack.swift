@@ -107,5 +107,18 @@ open class CoreDataStack {
         }
     }
     
+    public func fetchItemsByNames(query: String) -> [CDItem] {
+        do {
+            let request: NSFetchRequest<CDItem>  = CDItem.fetchRequest()
+            request.predicate = NSPredicate(format: "name CONTAINS[C] %@", query)
+            
+            let lists = try self.mainContext.fetch(request)
+
+            return lists 
+        } catch _ {
+            return []
+        }
+    }
+    
 }
 
