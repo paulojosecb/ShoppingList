@@ -22,7 +22,6 @@ class ListRepository: ICRUDRepository {
     
     var list: [List] = []
     
-    
     func fetch<T>(uuid: String) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
             
@@ -100,7 +99,15 @@ class ListRepository: ICRUDRepository {
     
     func delete<T>(_ item: T) -> Promise<Bool> where T : Fetchable {
         return Promise { fulfill, reject in
-            self.list = self.list.filter { $0.uuid != item.uuid }
+            let cdL: CDList? = self.coreDataStack.fetch(by: item.uuid)
+            
+            guard let cdList = cdL else {
+                reject(ICRUDRepositoryError.notFound)
+                return
+            }
+            
+            self.coreDataStack.mainContext.delete(cdList)
+            self.coreDataStack.saveContext()
             
             fulfill(true)
         }

@@ -107,6 +107,62 @@ class ListRepositoryTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
+    func testDeleteList() {
+        let list = List("My List")
+        let expectation = XCTestExpectation(description: "Test delete of list that exists")
+        
+        var wasCreated = false
+        
+        self.repository.create(list).then { (list) in
+            return self.fetchListWith(uuid: list.uuid)
+        }.then { (cdList) -> Promise<Bool> in
+            if (list.uuid == cdList.uuid) {
+                wasCreated = true
+            }
+            
+            return self.repository.delete(list)
+        }.then { (deleted) in
+            
+            let request: NSFetchRequest<CDList> = CDList.fetchRequest()
+            request.predicate = NSPredicate(format: "uuid == %@", list.uuid)
+            
+            let returnCdList = try? self.coreDataStack.mainContext.fetch(request).first
+            
+            if (returnCdList == nil && wasCreated) {
+                XCTAssert(true)
+                expectation.fulfill()
+            } else {
+                XCTFail()
+            }
+            
+        }.catch { (_) in
+            XCTFail()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func testDeleteListThatDoesNotExists() {
+        let list = List("My List")
+        let expectation = XCTestExpectation(description: "Test delete of list that does not exists")
+        
+        var wasCreated = false
+        
+        self.repository.delete(list).then { (deleted) in
+            XCTFail()
+        }.catch { (error) in
+            if let error = error as? ICRUDRepositoryError,
+               error == ICRUDRepositoryError.notFound {
+                XCTAssert(true)
+                expectation.fulfill()
+            } else {
+                XCTFail()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
     private func fetchListWith(uuid: String) -> Promise<CDList> {
         return Promise<CDList> { fulfill, reject in
             let request: NSFetchRequest<CDList> = CDList.fetchRequest()
