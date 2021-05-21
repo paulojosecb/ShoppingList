@@ -44,6 +44,12 @@ class ListRepository: ICRUDRepository {
         }
     }
     
+    func fetch<T: Fetchable>(uuids: String) -> Promise<[T]> {
+        return Promise { fulfill, reject in
+            fatalError()
+        }
+    }
+    
     func create<T>(_ item: T) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
             
