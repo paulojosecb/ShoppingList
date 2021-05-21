@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Promises
 
 struct IEditItemOnListUseCaseRequest {
     let listUUID: UUID
@@ -25,5 +26,4 @@ enum IEditItemOnListUseCaseError: Error {
 }
 
 protocol IEditItemOnListUseCase {
-    func execute(request: IEditItemOnListUseCaseRequest, completion: @escaping (Result<IEditItemOnListUseCaseResponse, IEditItemOnListUseCaseError>) -> Void)
-}
+    func execute(request: IEditItemOnListUseCaseRequest) -> Promise<IEditListNameUseCaseResponse>
