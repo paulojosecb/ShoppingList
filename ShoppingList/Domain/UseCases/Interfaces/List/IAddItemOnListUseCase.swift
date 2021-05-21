@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Promises
 
 struct IAddItemOnListUseCaseRequest {
-    let listUUID: UUID
-    let itemUUID: UUID
+    let listUUID: String
+    let itemUUID: String
     let quantity: Int
 }
 
@@ -22,8 +23,9 @@ enum IAddItemOnListUseCaseError: Error {
     case itemNotFound
     case invalidQuantity
     case unknownError
+    case itemAlreadyOnList
 }
 
 protocol IAddItemOnListUseCase {
-    func execute(request: IAddItemOnListUseCaseRequest, completion: @escaping (Result<IAddItemOnListUseCaseResponse, IAddItemOnListUseCaseError>) -> Void)
+    func execute(request: IAddItemOnListUseCaseRequest) -> Promise<IAddItemOnListUseCaseResponse>
 }
