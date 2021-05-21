@@ -27,3 +27,4 @@ enum IEditItemOnListUseCaseError: Error {
 
 protocol IEditItemOnListUseCase {
     func execute(request: IEditItemOnListUseCaseRequest) -> Promise<IEditListNameUseCaseResponse>
+}
