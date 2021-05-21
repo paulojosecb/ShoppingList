@@ -35,6 +35,13 @@ class ItemRepository: IItemRepository {
             fullfill(items as? [T] ?? [])
         }
     }
+    
+    func fetch<T: Fetchable>(uuids: String) -> Promise<[T]> {
+        return Promise { fulfill, reject in
+            fatalError()
+        }
+    }
+
         
     func fetch<T>(uuid: String) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
