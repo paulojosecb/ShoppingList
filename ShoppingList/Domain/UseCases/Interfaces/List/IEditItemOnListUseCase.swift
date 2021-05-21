@@ -9,9 +9,10 @@ import Foundation
 import Promises
 
 struct IEditItemOnListUseCaseRequest {
-    let listUUID: UUID
-    let itemUUID: UUID
-    let quantity: Int
+    let itemOnListUUID: String
+    let listUUID: String
+    let itemUUID: String
+    let newQuantity: Int
 }
 
 struct IEditItemOnListUseCaseResponse {
