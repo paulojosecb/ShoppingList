@@ -17,6 +17,8 @@
 		7B915BDB2658074E0016BEAB /* AddItemOnListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915BDA2658074E0016BEAB /* AddItemOnListUseCaseTest.swift */; };
 		7B915BEE265835600016BEAB /* DeleteListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915BED265835600016BEAB /* DeleteListUseCase.swift */; };
 		7B915BFB265837F60016BEAB /* DeleteListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915BFA265837F60016BEAB /* DeleteListUseCaseTest.swift */; };
+		7B915C0826583EFB0016BEAB /* EditItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915C0726583EFB0016BEAB /* EditItemOnListUseCase.swift */; };
+		7B915C1026583FA40016BEAB /* ItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915C0F26583FA40016BEAB /* ItemOnListRepository.swift */; };
 		7B9807BB2657FF5400D5E74C /* AddItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */; };
 		7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */; };
 		7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */; };
@@ -100,6 +102,8 @@
 		7B915BDA2658074E0016BEAB /* AddItemOnListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B915BED265835600016BEAB /* DeleteListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListUseCase.swift; sourceTree = "<group>"; };
 		7B915BFA265837F60016BEAB /* DeleteListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListUseCaseTest.swift; sourceTree = "<group>"; };
+		7B915C0726583EFB0016BEAB /* EditItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemOnListUseCase.swift; sourceTree = "<group>"; };
+		7B915C0F26583FA40016BEAB /* ItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOnListRepository.swift; sourceTree = "<group>"; };
 		7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCase.swift; sourceTree = "<group>"; };
 		7BB1BA0F25DFEECC007FA08B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				7BE140BD264036C900967853 /* ListRepository.swift */,
 				7BD9547126569D6100ED2EF2 /* ItemRepository.swift */,
+				7B915C0F26583FA40016BEAB /* ItemOnListRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */,
+				7B915C0726583EFB0016BEAB /* EditItemOnListUseCase.swift */,
 				7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */,
 				7B794AEE2632286A009BA004 /* CreateListUseCase.swift */,
 				7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */,
@@ -797,6 +803,7 @@
 				7BB1BAC825DFFA44007FA08B /* IGetItemUseCase.swift in Sources */,
 				7BB1BA6525DFF356007FA08B /* ICreateListUseCase.swift in Sources */,
 				7BB1BAAB25DFF7E3007FA08B /* IRemoveItemfromListUseCase.swift in Sources */,
+				7B915C1026583FA40016BEAB /* ItemOnListRepository.swift in Sources */,
 				7BCD9DA626309CCB001E7354 /* Cart.swift in Sources */,
 				7BCD9D872630966C001E7354 /* ItemPrice.swift in Sources */,
 				7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */,
@@ -805,6 +812,7 @@
 				7BB1BA4D25DFEF2B007FA08B /* List.swift in Sources */,
 				7BD9546226569C1B00ED2EF2 /* ISearchForItemsUseCase.swift in Sources */,
 				7BB1BAB325DFF84A007FA08B /* IEditItemOnListUseCase.swift in Sources */,
+				7B915C0826583EFB0016BEAB /* EditItemOnListUseCase.swift in Sources */,
 				7BCD9D8C263096AC001E7354 /* Location.swift in Sources */,
 				7BB1BAC325DFF9BD007FA08B /* IGetListUseCase.swift in Sources */,
 				7BE150B62630B90C0015693C /* Fetchable.swift in Sources */,
