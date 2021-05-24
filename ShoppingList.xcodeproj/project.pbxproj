@@ -75,6 +75,7 @@
 		7BE8CE492645884B0090955D /* ItemOnList+CDItemOnList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CE482645884B0090955D /* ItemOnList+CDItemOnList.swift */; };
 		7BFF1EE0265C32310004F766 /* ICreateItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EDF265C32310004F766 /* ICreateItemUseCase.swift */; };
 		7BFF1EE5265C32F20004F766 /* CreateItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */; };
+		7BFF1EEA265C33AE0004F766 /* CreateItemUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EE9265C33AE0004F766 /* CreateItemUseCaseTest.swift */; };
 		CF6701135D9C37CBF62DF4B7 /* Pods_ShoppingListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6FDC66EF2C5F9BA06BB0D04 /* Pods_ShoppingListTests.framework */; };
 		E794E0650B735E6E6C11D396 /* Pods_ShoppingList_ShoppingListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF56945634C1614006B5727E /* Pods_ShoppingList_ShoppingListUITests.framework */; };
 /* End PBXBuildFile section */
@@ -172,6 +173,7 @@
 		7BE8CE482645884B0090955D /* ItemOnList+CDItemOnList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemOnList+CDItemOnList.swift"; sourceTree = "<group>"; };
 		7BFF1EDF265C32310004F766 /* ICreateItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICreateItemUseCase.swift; sourceTree = "<group>"; };
 		7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateItemUseCase.swift; path = ShoppingList/Domain/UseCases/Interfaces/Item/CreateItemUseCase.swift; sourceTree = SOURCE_ROOT; };
+		7BFF1EE9265C33AE0004F766 /* CreateItemUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemUseCaseTest.swift; sourceTree = "<group>"; };
 		A910C95D43058E318071EAC4 /* Pods-ShoppingList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingList/Pods-ShoppingList.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF885986906ECAFCDD908F0 /* Pods_ShoppingList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF56945634C1614006B5727E /* Pods_ShoppingList_ShoppingListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingList_ShoppingListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -530,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				7BD9548F2656AEC900ED2EF2 /* SearchForItemsUseCaseTest.swift */,
+				7BFF1EE9265C33AE0004F766 /* CreateItemUseCaseTest.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				7BB1BA2D25DFEECF007FA08B /* ShoppingListTests.swift in Sources */,
 				7BE8CE3026457D4A0090955D /* TestCoreDataStack.swift in Sources */,
 				7BD954902656AEC900ED2EF2 /* SearchForItemsUseCaseTest.swift in Sources */,
+				7BFF1EEA265C33AE0004F766 /* CreateItemUseCaseTest.swift in Sources */,
 				7B00C5AA26435AE90000ABC2 /* ListTests.swift in Sources */,
 				7B915C23265845A40016BEAB /* MockListRepository.swift in Sources */,
 				7B915BFB265837F60016BEAB /* DeleteListUseCaseTest.swift in Sources */,
