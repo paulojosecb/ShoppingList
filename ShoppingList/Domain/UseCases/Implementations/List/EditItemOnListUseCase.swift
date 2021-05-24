@@ -10,12 +10,12 @@ import Promises
 
 class EditItemOnListUseCase: IEditItemOnListUseCase {
     
-    let repository: ICRUDRepository
+    let itemOnListRepository: ICRUDRepository
     let listRepository: ICRUDRepository
     
-    init(repository: ICRUDRepository, listRepository: ICRUDRepository) {
-        self.repository = repository
-        self.listRepository = repository
+    init(itemOnListRepository: ICRUDRepository, listRepository: ICRUDRepository) {
+        self.itemOnListRepository = itemOnListRepository
+        self.listRepository = listRepository
     }
     
     func execute(request: IEditItemOnListUseCaseRequest) -> Promise<IEditListNameUseCaseResponse> {
@@ -27,10 +27,10 @@ class EditItemOnListUseCase: IEditItemOnListUseCase {
                 return
             }
             
-            self.repository.fetch(uuid: request.itemOnListUUID)
+            self.itemOnListRepository.fetch(uuid: request.itemOnListUUID)
                 .then { (itemOnList: ItemOnList) -> Promise<ItemOnList> in
                     itemOnList.quantity = request.newQuantity
-                    return self.repository.update(itemOnList)
+                    return self.itemOnListRepository.update(itemOnList)
                 }
                 .then { (itemOnList) -> Promise<List> in
                     self.listRepository.fetch(uuid: request.listUUID)

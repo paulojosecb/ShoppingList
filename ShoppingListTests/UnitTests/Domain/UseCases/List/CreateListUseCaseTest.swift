@@ -14,7 +14,7 @@ class CreateListUseCaseTest: XCTestCase {
     var mockRepository: MockCreateListRepository? = nil
     
     class MockCreateListRepository: ICRUDRepository {
-        
+
         var errorMock = false
         var list: [List] = []
         
@@ -26,6 +26,12 @@ class CreateListUseCaseTest: XCTestCase {
                 }
                 
                 fullfill(list)
+            }
+        }
+        
+        func fetch<T>(uuids: String) -> Promise<[T]> where T : Fetchable {
+            return Promise { fullfill, reject in
+                fatalError()
             }
         }
         

@@ -17,7 +17,7 @@ class RemoveItemFromCartUseCaseTest: XCTestCase {
     var mockRepository: MockRemoveItemFromCartRepository? = nil
     
     class MockRemoveItemFromCartRepository: ICRUDRepository {
-        
+
         var errorMock = false
         var list: [List] = []
         
@@ -29,6 +29,12 @@ class RemoveItemFromCartUseCaseTest: XCTestCase {
                 }
                 
                 fullfill(list)
+            }
+        }
+        
+        func fetch<T>(uuids: String) -> Promise<[T]> where T : Fetchable {
+            return Promise { fulfill, reject in
+                fatalError()
             }
         }
         

@@ -33,6 +33,13 @@ class AddItemOnCartUseCaseTest: XCTestCase {
             }
         }
         
+        
+        func fetch<T>(uuids: String) -> Promise<[T]> where T : Fetchable {
+            return Promise { fullfill, reject in
+                fatalError()
+            }
+        }
+        
         func create<T: Fetchable>(_ item: T) -> Promise<T> {
             return Promise { fullfill, reject in
                 

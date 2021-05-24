@@ -14,7 +14,7 @@ class DeleteListUseCaseTest: XCTestCase {
     var mockRepository: MockRepository? = nil
     
     class MockRepository: ICRUDRepository {
-        
+                
         var errorMock = false
         var lists: [List] = []
         
@@ -26,6 +26,12 @@ class DeleteListUseCaseTest: XCTestCase {
                 }
                 
                 fullfill(list)
+            }
+        }
+        
+        func fetch<T>(uuids: String) -> Promise<[T]> where T : Fetchable {
+            return Promise { fullfill, reject in
+                fatalError()
             }
         }
         
