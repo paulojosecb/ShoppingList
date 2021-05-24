@@ -76,6 +76,7 @@
 		7BFF1EE0265C32310004F766 /* ICreateItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EDF265C32310004F766 /* ICreateItemUseCase.swift */; };
 		7BFF1EE5265C32F20004F766 /* CreateItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */; };
 		7BFF1EEA265C33AE0004F766 /* CreateItemUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EE9265C33AE0004F766 /* CreateItemUseCaseTest.swift */; };
+		7BFF1EFA265C35AC0004F766 /* GetItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EF9265C35AC0004F766 /* GetItemUseCase.swift */; };
 		CF6701135D9C37CBF62DF4B7 /* Pods_ShoppingListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6FDC66EF2C5F9BA06BB0D04 /* Pods_ShoppingListTests.framework */; };
 		E794E0650B735E6E6C11D396 /* Pods_ShoppingList_ShoppingListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF56945634C1614006B5727E /* Pods_ShoppingList_ShoppingListUITests.framework */; };
 /* End PBXBuildFile section */
@@ -174,6 +175,7 @@
 		7BFF1EDF265C32310004F766 /* ICreateItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICreateItemUseCase.swift; sourceTree = "<group>"; };
 		7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateItemUseCase.swift; path = ShoppingList/Domain/UseCases/Interfaces/Item/CreateItemUseCase.swift; sourceTree = SOURCE_ROOT; };
 		7BFF1EE9265C33AE0004F766 /* CreateItemUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemUseCaseTest.swift; sourceTree = "<group>"; };
+		7BFF1EF9265C35AC0004F766 /* GetItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetItemUseCase.swift; path = ShoppingListTests/UnitTests/Domain/UseCases/Item/GetItemUseCase.swift; sourceTree = SOURCE_ROOT; };
 		A910C95D43058E318071EAC4 /* Pods-ShoppingList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingList/Pods-ShoppingList.debug.xcconfig"; sourceTree = "<group>"; };
 		ACF885986906ECAFCDD908F0 /* Pods_ShoppingList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF56945634C1614006B5727E /* Pods_ShoppingList_ShoppingListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingList_ShoppingListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -524,6 +526,7 @@
 			children = (
 				7BD9546926569C8D00ED2EF2 /* SearchForItemsUseCase.swift */,
 				7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */,
+				7BFF1EF9265C35AC0004F766 /* GetItemUseCase.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				7BD222E32645B40D006938BD /* HomeViewController.swift in Sources */,
 				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
 				7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */,
+				7BFF1EFA265C35AC0004F766 /* GetItemUseCase.swift in Sources */,
 				7B8209892631061F00003819 /* AddItemOnCartUseCase.swift in Sources */,
 				7BB1BAA625DFF6AB007FA08B /* IAddItemOnListUseCase.swift in Sources */,
 				7BCD9DBE2630AC35001E7354 /* ICRUDRepository.swift in Sources */,
