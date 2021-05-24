@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Promises
 
 struct IEditListNameUseCaseRequest {
     let name: String
@@ -21,5 +22,5 @@ enum IEditListNameUseCaseError: Error {
 }
 
 protocol IEditListNameUseCase {
-    func execute(request: IEditListNameUseCaseRequest, completion: @escaping (Result<IEditListNameUseCaseResponse, IEditListNameUseCaseError>) -> ())
+    func execute(request: IEditListNameUseCaseRequest) -> Promise<IEditListNameUseCase>
 }

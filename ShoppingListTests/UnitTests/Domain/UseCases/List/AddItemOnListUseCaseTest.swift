@@ -13,54 +13,9 @@ class AddItemOnListUseCaseTest: XCTestCase {
     
     var mockListRepository: MockListRepository? = nil
     var mockItemRepository: MockItemRepository? = nil
-    
-    class MockItemRepository: IItemRepository {
-
-        var items: [Item] = [
-            Item(name: "My Item", initialPrice: nil),
-            Item(name: "My Item1", initialPrice: nil),
-            Item(name: "My Item2", initialPrice: nil)
-        ]
         
-        func fetchBy<T>(name: String) -> Promise<[T]> where T : Fetchable {
-            return Promise { fulfill, reject in
-                
-            }
-        }
-        
-        func fetch<T: Fetchable>(uuid: String) -> Promise<T> {
-            return Promise { fullfill, reject in
-                guard let items = (self.items.first { $0.uuid == uuid}) as? T  else {
-                    reject(ICRUDRepositoryError.notFound)
-                    return
-                }
-                
-                fullfill(items)
-            }
-        }
-        
-        func create<T: Fetchable>(_ item: T) -> Promise<T> {
-            return Promise { fullfill, reject in
-                
-            }
-        }
-        
-        func update<T>(_ item: T) -> Promise<T> where T : Fetchable {
-            return Promise { fullfill, reject in
-
-            }
-        }
-        
-        func delete<T>(_ item: T) -> Promise<Bool> where T : Fetchable {
-            return Promise { fullfill, reject in
-
-            }
-        }
-
-    }
-    
     class MockListRepository: ICRUDRepository {
-        
+
         var errorMock = false
         var list: [List] = []
         var items: [Item] = [
@@ -77,6 +32,12 @@ class AddItemOnListUseCaseTest: XCTestCase {
                 }
                 
                 fullfill(list)
+            }
+        }
+        
+        func fetch<T>(uuids: String) -> Promise<[T]> where T : Fetchable {
+            return Promise {fulfill, reject in
+                fatalError()
             }
         }
         

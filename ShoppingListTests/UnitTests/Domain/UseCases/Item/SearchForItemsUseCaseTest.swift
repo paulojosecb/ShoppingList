@@ -15,8 +15,7 @@ class SearchForItemsUseCaseTest: XCTestCase {
     var mockRepository: MockSearchForItemsRepository? = nil
     
     class MockSearchForItemsRepository: IItemRepository {
-  
-    
+
         var errorMock = false
         var items: [Item] = [
             Item(name: "Biscoito", initialPrice: nil),
@@ -31,9 +30,15 @@ class SearchForItemsUseCaseTest: XCTestCase {
             }
         }
         
-        func fetch<T: Fetchable>(uuid: String) -> Promise<T> {
-            return Promise { fullfill, reject in
-
+        func fetch<T>(uuid: String) -> Promise<T> where T : Fetchable {
+            return Promise<T> { fulfill, reject in
+                fatalError()
+            }
+        }
+        
+        func fetch<T>(uuids: String) -> Promise<[T]> where T : Fetchable {
+            return Promise { fulfill, reject in
+                
             }
         }
         
