@@ -9,7 +9,7 @@ import Foundation
 import Promises
 
 struct IGetItemUseCaseRequest {
-    let uuid: UUID
+    let uuid: String
 }
 
 struct IGetItemUseCaseResponse {
