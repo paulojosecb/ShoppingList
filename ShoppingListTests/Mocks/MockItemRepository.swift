@@ -43,7 +43,8 @@ class MockItemRepository: IItemRepository {
     
     func create<T: Fetchable>(_ item: T) -> Promise<T> {
         return Promise { fullfill, reject in
-            
+            self.items.append(item as! Item)
+            fullfill(item)
         }
     }
     
