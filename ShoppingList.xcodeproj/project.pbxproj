@@ -26,6 +26,7 @@
 		7B95C5BB265D7D8A00778B03 /* AddItemPriceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5BA265D7D8A00778B03 /* AddItemPriceUseCase.swift */; };
 		7B95C5C0265D7FBF00778B03 /* AddItemPriceUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5BF265D7FBF00778B03 /* AddItemPriceUseCaseTest.swift */; };
 		7B95C5CD265D831100778B03 /* GetListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5CC265D831100778B03 /* GetListUseCase.swift */; };
+		7B95C5D2265D838B00778B03 /* GetListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */; };
 		7B9807BB2657FF5400D5E74C /* AddItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */; };
 		7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */; };
 		7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */; };
@@ -123,6 +124,7 @@
 		7B95C5BA265D7D8A00778B03 /* AddItemPriceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddItemPriceUseCase.swift; path = ShoppingListTests/UnitTests/Domain/UseCases/Item/AddItemPriceUseCase.swift; sourceTree = SOURCE_ROOT; };
 		7B95C5BF265D7FBF00778B03 /* AddItemPriceUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPriceUseCaseTest.swift; sourceTree = "<group>"; };
 		7B95C5CC265D831100778B03 /* GetListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListUseCase.swift; sourceTree = "<group>"; };
+		7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCase.swift; sourceTree = "<group>"; };
 		7BB1BA0F25DFEECC007FA08B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				7BD95446265693DE00ED2EF2 /* AddItemOnCartUseCaseTest.swift */,
 				7B915BFA265837F60016BEAB /* DeleteListUseCaseTest.swift */,
 				7B915BDA2658074E0016BEAB /* AddItemOnListUseCaseTest.swift */,
+				7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				7B915BDB2658074E0016BEAB /* AddItemOnListUseCaseTest.swift in Sources */,
 				7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */,
 				7B915C1D265845570016BEAB /* EditItemOnListUseCaseTest.swift in Sources */,
+				7B95C5D2265D838B00778B03 /* GetListUseCaseTest.swift in Sources */,
 				7BE8CE2226457A550090955D /* ListRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
