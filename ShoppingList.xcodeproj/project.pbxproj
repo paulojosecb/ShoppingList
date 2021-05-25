@@ -23,6 +23,7 @@
 		7B915C1026583FA40016BEAB /* ItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915C0F26583FA40016BEAB /* ItemOnListRepository.swift */; };
 		7B915C1D265845570016BEAB /* EditItemOnListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915C1C265845570016BEAB /* EditItemOnListUseCaseTest.swift */; };
 		7B915C23265845A40016BEAB /* MockListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915C22265845A40016BEAB /* MockListRepository.swift */; };
+		7B95C5BB265D7D8A00778B03 /* AddItemPriceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5BA265D7D8A00778B03 /* AddItemPriceUseCase.swift */; };
 		7B9807BB2657FF5400D5E74C /* AddItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */; };
 		7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */; };
 		7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */; };
@@ -117,6 +118,7 @@
 		7B915C0F26583FA40016BEAB /* ItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOnListRepository.swift; sourceTree = "<group>"; };
 		7B915C1C265845570016BEAB /* EditItemOnListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemOnListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B915C22265845A40016BEAB /* MockListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListRepository.swift; sourceTree = "<group>"; };
+		7B95C5BA265D7D8A00778B03 /* AddItemPriceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddItemPriceUseCase.swift; path = ShoppingListTests/UnitTests/Domain/UseCases/Item/AddItemPriceUseCase.swift; sourceTree = SOURCE_ROOT; };
 		7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCase.swift; sourceTree = "<group>"; };
 		7BB1BA0F25DFEECC007FA08B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				7BD9546926569C8D00ED2EF2 /* SearchForItemsUseCase.swift */,
 				7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */,
 				7BFF1EF9265C35AC0004F766 /* GetItemUseCase.swift */,
+				7B95C5BA265D7D8A00778B03 /* AddItemPriceUseCase.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				7BB1BA1D25DFEECC007FA08B /* ShoppingList.xcdatamodeld in Sources */,
 				7BD9546A26569C8D00ED2EF2 /* SearchForItemsUseCase.swift in Sources */,
 				7BB1BADA25E00153007FA08B /* IAddItemOnCartUseCase.swift in Sources */,
+				7B95C5BB265D7D8A00778B03 /* AddItemPriceUseCase.swift in Sources */,
 				7BE8CE3E264587E80090955D /* Cart+CDCart.swift in Sources */,
 				7BE8CE39264581870090955D /* List+CDList.swift in Sources */,
 				7BD9547226569D6100ED2EF2 /* ItemRepository.swift in Sources */,
