@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import Promises
 
 struct IAddItemPriceUseCaseRequest {
-    let itemUUID: UUID
+    let itemUUID: String
     let newPrice: Double
-    let location: Location
+    let location: Location?
 }
 
 struct IAddItemPriceUseCaseResponse {
@@ -24,5 +25,5 @@ enum IAddItemPriceUseCaseError: Error {
 }
 
 protocol IAddItemPriceUseCase {
-    func execute(request: IAddItemPriceUseCaseRequest, completion: @escaping (Result<IAddItemPriceUseCaseResponse, IAddItemPriceUseCaseError>) -> Void)
+    func execute(request: IAddItemPriceUseCaseRequest) -> Promise<IAddItemPriceUseCaseResponse>
 }

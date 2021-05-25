@@ -50,7 +50,14 @@ class MockItemRepository: IItemRepository {
     
     func update<T>(_ item: T) -> Promise<T> where T : Fetchable {
         return Promise { fullfill, reject in
-
+            var storeItem = self.items.first { $0.uuid == item.uuid }
+            
+            if (storeItem != nil) {
+                storeItem = item as? Item
+                fullfill(item)
+            } else {
+                reject(ICRUDRepositoryError.notFound)
+            }
         }
     }
     
