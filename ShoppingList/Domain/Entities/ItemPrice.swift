@@ -12,7 +12,7 @@ class ItemPrice {
     let timeStamp: Date
     let location: Location?
     
-    init(price: Double, location: Location, timeStamp: Date) {
+    init(price: Double, location: Location?, timeStamp: Date) {
         self.price = price
         self.location = location
         self.timeStamp = timeStamp
