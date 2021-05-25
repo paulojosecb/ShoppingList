@@ -12,16 +12,18 @@ import Promises
 class MockListRepository: ICRUDRepository {
 
     var errorMock = false
-    var list: [List] = []
+    var list: [List] = [
+        List("name")
+    ]
     
     func fetch<T: Fetchable>(uuid: String) -> Promise<T> {
         return Promise { fullfill, reject in
-            guard let list = (self.list.first { $0.uuid == uuid}) as? T  else {
+            guard let list = (self.list.first { $0.uuid == uuid})  else {
                 reject(ICRUDRepositoryError.notFound)
                 return
             }
             
-            fullfill(list)
+            fullfill(list as! T)
         }
     }
     
