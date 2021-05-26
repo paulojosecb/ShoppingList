@@ -22,7 +22,7 @@ class RemoveItemFromListUseCase: IRemoveItemFromListUseCase {
             
             self.listRepository.fetch(uuid: request.listUUID)
                 .then { (list: List) -> Promise<List> in
-                    list.removeItemFromList(itemUUID: request.itemUUID)
+                    try list.removeItemFromList(itemUUID: request.itemUUID)
                     return self.listRepository.update(list)
                 }
                 .then { list in
