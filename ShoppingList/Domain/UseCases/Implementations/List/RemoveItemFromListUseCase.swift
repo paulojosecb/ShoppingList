@@ -10,11 +10,9 @@ import Promises
 
 class RemoveItemFromListUseCase: IRemoveItemFromListUseCase {
     
-    let itemOnListRepository: IItemOnListRepository
     let listRepository: ICRUDRepository
     
-    init(itemOnListRepository: IItemOnListRepository, listRepository: ICRUDRepository) {
-        self.itemOnListRepository = itemOnListRepository
+    init(listRepository: ICRUDRepository) {
         self.listRepository = listRepository
     }
     
