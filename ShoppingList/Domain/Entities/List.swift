@@ -66,7 +66,7 @@ class List: Fetchable {
             throw List.CustomError.itemNotFoundOnList
         }
         
-        self.removeItemFromList(itemUUID: itemUUID)
+        try? self.removeItemFromList(itemUUID: itemUUID)
         self.cart.items.append(item)
 
     }
@@ -85,8 +85,12 @@ class List: Fetchable {
         self.items.append(item)
     }
     
-    public func removeItemFromList(itemUUID: String) {
-        self.items = self.items.filter { $0.itemUUID != itemUUID }
+    public func removeItemFromList(itemUUID: String) throws {
+        if (self.items.contains { $0.itemUUID == itemUUID}) {
+            self.items = self.items.filter { $0.itemUUID != itemUUID }
+        } else {
+            throw List.CustomError.itemNotFoundOnList
+        }
     }
     
     public func getItemsFromList() -> [ItemOnList] {
