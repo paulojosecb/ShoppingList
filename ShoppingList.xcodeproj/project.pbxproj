@@ -17,6 +17,7 @@
 		7B8209892631061F00003819 /* AddItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */; };
 		7B82098E26310A7300003819 /* RemoveItemFromCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */; };
 		7B898440265E8A9D008D7AB2 /* IItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89843F265E8A9D008D7AB2 /* IItemOnListRepository.swift */; };
+		7B898445265E8AE6008D7AB2 /* RemoveItemFromListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B898444265E8AE6008D7AB2 /* RemoveItemFromListUseCase.swift */; };
 		7B915BDB2658074E0016BEAB /* AddItemOnListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915BDA2658074E0016BEAB /* AddItemOnListUseCaseTest.swift */; };
 		7B915BEE265835600016BEAB /* DeleteListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915BED265835600016BEAB /* DeleteListUseCase.swift */; };
 		7B915BFB265837F60016BEAB /* DeleteListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B915BFA265837F60016BEAB /* DeleteListUseCaseTest.swift */; };
@@ -116,6 +117,7 @@
 		7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnCartUseCase.swift; sourceTree = "<group>"; };
 		7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemFromCartUseCase.swift; sourceTree = "<group>"; };
 		7B89843F265E8A9D008D7AB2 /* IItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IItemOnListRepository.swift; sourceTree = "<group>"; };
+		7B898444265E8AE6008D7AB2 /* RemoveItemFromListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemFromListUseCase.swift; sourceTree = "<group>"; };
 		7B915BDA2658074E0016BEAB /* AddItemOnListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B915BED265835600016BEAB /* DeleteListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListUseCase.swift; sourceTree = "<group>"; };
 		7B915BFA265837F60016BEAB /* DeleteListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListUseCaseTest.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */,
 				7B915C0726583EFB0016BEAB /* EditItemOnListUseCase.swift */,
 				7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */,
+				7B898444265E8AE6008D7AB2 /* RemoveItemFromListUseCase.swift */,
 				7B794AEE2632286A009BA004 /* CreateListUseCase.swift */,
 				7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */,
 				7B915BED265835600016BEAB /* DeleteListUseCase.swift */,
@@ -866,6 +869,7 @@
 				7BB1BAB325DFF84A007FA08B /* IEditItemOnListUseCase.swift in Sources */,
 				7B915C0826583EFB0016BEAB /* EditItemOnListUseCase.swift in Sources */,
 				7BCD9D8C263096AC001E7354 /* Location.swift in Sources */,
+				7B898445265E8AE6008D7AB2 /* RemoveItemFromListUseCase.swift in Sources */,
 				7BB1BAC325DFF9BD007FA08B /* IGetListUseCase.swift in Sources */,
 				7BE150B62630B90C0015693C /* Fetchable.swift in Sources */,
 				7BD223072645BB8D006938BD /* CustomTabBarView.swift in Sources */,
