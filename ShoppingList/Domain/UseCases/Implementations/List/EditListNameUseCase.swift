@@ -20,7 +20,7 @@ class EditListNameUseCase: IEditListNameUseCase {
         
         return Promise<IEditListNameUseCaseResponse> { fulfill, reject in
             
-            if (request.name != "") {
+            if (request.name == "") {
                 reject(IEditListNameUseCaseError.invalidName)
                 return
             }
