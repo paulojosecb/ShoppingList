@@ -5,6 +5,13 @@
         <attribute name="listUUID" attributeType="String"/>
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
     </entity>
+    <entity name="CDCheckout" representedClassName="CDCheckout" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="items" optional="YES" attributeType="Transformable"/>
+        <attribute name="location" optional="YES" attributeType="Transformable"/>
+        <attribute name="total" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="uuid" attributeType="String"/>
+    </entity>
     <entity name="CDItem" representedClassName="CDItem" syncable="YES" codeGenerationType="class">
         <attribute name="isBulk" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
@@ -42,5 +49,6 @@
         <element name="CDItemPrice" positionX="-9" positionY="72" width="128" height="103"/>
         <element name="CDList" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="CDLocation" positionX="0" positionY="81" width="128" height="88"/>
+        <element name="CDCheckout" positionX="-27" positionY="54" width="128" height="118"/>
     </elements>
 </model>
