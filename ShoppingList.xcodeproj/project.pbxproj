@@ -13,6 +13,8 @@
 		7B03DCC82660142A00D974A7 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCC72660142A00D974A7 /* Checkout.swift */; };
 		7B03DCCD2660160300D974A7 /* CheckoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCCC2660160300D974A7 /* CheckoutRepository.swift */; };
 		7B03DCD2266018D400D974A7 /* CheckoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCD1266018D400D974A7 /* CheckoutUseCase.swift */; };
+		7B03DCDC2660201C00D974A7 /* CheckoutUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCDB2660201C00D974A7 /* CheckoutUseCaseTest.swift */; };
+		7B03DCE42660206300D974A7 /* MockCheckoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCE32660206300D974A7 /* MockCheckoutRepository.swift */; };
 		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
 		7B77DD36265C2628000A4A76 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD35265C2628000A4A76 /* MockItemRepository.swift */; };
 		7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */; };
@@ -121,6 +123,8 @@
 		7B03DCC72660142A00D974A7 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		7B03DCCC2660160300D974A7 /* CheckoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutRepository.swift; sourceTree = "<group>"; };
 		7B03DCD1266018D400D974A7 /* CheckoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutUseCase.swift; sourceTree = "<group>"; };
+		7B03DCDB2660201C00D974A7 /* CheckoutUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutUseCaseTest.swift; sourceTree = "<group>"; };
+		7B03DCE32660206300D974A7 /* MockCheckoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCheckoutRepository.swift; sourceTree = "<group>"; };
 		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B77DD35265C2628000A4A76 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
 		7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemOnListRepository.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */,
 				7B915C1C265845570016BEAB /* EditItemOnListUseCaseTest.swift */,
 				7B898454265E99A1008D7AB2 /* RemoveItemFromListUseCase.swift */,
+				7B03DCDB2660201C00D974A7 /* CheckoutUseCaseTest.swift */,
 				7B00C5A02643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift */,
 				7BD95446265693DE00ED2EF2 /* AddItemOnCartUseCaseTest.swift */,
 				7B898466265EA625008D7AB2 /* EditListNameUseCaseTest.swift */,
@@ -363,6 +368,7 @@
 				7B915C22265845A40016BEAB /* MockListRepository.swift */,
 				7B77DD35265C2628000A4A76 /* MockItemRepository.swift */,
 				7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */,
+				7B03DCE32660206300D974A7 /* MockCheckoutRepository.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -951,6 +957,8 @@
 				7B915BDB2658074E0016BEAB /* AddItemOnListUseCaseTest.swift in Sources */,
 				7B898455265E99A1008D7AB2 /* RemoveItemFromListUseCase.swift in Sources */,
 				7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */,
+				7B03DCDC2660201C00D974A7 /* CheckoutUseCaseTest.swift in Sources */,
+				7B03DCE42660206300D974A7 /* MockCheckoutRepository.swift in Sources */,
 				7B898467265EA625008D7AB2 /* EditListNameUseCaseTest.swift in Sources */,
 				7B915C1D265845570016BEAB /* EditItemOnListUseCaseTest.swift in Sources */,
 				7B95C5D2265D838B00778B03 /* GetListUseCaseTest.swift in Sources */,
