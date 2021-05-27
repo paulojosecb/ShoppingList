@@ -44,7 +44,8 @@ class List: Fetchable {
         let template = List(uuid: UUID().uuidString,
                             name: "Template - \(list.name)",
                             items: list.getItemsFromList(),
-                            cart: list.cart)
+                            cart: list.cart,
+                            isTempl: true)
         
         return template
     }
