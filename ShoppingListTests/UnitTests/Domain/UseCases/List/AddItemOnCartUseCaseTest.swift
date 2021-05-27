@@ -84,7 +84,7 @@ class AddItemOnCartUseCaseTest: XCTestCase {
     func testAddExistingItemOnCart() {
         let expectation = XCTestExpectation(description: "List with name")
         let useCase = AddItemOnCartUseCase(repository: mockRepository!)
-        let itemOnList = ItemOnList(item: item!.uuid, on: list!.uuid, quantity: 1, uuid: nil)
+        let itemOnList = ItemOnList(item: item!.uuid, on: list!.uuid, quantity: 1, unitPrice: nil, uuid: nil)
         
         
         try! list?.addItemToList(itemOnList)

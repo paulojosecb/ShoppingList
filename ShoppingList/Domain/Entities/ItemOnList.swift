@@ -12,11 +12,13 @@ class ItemOnList: Fetchable {
     var quantity: Int
     let itemUUID: String
     let listUUID: String
+    let unitPrice: ItemPrice?
 
-    init(item: String, on list: String, quantity: Int, uuid: String?) {
+    init(item: String, on list: String, quantity: Int, unitPrice: ItemPrice?, uuid: String?) {
         self.uuid = uuid ?? UUID().uuidString
         self.itemUUID = item
         self.listUUID = list
         self.quantity = quantity
+        self.unitPrice = unitPrice
     }
 }

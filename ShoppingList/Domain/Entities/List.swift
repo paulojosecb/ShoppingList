@@ -24,6 +24,19 @@ class List: Fetchable {
     private var items: [ItemOnList]
     var cart: Cart
     
+    var total: Double {
+        get {
+            return items.reduce(0.0) { (result, item) -> Double in
+                
+                guard let itemPrice = item.unitPrice?.price else {
+                    return result
+                }
+                
+                return result + itemPrice * Double(item.quantity)
+            }
+        }
+    }
+    
     init(_ nam: String) {
         self.uuid = UUID().uuidString
         self.items = []

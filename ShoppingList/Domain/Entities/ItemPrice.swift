@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ItemPrice {
+class ItemPrice: NSObject {
     let price: Double
     let timeStamp: Date
     let location: Location?

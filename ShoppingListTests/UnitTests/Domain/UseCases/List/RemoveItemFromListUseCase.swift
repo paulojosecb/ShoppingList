@@ -18,6 +18,7 @@ class RemoveItemFromListUseCaseTest: XCTestCase {
         try! repository?.list.first?.addItemToList(ItemOnList(item: "itemUUID",
                                                          on: repository!.list.first!.uuid,
                                                          quantity: 1,
+                                                         unitPrice: nil,
                                                          uuid: name))
     }
     

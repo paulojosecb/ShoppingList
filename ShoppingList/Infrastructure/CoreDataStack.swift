@@ -95,6 +95,18 @@ open class CoreDataStack {
         }
     }
     
+    public func fetch(by uuid: String) -> CDCheckout? {
+        do {
+            let request: NSFetchRequest<CDCheckout>  = CDCheckout.fetchRequest()
+            request.predicate = NSPredicate(format: "uuid == %@", uuid)
+            
+            let item = try self.mainContext.fetch(request).first
+            return item
+        } catch _ {
+            return nil
+        }
+    }
+    
     public func fetch(by listUUID: String) -> CDCart? {
         do {
             let request: NSFetchRequest<CDCart>  = CDCart.fetchRequest()
