@@ -23,5 +23,5 @@ enum ISaveListAsTemplateUseCaseError: Error {
 }
 
 protocol ISaveListAsTemplateUseCase {
-    func execute(request: ISaveListAsTemplateUseCaseRequest) -> ISaveListAsTemplateUseCaseResponse
+    func execute(request: ISaveListAsTemplateUseCaseRequest) -> Promise<ISaveListAsTemplateUseCaseResponse>
 }
