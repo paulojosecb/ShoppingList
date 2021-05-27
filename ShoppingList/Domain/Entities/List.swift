@@ -40,6 +40,15 @@ class List: Fetchable {
         self.isTemplate = isTempl ?? false
     }
     
+    static func makeTemplateCopy(list: List) -> List {
+        let template = List(uuid: UUID().uuidString,
+                            name: "Template - \(list.name)",
+                            items: list.getItemsFromList(),
+                            cart: list.cart)
+        
+        return template
+    }
+    
     public func addItemToList(_ item: ItemOnList) throws {
         if (item.listUUID == self.uuid) {
             
