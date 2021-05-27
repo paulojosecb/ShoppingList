@@ -18,7 +18,7 @@ class List: Fetchable {
     }
     
     var uuid: String
-    
+    var isTemplate: Bool
     var name: String
     
     private var items: [ItemOnList]
@@ -29,13 +29,25 @@ class List: Fetchable {
         self.items = []
         self.cart = Cart(listUUID: self.uuid)
         self.name = nam
+        self.isTemplate = false
     }
     
-    init(uuid: String, name: String, items: [ItemOnList], cart: Cart) {
+    init(uuid: String, name: String, items: [ItemOnList], cart: Cart, isTempl: Bool? = false) {
         self.uuid = uuid
         self.name = name
         self.items = items
         self.cart = cart
+        self.isTemplate = isTempl ?? false
+    }
+    
+    static func makeTemplateCopy(list: List) -> List {
+        let template = List(uuid: UUID().uuidString,
+                            name: "Template - \(list.name)",
+                            items: list.getItemsFromList(),
+                            cart: list.cart,
+                            isTempl: true)
+        
+        return template
     }
     
     public func addItemToList(_ item: ItemOnList) throws {

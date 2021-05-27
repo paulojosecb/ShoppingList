@@ -14,6 +14,8 @@
 		7B77DD36265C2628000A4A76 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD35265C2628000A4A76 /* MockItemRepository.swift */; };
 		7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */; };
 		7B794AEF2632286A009BA004 /* CreateListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B794AEE2632286A009BA004 /* CreateListUseCase.swift */; };
+		7B81E05D266008550049B7DF /* SaveListAsTemplateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81E05C266008550049B7DF /* SaveListAsTemplateUseCase.swift */; };
+		7B81E06226600A2C0049B7DF /* SaveListAsTemplateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81E06126600A2C0049B7DF /* SaveListAsTemplateUseCase.swift */; };
 		7B8209892631061F00003819 /* AddItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */; };
 		7B82098E26310A7300003819 /* RemoveItemFromCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */; };
 		7B898440265E8A9D008D7AB2 /* IItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89843F265E8A9D008D7AB2 /* IItemOnListRepository.swift */; };
@@ -117,6 +119,8 @@
 		7B77DD35265C2628000A4A76 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
 		7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemOnListRepository.swift; sourceTree = "<group>"; };
 		7B794AEE2632286A009BA004 /* CreateListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCase.swift; sourceTree = "<group>"; };
+		7B81E05C266008550049B7DF /* SaveListAsTemplateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListAsTemplateUseCase.swift; sourceTree = "<group>"; };
+		7B81E06126600A2C0049B7DF /* SaveListAsTemplateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListAsTemplateUseCase.swift; sourceTree = "<group>"; };
 		7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnCartUseCase.swift; sourceTree = "<group>"; };
 		7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemFromCartUseCase.swift; sourceTree = "<group>"; };
 		7B89843F265E8A9D008D7AB2 /* IItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IItemOnListRepository.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 			children = (
 				7B8209882631061F00003819 /* AddItemOnCartUseCase.swift */,
 				7B915C0726583EFB0016BEAB /* EditItemOnListUseCase.swift */,
+				7B81E05C266008550049B7DF /* SaveListAsTemplateUseCase.swift */,
 				7B898461265EA4B0008D7AB2 /* EditListNameUseCase.swift */,
 				7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */,
 				7B898444265E8AE6008D7AB2 /* RemoveItemFromListUseCase.swift */,
@@ -336,6 +341,7 @@
 				7B00C5A02643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift */,
 				7BD95446265693DE00ED2EF2 /* AddItemOnCartUseCaseTest.swift */,
 				7B898466265EA625008D7AB2 /* EditListNameUseCaseTest.swift */,
+				7B81E06126600A2C0049B7DF /* SaveListAsTemplateUseCase.swift */,
 				7B915BFA265837F60016BEAB /* DeleteListUseCaseTest.swift */,
 				7B915BDA2658074E0016BEAB /* AddItemOnListUseCaseTest.swift */,
 				7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */,
@@ -905,6 +911,7 @@
 				7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */,
 				7BD9548A2656AB8600ED2EF2 /* Item+CDItem.swift in Sources */,
 				7BFF1EE5265C32F20004F766 /* CreateItemUseCase.swift in Sources */,
+				7B81E05D266008550049B7DF /* SaveListAsTemplateUseCase.swift in Sources */,
 				7B82098E26310A7300003819 /* RemoveItemFromCartUseCase.swift in Sources */,
 				7BE8CE492645884B0090955D /* ItemOnList+CDItemOnList.swift in Sources */,
 				7BCD9D9226309931001E7354 /* IEditListNameUseCase.swift in Sources */,
@@ -926,6 +933,7 @@
 				7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */,
 				7BD95447265693DE00ED2EF2 /* AddItemOnCartUseCaseTest.swift in Sources */,
 				7B77DD36265C2628000A4A76 /* MockItemRepository.swift in Sources */,
+				7B81E06226600A2C0049B7DF /* SaveListAsTemplateUseCase.swift in Sources */,
 				7BFF1EFF265C368A0004F766 /* GetItemUseCaseTest.swift in Sources */,
 				7B95C5C0265D7FBF00778B03 /* AddItemPriceUseCaseTest.swift in Sources */,
 				7B915BDB2658074E0016BEAB /* AddItemOnListUseCaseTest.swift in Sources */,
