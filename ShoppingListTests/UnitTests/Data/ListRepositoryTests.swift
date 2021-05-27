@@ -76,17 +76,26 @@ class ListRepositoryTests: XCTestCase {
         let item = Item(name: "My Item", initialPrice: nil)
         let itemTwo = Item(name: "My Item Two", initialPrice: nil)
         
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, uuid: nil)
-        let itemOnListTwo = ItemOnList(item: itemTwo.uuid, on: list.uuid, quantity: 1, uuid: nil)
+        let itemOnList = ItemOnList(item: item.uuid,
+                                    on: list.uuid,
+                                    quantity: 1,
+                                    unitPrice: nil, uuid: nil)
+        let itemOnListTwo = ItemOnList(item: itemTwo.uuid,
+                                       on: list.uuid,
+                                       quantity: 1,
+                                       unitPrice: nil,
+                                       uuid: nil)
         
         try! list.addItemToList(itemOnList)
         try! list.addItemToList(itemOnListTwo)
         
         try! list.moveItemToCart(itemUUID: itemTwo.uuid)
         
-        repository.create(list).then { (createdList: List) in
+        repository.create(list)
+            .then { (createdList: List) in
             self.repository.fetch(uuid: createdList.uuid)
-        }.then { (fetchedList: List) in
+            }
+            .then { (fetchedList: List) in
             XCTAssertTrue(fetchedList.getItemsFromList().count == 1)
             XCTAssertTrue(fetchedList.getItemsFromCart().count == 1)
             

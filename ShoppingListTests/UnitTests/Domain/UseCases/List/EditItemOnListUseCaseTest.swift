@@ -24,7 +24,7 @@ class EditItemOnListUseCaseTest: XCTestCase {
         mockItemOnListRepository?.items = [
             ItemOnList(item: "myItemID",
                        on: "myListID",
-                                        quantity: 1,
+                       quantity: 1, unitPrice: nil,
                                         uuid: "myItemOnListID")
         ]
                 
