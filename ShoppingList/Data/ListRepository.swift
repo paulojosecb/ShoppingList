@@ -85,7 +85,7 @@ class ListRepository: ICRUDRepository {
                 try self.managedObjectContext.save()
                 
                 fulfill(list as! T)
-            } catch _ {
+            } catch let error {
                 reject(ICRUDRepositoryError.errorOnOperaration)
             }
             
