@@ -14,6 +14,7 @@ extension ItemOnList {
         let itemOnList = ItemOnList(item: cdItemOnList.itemUUID!,
                                     on: cdItemOnList.listUUID!,
                                     quantity: Int(cdItemOnList.quantity),
+                                    unitPrice: cdItemOnList.unitPrice as? ItemPrice,
                                     uuid: cdItemOnList.uuid)
         
         return itemOnList
@@ -25,6 +26,7 @@ extension ItemOnList {
         cdItemOnList.listUUID = itemOnList.listUUID
         cdItemOnList.uuid = itemOnList.uuid
         cdItemOnList.quantity = Int16(itemOnList.quantity)
+        cdItemOnList.unitPrice = itemOnList.unitPrice
         
         return cdItemOnList
     }
