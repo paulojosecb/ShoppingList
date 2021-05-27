@@ -25,6 +25,7 @@
     </entity>
     <entity name="CDList" representedClassName="CDList" syncable="YES" codeGenerationType="class">
         <attribute name="cartUUID" optional="YES" attributeType="String"/>
+        <attribute name="isTemplate" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="items" optional="YES" attributeType="Transformable"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="uuid" attributeType="String"/>
@@ -39,7 +40,7 @@
         <element name="CDItem" positionX="-27" positionY="54" width="128" height="103"/>
         <element name="CDItemOnList" positionX="-36" positionY="18" width="128" height="103"/>
         <element name="CDItemPrice" positionX="-9" positionY="72" width="128" height="103"/>
-        <element name="CDList" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="CDList" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="CDLocation" positionX="0" positionY="81" width="128" height="88"/>
     </elements>
 </model>

@@ -38,7 +38,8 @@ class ListRepository: ICRUDRepository {
             let list = List(uuid: cdList!.uuid!,
                             name: cdList!.name!,
                             items: itemsOnList,
-                            cart: cart)
+                            cart: cart,
+                            isTempl: cdList!.isTemplate)
             
             fulfill(list as! T)
         }
@@ -64,6 +65,7 @@ class ListRepository: ICRUDRepository {
                 cdList.uuid = list.uuid
                 cdList.items = list.getItemsFromList().map { $0.uuid } as NSObject
                 cdList.cartUUID = list.cart.uuid
+                cdList.isTemplate = list.isTemplate
                 
                 _ = list.getItemsFromList().map { itemOnList -> CDItemOnList in
                     let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
