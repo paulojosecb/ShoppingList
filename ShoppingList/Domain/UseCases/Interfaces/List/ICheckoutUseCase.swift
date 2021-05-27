@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Promises
 
 struct ICheckoutUseCaseRequest {
-    let listUUID: UUID
+    let listUUID: String
 }
 
 struct ICheckoutUseCaseResponse {
@@ -22,5 +23,5 @@ enum ICheckoutUseCaseRequestError: Error {
 }
 
 protocol ICheckoutUseCase {
-    func execute(request: ICheckoutUseCaseRequest, completion: @escaping (Result<ICheckoutUseCaseResponse, ICheckoutUseCaseRequestError>) -> Void)
+    func execute(request: ICheckoutUseCaseRequest) -> Promise<ICheckoutUseCaseResponse>
 }
