@@ -42,6 +42,7 @@
 		7B95C5CD265D831100778B03 /* GetListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5CC265D831100778B03 /* GetListUseCase.swift */; };
 		7B95C5D2265D838B00778B03 /* GetListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */; };
 		7B9807BB2657FF5400D5E74C /* AddItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */; };
+		7BA33B9626616E340014F2C2 /* GetCheckoutsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA33B9526616E340014F2C2 /* GetCheckoutsUseCaseTest.swift */; };
 		7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */; };
 		7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */; };
 		7BB1BA1725DFEECC007FA08B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1625DFEECC007FA08B /* ViewController.swift */; };
@@ -154,6 +155,7 @@
 		7B95C5CC265D831100778B03 /* GetListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListUseCase.swift; sourceTree = "<group>"; };
 		7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCase.swift; sourceTree = "<group>"; };
+		7BA33B9526616E340014F2C2 /* GetCheckoutsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCheckoutsUseCaseTest.swift; sourceTree = "<group>"; };
 		7BB1BA0F25DFEECC007FA08B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BB1BA1425DFEECC007FA08B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				7B915C1C265845570016BEAB /* EditItemOnListUseCaseTest.swift */,
 				7B898454265E99A1008D7AB2 /* RemoveItemFromListUseCase.swift */,
 				7B03DCDB2660201C00D974A7 /* CheckoutUseCaseTest.swift */,
+				7BA33B9526616E340014F2C2 /* GetCheckoutsUseCaseTest.swift */,
 				7B00C5A02643511F0000ABC2 /* RemoveItemFromCartUseCaseTest.swift */,
 				7BD95446265693DE00ED2EF2 /* AddItemOnCartUseCaseTest.swift */,
 				7B898466265EA625008D7AB2 /* EditListNameUseCaseTest.swift */,
@@ -966,6 +969,7 @@
 				7B898455265E99A1008D7AB2 /* RemoveItemFromListUseCase.swift in Sources */,
 				7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */,
 				7B03DCDC2660201C00D974A7 /* CheckoutUseCaseTest.swift in Sources */,
+				7BA33B9626616E340014F2C2 /* GetCheckoutsUseCaseTest.swift in Sources */,
 				7B03DCE42660206300D974A7 /* MockCheckoutRepository.swift in Sources */,
 				7B898467265EA625008D7AB2 /* EditListNameUseCaseTest.swift in Sources */,
 				7B915C1D265845570016BEAB /* EditItemOnListUseCaseTest.swift in Sources */,

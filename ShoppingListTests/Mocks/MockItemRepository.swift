@@ -41,6 +41,12 @@ class MockItemRepository: IItemRepository {
         }
     }
     
+    func fetch<T>() -> Promise<[T]> where T : Fetchable {
+        return Promise { fulfill, reject in
+            fatalError()
+        }
+    }
+    
     func create<T: Fetchable>(_ item: T) -> Promise<T> {
         return Promise { fullfill, reject in
             self.items.append(item as! Item)
