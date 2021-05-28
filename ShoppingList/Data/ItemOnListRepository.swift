@@ -39,6 +39,12 @@ class ItemOnListRepository: ICRUDRepository {
         }
     }
     
+    func fetch<T>() -> Promise<[T]> where T : Fetchable {
+        return Promise { fulfill, reject in
+            fatalError()
+        }
+    }
+    
     func create<T>(_ item: T) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
             let cdItemOnList = CDItemOnList(context: self.coreDataStack.mainContext)
