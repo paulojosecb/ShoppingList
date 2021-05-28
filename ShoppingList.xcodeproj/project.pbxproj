@@ -15,6 +15,8 @@
 		7B03DCD2266018D400D974A7 /* CheckoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCD1266018D400D974A7 /* CheckoutUseCase.swift */; };
 		7B03DCDC2660201C00D974A7 /* CheckoutUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCDB2660201C00D974A7 /* CheckoutUseCaseTest.swift */; };
 		7B03DCE42660206300D974A7 /* MockCheckoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCE32660206300D974A7 /* MockCheckoutRepository.swift */; };
+		7B03DD0526602A6200D974A7 /* IGetCheckoutsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DD0426602A6200D974A7 /* IGetCheckoutsUseCase.swift */; };
+		7B03DD0A26602ABC00D974A7 /* GetCheckoutsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DD0926602ABC00D974A7 /* GetCheckoutsUseCase.swift */; };
 		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
 		7B77DD36265C2628000A4A76 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD35265C2628000A4A76 /* MockItemRepository.swift */; };
 		7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */; };
@@ -125,6 +127,8 @@
 		7B03DCD1266018D400D974A7 /* CheckoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutUseCase.swift; sourceTree = "<group>"; };
 		7B03DCDB2660201C00D974A7 /* CheckoutUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutUseCaseTest.swift; sourceTree = "<group>"; };
 		7B03DCE32660206300D974A7 /* MockCheckoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCheckoutRepository.swift; sourceTree = "<group>"; };
+		7B03DD0426602A6200D974A7 /* IGetCheckoutsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetCheckoutsUseCase.swift; sourceTree = "<group>"; };
+		7B03DD0926602ABC00D974A7 /* GetCheckoutsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCheckoutsUseCase.swift; sourceTree = "<group>"; };
 		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B77DD35265C2628000A4A76 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
 		7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemOnListRepository.swift; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 				7B898461265EA4B0008D7AB2 /* EditListNameUseCase.swift */,
 				7B82098D26310A7300003819 /* RemoveItemFromCartUseCase.swift */,
 				7B03DCD1266018D400D974A7 /* CheckoutUseCase.swift */,
+				7B03DD0926602ABC00D974A7 /* GetCheckoutsUseCase.swift */,
 				7B898444265E8AE6008D7AB2 /* RemoveItemFromListUseCase.swift */,
 				7B794AEE2632286A009BA004 /* CreateListUseCase.swift */,
 				7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */,
@@ -481,6 +486,7 @@
 				7BB1BADE25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift */,
 				7BB1BA6425DFF356007FA08B /* ICreateListUseCase.swift */,
 				7BCD9D9126309931001E7354 /* IEditListNameUseCase.swift */,
+				7B03DD0426602A6200D974A7 /* IGetCheckoutsUseCase.swift */,
 				7BB1BAA525DFF6AB007FA08B /* IAddItemOnListUseCase.swift */,
 				7BB1BAAA25DFF7E3007FA08B /* IRemoveItemfromListUseCase.swift */,
 				7BB1BAB225DFF84A007FA08B /* IEditItemOnListUseCase.swift */,
@@ -915,6 +921,7 @@
 				7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */,
 				7BFF1EFA265C35AC0004F766 /* GetItemUseCase.swift in Sources */,
 				7B03DCCD2660160300D974A7 /* CheckoutRepository.swift in Sources */,
+				7B03DD0526602A6200D974A7 /* IGetCheckoutsUseCase.swift in Sources */,
 				7B8209892631061F00003819 /* AddItemOnCartUseCase.swift in Sources */,
 				7BB1BAA625DFF6AB007FA08B /* IAddItemOnListUseCase.swift in Sources */,
 				7BCD9DBE2630AC35001E7354 /* ICRUDRepository.swift in Sources */,
@@ -928,6 +935,7 @@
 				7BB1BADF25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift in Sources */,
 				7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */,
 				7BD9548A2656AB8600ED2EF2 /* Item+CDItem.swift in Sources */,
+				7B03DD0A26602ABC00D974A7 /* GetCheckoutsUseCase.swift in Sources */,
 				7BFF1EE5265C32F20004F766 /* CreateItemUseCase.swift in Sources */,
 				7B81E05D266008550049B7DF /* SaveListAsTemplateUseCase.swift in Sources */,
 				7B82098E26310A7300003819 /* RemoveItemFromCartUseCase.swift in Sources */,
