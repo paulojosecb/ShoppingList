@@ -21,7 +21,7 @@ class GetCheckoutsUseCaseTest: XCTestCase {
         self.repository = nil
     }
     
-    func testGetAllCheckouts() {
+//    func testGetAllCheckouts() {
 //        let expectation = XCTestExpectation(description: "Get all checkouts")
 //        let useCase = GetCheckoutsUseCase(repository: repository!)
 //        
