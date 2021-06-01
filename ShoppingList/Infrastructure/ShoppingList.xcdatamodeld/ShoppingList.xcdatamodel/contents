@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1027" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDCart" representedClassName="CDCart" syncable="YES" codeGenerationType="class">
+        <attribute name="items" optional="YES" attributeType="Transformable"/>
+        <attribute name="listUUID" attributeType="String"/>
+        <attribute name="uuid" attributeType="String" defaultValueString=""/>
+    </entity>
+    <entity name="CDCheckout" representedClassName="CDCheckout" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="items" optional="YES" attributeType="Transformable"/>
+        <attribute name="listUUID" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="Transformable"/>
+        <attribute name="total" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="uuid" attributeType="String"/>
+    </entity>
+    <entity name="CDItem" representedClassName="CDItem" syncable="YES" codeGenerationType="class">
+        <attribute name="isBulk" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="prices" optional="YES" attributeType="Transformable"/>
+        <attribute name="uuid" attributeType="String"/>
+    </entity>
+    <entity name="CDItemOnList" representedClassName="CDItemOnList" syncable="YES" codeGenerationType="class">
+        <attribute name="itemUUID" attributeType="String"/>
+        <attribute name="listUUID" attributeType="String"/>
+        <attribute name="quantity" attributeType="Integer 16" minValueString="1" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="unitPrice" optional="YES" attributeType="Transformable"/>
+        <attribute name="uuid" attributeType="String" defaultValueString=""/>
+    </entity>
+    <entity name="CDItemPrice" representedClassName="CDItemPrice" syncable="YES" codeGenerationType="class">
+        <attribute name="itemUUID" attributeType="String"/>
+        <attribute name="locationUUID" optional="YES" attributeType="String"/>
+        <attribute name="price" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timeStamp" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="CDList" representedClassName="CDList" syncable="YES" codeGenerationType="class">
+        <attribute name="cartUUID" optional="YES" attributeType="String"/>
+        <attribute name="isTemplate" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="items" optional="YES" attributeType="Transformable"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="uuid" attributeType="String"/>
+    </entity>
+    <entity name="CDLocation" representedClassName="CDLocation" syncable="YES" codeGenerationType="class">
+        <attribute name="itemPriceUUID" optional="YES" attributeType="String"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CDCart" positionX="-54" positionY="9" width="128" height="88"/>
+        <element name="CDItem" positionX="-27" positionY="54" width="128" height="103"/>
+        <element name="CDItemOnList" positionX="-36" positionY="18" width="128" height="118"/>
+        <element name="CDItemPrice" positionX="-9" positionY="72" width="128" height="103"/>
+        <element name="CDList" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="CDLocation" positionX="0" positionY="81" width="128" height="88"/>
+        <element name="CDCheckout" positionX="-27" positionY="54" width="128" height="133"/>
+    </elements>
+</model>

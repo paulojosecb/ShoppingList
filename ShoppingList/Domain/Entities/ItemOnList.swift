@@ -8,15 +8,17 @@
 import Foundation
 
 class ItemOnList: Fetchable {
-    let uuid: UUID
+    let uuid: String
     var quantity: Int
-    let item: Item
-    let list: List
-    
-    init(item: Item, on list: List, quantity: Int, uuid: UUID) {
-        self.uuid = uuid
-        self.item = item
-        self.list = list
+    let itemUUID: String
+    let listUUID: String
+    let unitPrice: ItemPrice?
+
+    init(item: String, on list: String, quantity: Int, unitPrice: ItemPrice?, uuid: String?) {
+        self.uuid = uuid ?? UUID().uuidString
+        self.itemUUID = item
+        self.listUUID = list
         self.quantity = quantity
+        self.unitPrice = unitPrice
     }
 }

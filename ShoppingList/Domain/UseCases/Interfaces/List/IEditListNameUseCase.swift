@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Promises
 
 struct IEditListNameUseCaseRequest {
     let name: String
+    let uuid: String
 }
 
 struct IEditListNameUseCaseResponse {
@@ -18,8 +20,9 @@ struct IEditListNameUseCaseResponse {
 enum IEditListNameUseCaseError: Error {
     case invalidName
     case unknownError
+    case listNotFound
 }
 
 protocol IEditListNameUseCase {
-    func execute(request: IEditListNameUseCaseRequest, completion: @escaping (Result<IEditListNameUseCaseResponse, IEditListNameUseCaseError>) -> ())
+    func execute(request: IEditListNameUseCaseRequest) -> Promise<IEditListNameUseCaseResponse>
 }

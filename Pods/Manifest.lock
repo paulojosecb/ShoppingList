@@ -1,0 +1,20 @@
+PODS:
+  - PromisesObjC (1.2.8)
+  - PromisesSwift (1.2.8):
+    - PromisesObjC (= 1.2.8)
+
+DEPENDENCIES:
+  - PromisesSwift
+
+SPEC REPOS:
+  trunk:
+    - PromisesObjC
+    - PromisesSwift
+
+SPEC CHECKSUMS:
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
+
+PODFILE CHECKSUM: 6e24af39cbd023667d511842af5147318f4683cf
+
+COCOAPODS: 1.9.3

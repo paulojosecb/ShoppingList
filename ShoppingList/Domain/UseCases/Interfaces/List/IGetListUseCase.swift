@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Promises
 
 struct IGetListUseCaseRequest {
-    let uuid: UUID
+    let uuid: String
 }
 
 struct IGetListUseCaseResponse {
@@ -21,6 +22,6 @@ enum IGetListUseCaseError: Error {
 }
 
 protocol IGetListUseCase {
-    func execute(request: IGetListUseCaseRequest, completion: @escaping (Result<IGetListUseCaseResponse, IGetListUseCaseError>) -> Void)
+    func execute(request: IGetListUseCaseRequest) -> Promise<IGetListUseCaseResponse>
 }
 

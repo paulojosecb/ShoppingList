@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Promises
 
 struct ICreateListUseCaseRequest {
     let name: String
@@ -21,5 +22,5 @@ enum ICreateListUseCaseError: Error {
 }
 
 protocol ICreateListUseCase {
-    func execute(request: ICreateListUseCaseRequest, completion: @escaping (Result<ICreateListUseCaseResponse, ICreateListUseCaseError>) -> ())
+    func execute(request: ICreateListUseCaseRequest) -> Promise<ICreateListUseCaseResponse>
 }

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Promises
 
 struct IDeleteListUseCaseRequest {
-    let uuid: UUID
+    let uuid: String
 }
 
 struct IDeleteListUseCaseResponse {
@@ -21,5 +22,5 @@ enum IDeleteListUseCaseError: Error {
 }
 
 protocol IDeleteListUseCase {
-    func execute(request: IDeleteListUseCaseRequest, completion: @escaping (Result<IDeleteListUseCaseResponse, IDeleteListUseCaseError>) -> Void)
+    func execute(request: IDeleteListUseCaseRequest) -> Promise<IDeleteListUseCaseResponse>
 }

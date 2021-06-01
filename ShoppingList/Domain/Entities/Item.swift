@@ -8,12 +8,12 @@
 import Foundation
 
 class Item: Fetchable {
-    var uuid: UUID
+    var uuid: String
     var name: String
     var prices: [ItemPrice]
     var isBulk: Bool
     
-    init(name: String, isBulk: Bool = false, initialPrice: ItemPrice?, uuid: UUID) {
+    init(name: String, isBulk: Bool = false, initialPrice: ItemPrice?, uuid: String = UUID().uuidString) {
         self.name = name
         self.isBulk = isBulk
         
@@ -25,4 +25,11 @@ class Item: Fetchable {
             
         self.uuid = uuid
     }
+    
+    convenience init(name: String, isBulk: Bool = false, prices: [ItemPrice], uuid: String = UUID().uuidString) {
+        self.init(name: name, isBulk: isBulk, initialPrice: prices.first, uuid: uuid)
+        self.prices = prices
+    }
+    
+    
 }

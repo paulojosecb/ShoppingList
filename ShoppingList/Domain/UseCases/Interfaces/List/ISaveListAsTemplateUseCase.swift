@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import Promises
 
 struct ISaveListAsTemplateUseCaseRequest {
-    let uuid: UUID
+    let uuid: String
 }
 
 struct ISaveListAsTemplateUseCaseResponse {
     let copyed: Bool
+    let templateList: List
 }
 
 enum ISaveListAsTemplateUseCaseError: Error {
@@ -21,5 +23,5 @@ enum ISaveListAsTemplateUseCaseError: Error {
 }
 
 protocol ISaveListAsTemplateUseCase {
-    func execute(request: ISaveListAsTemplateUseCaseRequest, completion: @escaping (Result<ISaveListAsTemplateUseCaseResponse, ISaveListAsTemplateUseCaseError>) -> Void)
+    func execute(request: ISaveListAsTemplateUseCaseRequest) -> Promise<ISaveListAsTemplateUseCaseResponse>
 }
