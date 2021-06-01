@@ -9,11 +9,11 @@ import Foundation
 import Promises
 
 struct IGetListUseCaseRequest {
-    let uuid: String
+    let uuid: String?
 }
 
 struct IGetListUseCaseResponse {
-    let list: List
+    let lists: [List]
 }
 
 enum IGetListUseCaseError: Error {

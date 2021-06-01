@@ -21,15 +21,30 @@ class GetListUseCase: IGetListUseCase {
         
         return Promise<IGetListUseCaseResponse> { fulfill, reject in
             
-            self.repository.fetch(uuid: request.uuid)
-                .then { (list: List) in
-                    
-                    fulfill(.init(list: list))
-                    
-                }
-                .catch { _ in
-                    reject(IGetListUseCaseError.listNotFound)
-                }
+            if request.uuid != nil {
+                
+                self.repository.fetch(uuid: request.uuid!)
+                    .then { (list: List) in
+                        
+                        fulfill(.init(lists: [list]))
+                        
+                    }
+                    .catch { _ in
+                        reject(IGetListUseCaseError.listNotFound)
+                    }
+                
+            } else {
+                
+                self.repository.fetch()
+                    .then { lists in
+                        fulfill(.init(lists: lists))
+                    }
+                    .catch { _ in
+                        reject(IGetListUseCaseError.unknownError)
+                    }
+                
+            }
+            
             
         }
         
