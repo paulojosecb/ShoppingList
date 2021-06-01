@@ -18,6 +18,7 @@ class HomeView: UIView {
         tableView.delegate = self.tableViewDelegate
         tableView.dataSource = self.tableViewDataSource
         tableView.separatorStyle = .none
+        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
         return tableView
     }()
 

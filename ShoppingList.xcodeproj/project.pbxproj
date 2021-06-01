@@ -17,6 +17,8 @@
 		7B03DCE42660206300D974A7 /* MockCheckoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DCE32660206300D974A7 /* MockCheckoutRepository.swift */; };
 		7B03DD0526602A6200D974A7 /* IGetCheckoutsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DD0426602A6200D974A7 /* IGetCheckoutsUseCase.swift */; };
 		7B03DD0A26602ABC00D974A7 /* GetCheckoutsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DD0926602ABC00D974A7 /* GetCheckoutsUseCase.swift */; };
+		7B134949266685110057D4DD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B134948266685110057D4DD /* ListTableViewCell.swift */; };
+		7B13495426668A190057D4DD /* IHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13495326668A180057D4DD /* IHomeViewModel.swift */; };
 		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
 		7B77DD36265C2628000A4A76 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD35265C2628000A4A76 /* MockItemRepository.swift */; };
 		7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */; };
@@ -130,6 +132,8 @@
 		7B03DCE32660206300D974A7 /* MockCheckoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCheckoutRepository.swift; sourceTree = "<group>"; };
 		7B03DD0426602A6200D974A7 /* IGetCheckoutsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetCheckoutsUseCase.swift; sourceTree = "<group>"; };
 		7B03DD0926602ABC00D974A7 /* GetCheckoutsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCheckoutsUseCase.swift; sourceTree = "<group>"; };
+		7B134948266685110057D4DD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		7B13495326668A180057D4DD /* IHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHomeViewModel.swift; sourceTree = "<group>"; };
 		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B77DD35265C2628000A4A76 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
 		7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemOnListRepository.swift; sourceTree = "<group>"; };
@@ -301,6 +305,14 @@
 				7BCF53952644CD7100794EE2 /* CoreDataStack.swift */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		7B134947266684DE0057D4DD /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7B134948266685110057D4DD /* ListTableViewCell.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		7B507D63263313A3000EE3B2 /* Data */ = {
@@ -550,6 +562,7 @@
 				7BD222E22645B40D006938BD /* HomeViewController.swift */,
 				7BD222EA2645B41B006938BD /* HomeView.swift */,
 				7BD223002645B68E006938BD /* HomeViewModel.swift */,
+				7B13495326668A180057D4DD /* IHomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -573,6 +586,7 @@
 		7BD223052645BB81006938BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7B134947266684DE0057D4DD /* List */,
 				7BD223062645BB8D006938BD /* CustomTabBarView.swift */,
 			);
 			path = Components;
@@ -895,7 +909,9 @@
 				7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */,
 				7BCF53962644CD7100794EE2 /* CoreDataStack.swift in Sources */,
 				7BD9548226569EDF00ED2EF2 /* IItemRepository.swift in Sources */,
+				7B13495426668A190057D4DD /* IHomeViewModel.swift in Sources */,
 				7BB1BAC825DFFA44007FA08B /* IGetItemUseCase.swift in Sources */,
+				7B134949266685110057D4DD /* ListTableViewCell.swift in Sources */,
 				7BB1BA6525DFF356007FA08B /* ICreateListUseCase.swift in Sources */,
 				7BB1BAAB25DFF7E3007FA08B /* IRemoveItemfromListUseCase.swift in Sources */,
 				7B915C1026583FA40016BEAB /* ItemOnListRepository.swift in Sources */,

@@ -15,6 +15,24 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.view = HomeView(tableViewDelegate: self, tableViewDataSource: self)
         // Do any additional setup after loading the view.
+        
+        self.viewModel.createListWith(name: "Minha lista")
+            .then { list in
+                self.fetchLists()
+            }
+            .catch { _ in
+                
+            }
+    }
+    
+    private func fetchLists() {
+        self.viewModel.fetchLists()
+            .then { lists in
+                
+            }
+            .catch { _ in
+                
+            }
     }
 
 }

@@ -8,14 +8,31 @@
 import Foundation
 import Promises
 
-class HomeViewModel {
+class HomeViewModel: IHomeViewModel {
     
-    let createListUseCase: CreateListUseCase
+    private let createListUseCase: ICreateListUseCase
+    private let getListsUseCase: IGetListUseCase
+    
+    var lists: [List] = []
     
     init() {
         let coreDataStack = CoreDataStack()
         let repository = ListRepository(managedObjectContext: coreDataStack.mainContext, coreDataStack: coreDataStack)
+        
         self.createListUseCase = CreateListUseCase(repository: repository)
+        self.getListsUseCase = GetListUseCase(repository: repository)
+    }
+    
+    public func fetchLists() -> Promise<[List]> {
+        return Promise { fulfill, reject in
+            self.getListsUseCase.execute(request: .init(uuid: ""))
+                .then { response in
+                    fulfill(response.lists)
+                }
+                .catch { _ in
+                    reject(IGetItemUseCaseError.unknownError)
+                }
+        }
     }
     
     public func createListWith(name: String) -> Promise<List> {
