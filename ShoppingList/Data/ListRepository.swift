@@ -25,21 +25,25 @@ class ListRepository: ICRUDRepository {
     func fetch<T>(uuid: String) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
             
-            let cdList: CDList? = self.coreDataStack.fetch(by: uuid)
-            let cdCart: CDCart? = self.coreDataStack.fetch(by: cdList!.uuid!)
+            guard let cdList: CDList = self.coreDataStack.fetch(by: uuid) else {
+                reject(ICRUDRepositoryError.notFound)
+                return
+            }
             
-            let cdItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdList?.items as? [String]) ?? [])
+            let cdCart: CDCart? = self.coreDataStack.fetch(by: cdList.uuid!)
+            
+            let cdItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdList.items as? [String]) ?? [])
             let cartItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdCart?.items as? [String]) ?? [])
             
             let itemsOnList = cdItemsOnList?.map { ItemOnList.make(from: $0)} ?? []
             
             let cart = Cart.make(from: cdCart!, and: cartItemsOnList ?? [])
             
-            let list = List(uuid: cdList!.uuid!,
-                            name: cdList!.name!,
+            let list = List(uuid: cdList.uuid!,
+                            name: cdList.name!,
                             items: itemsOnList,
                             cart: cart,
-                            isTempl: cdList!.isTemplate)
+                            isTempl: cdList.isTemplate)
             
             fulfill(list as! T)
         }
@@ -53,7 +57,7 @@ class ListRepository: ICRUDRepository {
     
     func fetch<T>() -> Promise<[T]> where T : Fetchable {
         return Promise { fulfill, reject in
-            fatalError()
+            
         }
     }
     
