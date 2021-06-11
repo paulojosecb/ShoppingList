@@ -15,48 +15,27 @@ class ListTableViewCell: UITableViewCell {
         let price: Double
     }
     
+    lazy var listItemView: ListItemView = {
+        let view = ListItemView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var viewModel: ViewModel? = nil {
         didSet {
             guard let viewModel = self.viewModel else {
                 return
             }
             
-            self.listNameLabel.text = viewModel.name
-            self.detailLabel.text = "\(viewModel.itensQuantity) itens"
-            self.priceLabel.text = "R$ \(viewModel.price)"
+            self.listItemView.listNameLabel.text = viewModel.name
+            self.listItemView.detailLabel.text = "\(viewModel.itensQuantity) itens"
+            self.listItemView.priceLabel.text = "R$ \(String(format: "%.2f", viewModel.price))"
         }
     }
     
     static var identifier = String(describing: ListTableViewCell.self)
-    
-    lazy var bulletPointView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .darkGray
-        return view
-    }()
-    
-    lazy var listNameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .callout)
-        return label
-    }()
-    
-    lazy var detailLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .footnote)
-        return label
-    }()
-    
-    lazy var priceLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .headline)
-        return label
-    }()
-
+    static var height: CGFloat = 78
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -77,49 +56,22 @@ class ListTableViewCell: UITableViewCell {
         super.init(coder: decoder)
     }
     
-    override func draw(_ rect: CGRect) {
-        self.setupAdditionalConfiguration()
-    }
-    
-    func setup() {
-        
-    }
-
 }
 
 extension ListTableViewCell: ViewCode {
-    
     func buildViewHierarchy() {
-        self.contentView.addSubview(bulletPointView)
-        self.contentView.addSubview(listNameLabel)
-        self.addSubview(detailLabel)
-        self.addSubview(priceLabel)
+        self.contentView.addSubview(listItemView)
     }
     
     func setupConstraints() {
-        self.bulletPointView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        self.bulletPointView.leadingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
-        self.bulletPointView.widthAnchor.constraint(equalToConstant: 16).isActive = true
-        self.bulletPointView.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        
-        self.listNameLabel.leadingAnchor.constraint(equalTo: bulletPointView.trailingAnchor, constant: 8).isActive = true
-        self.listNameLabel.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor, constant: 8).isActive = true
-        self.listNameLabel.heightAnchor.constraint(equalToConstant: self.listNameLabel.intrinsicContentSize.height).isActive = true
-        self.listNameLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3).isActive = true
-        
-        self.detailLabel.leadingAnchor.constraint(equalTo: self.listNameLabel.leadingAnchor).isActive = true
-        self.detailLabel.trailingAnchor.constraint(equalTo: self.listNameLabel.trailingAnchor).isActive = true
-        self.detailLabel.topAnchor.constraint(equalTo: self.listNameLabel.bottomAnchor, constant: 8).isActive = true
-        self.detailLabel.heightAnchor.constraint(equalToConstant: self.detailLabel.intrinsicContentSize.height).isActive = true
-        
-        self.priceLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        self.priceLabel.leadingAnchor.constraint(equalTo: self.listNameLabel.trailingAnchor, constant: 8).isActive = true
-        self.priceLabel.trailingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.trailingAnchor, constant: -8).isActive = true
-        self.priceLabel.heightAnchor.constraint(equalToConstant: self.priceLabel.intrinsicContentSize.height).isActive = true
+        self.listItemView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
+        self.listItemView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
+        self.listItemView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
+        self.listItemView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16).isActive = true
     }
     
     func setupAdditionalConfiguration() {
-        
+        self.backgroundColor = .init(white: 1, alpha: 0)
+        selectionStyle = .none
     }
-    
 }

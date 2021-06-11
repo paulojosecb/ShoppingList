@@ -19,6 +19,7 @@ class HomeView: UIView {
         tableView.dataSource = self.tableViewDataSource
         tableView.separatorStyle = .none
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
+        tableView.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         return tableView
     }()
 
@@ -49,6 +50,6 @@ extension HomeView: ViewCode {
     }
     
     func setupAdditionalConfiguration() {
-        
+        self.backgroundColor = .init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
     }
 }
