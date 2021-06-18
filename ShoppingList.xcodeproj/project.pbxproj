@@ -18,6 +18,10 @@
 		7B03DD0526602A6200D974A7 /* IGetCheckoutsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DD0426602A6200D974A7 /* IGetCheckoutsUseCase.swift */; };
 		7B03DD0A26602ABC00D974A7 /* GetCheckoutsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03DD0926602ABC00D974A7 /* GetCheckoutsUseCase.swift */; };
 		7B06C7172666C6E9001E5762 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06C7162666C6E9001E5762 /* UIView+Utils.swift */; };
+		7B0BC80F267BE56D003E3130 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0BC80E267BE56D003E3130 /* ListViewController.swift */; };
+		7B0BC814267BE57A003E3130 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0BC813267BE57A003E3130 /* ListView.swift */; };
+		7B0BC819267BE5AC003E3130 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0BC818267BE5AC003E3130 /* ListHeaderView.swift */; };
+		7B0BC821267BE68D003E3130 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0BC820267BE68D003E3130 /* ItemTableViewCell.swift */; };
 		7B134949266685110057D4DD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B134948266685110057D4DD /* ListTableViewCell.swift */; };
 		7B13495426668A190057D4DD /* IHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13495326668A180057D4DD /* IHomeViewModel.swift */; };
 		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
@@ -68,6 +72,7 @@
 		7BB1BADF25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BADE25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift */; };
 		7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAE925E0024F007FA08B /* IEditItemOnCartUseCase.swift */; };
 		7BB1BAEF25E0028C007FA08B /* ICheckoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAEE25E0028C007FA08B /* ICheckoutUseCase.swift */; };
+		7BB3619D267D169900E38494 /* ItemPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB3619C267D169900E38494 /* ItemPriceView.swift */; };
 		7BCD9D872630966C001E7354 /* ItemPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D862630966C001E7354 /* ItemPrice.swift */; };
 		7BCD9D8C263096AC001E7354 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D8B263096AC001E7354 /* Location.swift */; };
 		7BCD9D9226309931001E7354 /* IEditListNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D9126309931001E7354 /* IEditListNameUseCase.swift */; };
@@ -135,6 +140,10 @@
 		7B03DD0426602A6200D974A7 /* IGetCheckoutsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetCheckoutsUseCase.swift; sourceTree = "<group>"; };
 		7B03DD0926602ABC00D974A7 /* GetCheckoutsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCheckoutsUseCase.swift; sourceTree = "<group>"; };
 		7B06C7162666C6E9001E5762 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		7B0BC80E267BE56D003E3130 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		7B0BC813267BE57A003E3130 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		7B0BC818267BE5AC003E3130 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
+		7B0BC820267BE68D003E3130 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		7B134948266685110057D4DD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		7B13495326668A180057D4DD /* IHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHomeViewModel.swift; sourceTree = "<group>"; };
 		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
@@ -191,6 +200,7 @@
 		7BB1BADE25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoveItemFromCartUseCase.swift; sourceTree = "<group>"; };
 		7BB1BAE925E0024F007FA08B /* IEditItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditItemOnCartUseCase.swift; sourceTree = "<group>"; };
 		7BB1BAEE25E0028C007FA08B /* ICheckoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICheckoutUseCase.swift; sourceTree = "<group>"; };
+		7BB3619C267D169900E38494 /* ItemPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPriceView.swift; sourceTree = "<group>"; };
 		7BCD9D862630966C001E7354 /* ItemPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPrice.swift; sourceTree = "<group>"; };
 		7BCD9D8B263096AC001E7354 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7BCD9D9126309931001E7354 /* IEditListNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditListNameUseCase.swift; sourceTree = "<group>"; };
@@ -311,11 +321,46 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		7B134947266684DE0057D4DD /* List */ = {
+		7B0BC805267BE53F003E3130 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7B0BC80E267BE56D003E3130 /* ListViewController.swift */,
+				7B0BC813267BE57A003E3130 /* ListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		7B0BC81D267BE65B003E3130 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				7B134948266685110057D4DD /* ListTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		7B0BC81E267BE670003E3130 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				7B0BC81F267BE676003E3130 /* TableViewCell */,
+				7BB3619C267D169900E38494 /* ItemPriceView.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		7B0BC81F267BE676003E3130 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B0BC820267BE68D003E3130 /* ItemTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		7B134947266684DE0057D4DD /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7B0BC81D267BE65B003E3130 /* TableViewCell */,
 				7BD5DE9F2673B30700B48921 /* ListItemView.swift */,
+				7B0BC818267BE5AC003E3130 /* ListHeaderView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -555,6 +600,7 @@
 		7BD222DF2645B3E0006938BD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7B0BC805267BE53F003E3130 /* List */,
 				7BD222E12645B3FB006938BD /* Home */,
 			);
 			path = Scenes;
@@ -592,6 +638,7 @@
 		7BD223052645BB81006938BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7B0BC81E267BE670003E3130 /* Item */,
 				7B134947266684DE0057D4DD /* List */,
 				7BD223062645BB8D006938BD /* CustomTabBarView.swift */,
 			);
@@ -914,6 +961,7 @@
 				7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */,
 				7BCF53962644CD7100794EE2 /* CoreDataStack.swift in Sources */,
 				7BD9548226569EDF00ED2EF2 /* IItemRepository.swift in Sources */,
+				7B0BC821267BE68D003E3130 /* ItemTableViewCell.swift in Sources */,
 				7B13495426668A190057D4DD /* IHomeViewModel.swift in Sources */,
 				7BB1BAC825DFFA44007FA08B /* IGetItemUseCase.swift in Sources */,
 				7B134949266685110057D4DD /* ListTableViewCell.swift in Sources */,
@@ -922,6 +970,7 @@
 				7B915C1026583FA40016BEAB /* ItemOnListRepository.swift in Sources */,
 				7BCD9DA626309CCB001E7354 /* Cart.swift in Sources */,
 				7BCD9D872630966C001E7354 /* ItemPrice.swift in Sources */,
+				7B0BC814267BE57A003E3130 /* ListView.swift in Sources */,
 				7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */,
 				7BE140BE264036C900967853 /* ListRepository.swift in Sources */,
 				7B898440265E8A9D008D7AB2 /* IItemOnListRepository.swift in Sources */,
@@ -939,6 +988,7 @@
 				7B794AEF2632286A009BA004 /* CreateListUseCase.swift in Sources */,
 				7B915BEE265835600016BEAB /* DeleteListUseCase.swift in Sources */,
 				7B03DCD2266018D400D974A7 /* CheckoutUseCase.swift in Sources */,
+				7B0BC819267BE5AC003E3130 /* ListHeaderView.swift in Sources */,
 				7BD223012645B68E006938BD /* HomeViewModel.swift in Sources */,
 				7BD222E32645B40D006938BD /* HomeViewController.swift in Sources */,
 				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
@@ -958,6 +1008,7 @@
 				7BD222FC2645B600006938BD /* ViewCode.swift in Sources */,
 				7BB1BAD025E00070007FA08B /* ISaveListAsTemplateUseCase.swift in Sources */,
 				7BB1BABE25DFF929007FA08B /* IDeleteListUseCase.swift in Sources */,
+				7BB3619D267D169900E38494 /* ItemPriceView.swift in Sources */,
 				7BB1BADF25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift in Sources */,
 				7BD5DEAA2673BBF900B48921 /* ShadowedView.swift in Sources */,
 				7BB1BA1525DFEECC007FA08B /* SceneDelegate.swift in Sources */,
@@ -965,6 +1016,7 @@
 				7B03DD0A26602ABC00D974A7 /* GetCheckoutsUseCase.swift in Sources */,
 				7BFF1EE5265C32F20004F766 /* CreateItemUseCase.swift in Sources */,
 				7B81E05D266008550049B7DF /* SaveListAsTemplateUseCase.swift in Sources */,
+				7B0BC80F267BE56D003E3130 /* ListViewController.swift in Sources */,
 				7B82098E26310A7300003819 /* RemoveItemFromCartUseCase.swift in Sources */,
 				7BE8CE492645884B0090955D /* ItemOnList+CDItemOnList.swift in Sources */,
 				7BCD9D9226309931001E7354 /* IEditListNameUseCase.swift in Sources */,
