@@ -73,6 +73,7 @@
 		7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAE925E0024F007FA08B /* IEditItemOnCartUseCase.swift */; };
 		7BB1BAEF25E0028C007FA08B /* ICheckoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAEE25E0028C007FA08B /* ICheckoutUseCase.swift */; };
 		7BB3619D267D169900E38494 /* ItemPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB3619C267D169900E38494 /* ItemPriceView.swift */; };
+		7BB361A2267D1E2000E38494 /* BulletPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB361A1267D1E2000E38494 /* BulletPointView.swift */; };
 		7BCD9D872630966C001E7354 /* ItemPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D862630966C001E7354 /* ItemPrice.swift */; };
 		7BCD9D8C263096AC001E7354 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D8B263096AC001E7354 /* Location.swift */; };
 		7BCD9D9226309931001E7354 /* IEditListNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D9126309931001E7354 /* IEditListNameUseCase.swift */; };
@@ -201,6 +202,7 @@
 		7BB1BAE925E0024F007FA08B /* IEditItemOnCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditItemOnCartUseCase.swift; sourceTree = "<group>"; };
 		7BB1BAEE25E0028C007FA08B /* ICheckoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICheckoutUseCase.swift; sourceTree = "<group>"; };
 		7BB3619C267D169900E38494 /* ItemPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPriceView.swift; sourceTree = "<group>"; };
+		7BB361A1267D1E2000E38494 /* BulletPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletPointView.swift; sourceTree = "<group>"; };
 		7BCD9D862630966C001E7354 /* ItemPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPrice.swift; sourceTree = "<group>"; };
 		7BCD9D8B263096AC001E7354 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7BCD9D9126309931001E7354 /* IEditListNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditListNameUseCase.swift; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 				7B0BC81E267BE670003E3130 /* Item */,
 				7B134947266684DE0057D4DD /* List */,
 				7BD223062645BB8D006938BD /* CustomTabBarView.swift */,
+				7BB361A1267D1E2000E38494 /* BulletPointView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				7BD223072645BB8D006938BD /* CustomTabBarView.swift in Sources */,
 				7B95C5CD265D831100778B03 /* GetListUseCase.swift in Sources */,
 				7B794AEF2632286A009BA004 /* CreateListUseCase.swift in Sources */,
+				7BB361A2267D1E2000E38494 /* BulletPointView.swift in Sources */,
 				7B915BEE265835600016BEAB /* DeleteListUseCase.swift in Sources */,
 				7B03DCD2266018D400D974A7 /* CheckoutUseCase.swift in Sources */,
 				7B0BC819267BE5AC003E3130 /* ListHeaderView.swift in Sources */,
