@@ -29,8 +29,8 @@ class GetListUseCaseTest: XCTestCase {
         
         useCase.execute(request: .init(uuid: list.uuid))
             .then { response in
-                XCTAssertTrue(response.list.uuid == list.uuid)
-                XCTAssertTrue(response.list.name == list.name)
+                XCTAssertTrue(response.lists[0].uuid == list.uuid)
+                XCTAssertTrue(response.lists[0].name == list.name)
                 
                 expectation.fulfill()
             }
