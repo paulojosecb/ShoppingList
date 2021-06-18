@@ -13,7 +13,15 @@ class ItemPriceView: UIView {
         let quantity: Int
     }
     
-    let viewModel: ViewModel
+    var viewModel: ViewModel? {
+        didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
+            
+            unitLabel.text = "\(viewModel.quantity)"
+        }
+    }
     
     lazy var unitLabel: UILabel = {
         let label = UILabel()
@@ -34,6 +42,11 @@ class ItemPriceView: UIView {
     init(viewModel: ItemPriceView.ViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
+        self.setupView()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.setupView()
     }
     
