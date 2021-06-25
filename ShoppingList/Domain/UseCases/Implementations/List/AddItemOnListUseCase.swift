@@ -29,12 +29,12 @@ class AddItemOnListUseCase: IAddItemOnListUseCase {
             
             var item: Item? = nil
             
-            self.itemRepository.fetch(uuid: request.itemUUID).then { (it: Item) -> Promise<List> in
+            self.itemRepository.fetch(uuid: request.item.uuid).then { (it: Item) -> Promise<List> in
                 item = it
                 return self.listRepository.fetch(uuid: request.listUUID)
             }.then { (list: List) -> Promise<List> in
                 
-                let itemOnList = ItemOnList(item: request.itemUUID,
+                let itemOnList = ItemOnList(item: request.item,
                                             on: request.listUUID,
                                             quantity: request.quantity,
                                             unitPrice: item?.prices.last,
