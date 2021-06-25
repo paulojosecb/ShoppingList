@@ -9,10 +9,10 @@ import UIKit
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let list: List
+    let viewModel: IListViewModel
     
-    init(list: List) {
-        self.list = list
+    init(viewModel: IListViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,11 +27,22 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.viewModel.list.getItemsFromList().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifier, for: indexPath) as? ItemTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let itemOnList = self.viewModel.itensOnList[indexPath.row]
+        
+        cell.viewModel = .init(itemName: itemOnList.item.name,
+                               itemDescription: "Marca",
+                               quantity: itemOnList.quantity,
+                               price: (itemOnList.unitPrice?.price ?? 0.0) * Double(itemOnList.quantity))
+        
+        return cell
     }
 
 }
