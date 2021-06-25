@@ -74,6 +74,8 @@
 		7BB1BAEF25E0028C007FA08B /* ICheckoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BAEE25E0028C007FA08B /* ICheckoutUseCase.swift */; };
 		7BB3619D267D169900E38494 /* ItemPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB3619C267D169900E38494 /* ItemPriceView.swift */; };
 		7BB361A2267D1E2000E38494 /* BulletPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB361A1267D1E2000E38494 /* BulletPointView.swift */; };
+		7BB361A7267D241D00E38494 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB361A6267D241D00E38494 /* ListViewModel.swift */; };
+		7BB361AC267D242900E38494 /* IListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB361AB267D242900E38494 /* IListViewModel.swift */; };
 		7BCD9D872630966C001E7354 /* ItemPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D862630966C001E7354 /* ItemPrice.swift */; };
 		7BCD9D8C263096AC001E7354 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D8B263096AC001E7354 /* Location.swift */; };
 		7BCD9D9226309931001E7354 /* IEditListNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD9D9126309931001E7354 /* IEditListNameUseCase.swift */; };
@@ -203,6 +205,8 @@
 		7BB1BAEE25E0028C007FA08B /* ICheckoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICheckoutUseCase.swift; sourceTree = "<group>"; };
 		7BB3619C267D169900E38494 /* ItemPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPriceView.swift; sourceTree = "<group>"; };
 		7BB361A1267D1E2000E38494 /* BulletPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletPointView.swift; sourceTree = "<group>"; };
+		7BB361A6267D241D00E38494 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		7BB361AB267D242900E38494 /* IListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IListViewModel.swift; sourceTree = "<group>"; };
 		7BCD9D862630966C001E7354 /* ItemPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPrice.swift; sourceTree = "<group>"; };
 		7BCD9D8B263096AC001E7354 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7BCD9D9126309931001E7354 /* IEditListNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditListNameUseCase.swift; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 			children = (
 				7B0BC80E267BE56D003E3130 /* ListViewController.swift */,
 				7B0BC813267BE57A003E3130 /* ListView.swift */,
+				7BB361A6267D241D00E38494 /* ListViewModel.swift */,
+				7BB361AB267D242900E38494 /* IListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -968,6 +974,7 @@
 				7B13495426668A190057D4DD /* IHomeViewModel.swift in Sources */,
 				7BB1BAC825DFFA44007FA08B /* IGetItemUseCase.swift in Sources */,
 				7B134949266685110057D4DD /* ListTableViewCell.swift in Sources */,
+				7BB361AC267D242900E38494 /* IListViewModel.swift in Sources */,
 				7BB1BA6525DFF356007FA08B /* ICreateListUseCase.swift in Sources */,
 				7BB1BAAB25DFF7E3007FA08B /* IRemoveItemfromListUseCase.swift in Sources */,
 				7B915C1026583FA40016BEAB /* ItemOnListRepository.swift in Sources */,
@@ -997,6 +1004,7 @@
 				7BD222E32645B40D006938BD /* HomeViewController.swift in Sources */,
 				7BB1BA5225DFEF81007FA08B /* Item.swift in Sources */,
 				7BD5DEA02673B30700B48921 /* ListItemView.swift in Sources */,
+				7BB361A7267D241D00E38494 /* ListViewModel.swift in Sources */,
 				7BB1BAEA25E0024F007FA08B /* IEditItemOnCartUseCase.swift in Sources */,
 				7BFF1EFA265C35AC0004F766 /* GetItemUseCase.swift in Sources */,
 				7B03DCCD2660160300D974A7 /* CheckoutRepository.swift in Sources */,

@@ -9,6 +9,9 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
     
+    static let identifier = String(describing: ItemTableViewCell.self)
+    static let height: CGFloat = 80
+    
     struct ViewModel {
         let itemName: String
         let itemDescription: String
@@ -27,10 +30,7 @@ class ItemTableViewCell: UITableViewCell {
             priceLabel.text = "R$\(viewModel.price)"
         }
     }
-    
-    static var identifier = String(describing: ListTableViewCell.self)
-    static var height: CGFloat = 78
-    
+        
     lazy var bulletPointView: BulletPointView = {
         let view = BulletPointView()
         view.translatesAutoresizingMaskIntoConstraints = false
