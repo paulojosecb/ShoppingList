@@ -11,7 +11,7 @@ import CoreData
 extension ItemOnList {
     
     static func make(from cdItemOnList: CDItemOnList) -> ItemOnList {
-        let itemOnList = ItemOnList(item: cdItemOnList.itemUUID!,
+        let itemOnList = ItemOnList(item: Item.make(from: cdItemOnList.item!),
                                     on: cdItemOnList.listUUID!,
                                     quantity: Int(cdItemOnList.quantity),
                                     unitPrice: cdItemOnList.unitPrice as? ItemPrice,
@@ -20,9 +20,9 @@ extension ItemOnList {
         return itemOnList
     }
     
-    static func make(from itemOnList: ItemOnList, cdItemOnList: CDItemOnList) -> CDItemOnList {
+    static func make(from itemOnList: ItemOnList, cdItemOnList: CDItemOnList, cdItem: CDItem) -> CDItemOnList {
         
-        cdItemOnList.itemUUID = itemOnList.itemUUID
+        cdItemOnList.item = Item.make(from: itemOnList.item, cdItem: cdItem)
         cdItemOnList.listUUID = itemOnList.listUUID
         cdItemOnList.uuid = itemOnList.uuid
         cdItemOnList.quantity = Int16(itemOnList.quantity)
