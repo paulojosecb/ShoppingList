@@ -47,13 +47,21 @@ class ItemOnListRepository: ICRUDRepository {
     
     func create<T>(_ item: T) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
+            
+            guard let item = item as? ItemOnList else {
+                reject(ICRUDRepositoryError.errorOnOperaration)
+                return
+            }
+            
             let cdItemOnList = CDItemOnList(context: self.coreDataStack.mainContext)
             
-            let _ = ItemOnList.make(from: item as! ItemOnList, cdItemOnList: cdItemOnList)
+            let cdItem: CDItem = self.coreDataStack.fetch(by: item.item.uuid)!
+            
+            let _ = ItemOnList.make(from: item, cdItemOnList: cdItemOnList, cdItem: cdItem)
             
             do {
                 try self.coreDataStack.mainContext.save()
-                fulfill(item)
+                fulfill(item as! T)
             } catch _ {
                 reject(ICRUDRepositoryError.errorOnOperaration)
             }
