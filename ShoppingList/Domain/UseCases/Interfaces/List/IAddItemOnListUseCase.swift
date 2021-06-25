@@ -10,7 +10,7 @@ import Promises
 
 struct IAddItemOnListUseCaseRequest {
     let listUUID: String
-    let itemUUID: String
+    let item: Item
     let quantity: Int
 }
 
