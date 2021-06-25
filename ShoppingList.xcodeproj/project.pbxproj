@@ -24,6 +24,7 @@
 		7B0BC821267BE68D003E3130 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0BC820267BE68D003E3130 /* ItemTableViewCell.swift */; };
 		7B134949266685110057D4DD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B134948266685110057D4DD /* ListTableViewCell.swift */; };
 		7B13495426668A190057D4DD /* IHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13495326668A180057D4DD /* IHomeViewModel.swift */; };
+		7B2398F226861BE000FD7776 /* FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2398F126861BE000FD7776 /* FloatButton.swift */; };
 		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
 		7B77DD36265C2628000A4A76 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD35265C2628000A4A76 /* MockItemRepository.swift */; };
 		7B77DD3B265C29D9000A4A76 /* MockItemOnListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */; };
@@ -149,6 +150,7 @@
 		7B0BC820267BE68D003E3130 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		7B134948266685110057D4DD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		7B13495326668A180057D4DD /* IHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHomeViewModel.swift; sourceTree = "<group>"; };
+		7B2398F126861BE000FD7776 /* FloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButton.swift; sourceTree = "<group>"; };
 		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B77DD35265C2628000A4A76 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
 		7B77DD3A265C29D9000A4A76 /* MockItemOnListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemOnListRepository.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				7B0BC81E267BE670003E3130 /* Item */,
 				7B134947266684DE0057D4DD /* List */,
 				7BD223062645BB8D006938BD /* CustomTabBarView.swift */,
+				7B2398F126861BE000FD7776 /* FloatButton.swift */,
 				7BB361A1267D1E2000E38494 /* BulletPointView.swift */,
 			);
 			path = Components;
@@ -981,6 +984,7 @@
 				7BCD9DA626309CCB001E7354 /* Cart.swift in Sources */,
 				7BCD9D872630966C001E7354 /* ItemPrice.swift in Sources */,
 				7B0BC814267BE57A003E3130 /* ListView.swift in Sources */,
+				7B2398F226861BE000FD7776 /* FloatButton.swift in Sources */,
 				7BB1BA5C25DFF08D007FA08B /* ItemOnList.swift in Sources */,
 				7BE140BE264036C900967853 /* ListRepository.swift in Sources */,
 				7B898440265E8A9D008D7AB2 /* IItemOnListRepository.swift in Sources */,

@@ -24,7 +24,13 @@ class ListView: UIView {
         tableView.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         return tableView
     }()
-
+    
+    lazy var floatButton: FloatButton = {
+        let button = FloatButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     init(tableViewDelegate: UITableViewDelegate, tableViewDataSource: UITableViewDataSource) {
         self.tableViewDataSource = tableViewDataSource
         self.tableViewDelegate = tableViewDelegate
