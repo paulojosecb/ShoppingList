@@ -10,13 +10,13 @@ import Foundation
 class ItemOnList: Fetchable {
     let uuid: String
     var quantity: Int
-    let itemUUID: String
+    let item: Item
     let listUUID: String
     let unitPrice: ItemPrice?
 
-    init(item: String, on list: String, quantity: Int, unitPrice: ItemPrice?, uuid: String?) {
+    init(item: Item, on list: String, quantity: Int, unitPrice: ItemPrice?, uuid: String?) {
         self.uuid = uuid ?? UUID().uuidString
-        self.itemUUID = item
+        self.item = item
         self.listUUID = list
         self.quantity = quantity
         self.unitPrice = unitPrice
