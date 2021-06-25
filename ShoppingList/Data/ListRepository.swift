@@ -79,7 +79,8 @@ class ListRepository: ICRUDRepository {
                 
                 _ = list.getItemsFromList().map { itemOnList -> CDItemOnList in
                     let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
-                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList)
+                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid)!
+                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList, cdItem: cdItem)
                 }
  
                 let cdCart = CDCart(context: self.managedObjectContext)
@@ -89,13 +90,14 @@ class ListRepository: ICRUDRepository {
             
                 _ = list.getItemsFromCart().map { itemOnList -> CDItemOnList in
                     let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
-                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList)
+                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid)!
+                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList, cdItem: cdItem)
                 }
                 
                 try self.managedObjectContext.save()
                 
                 fulfill(list as! T)
-            } catch let error {
+            } catch _ {
                 reject(ICRUDRepositoryError.errorOnOperaration)
             }
             
