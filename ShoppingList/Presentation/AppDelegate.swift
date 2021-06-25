@@ -10,6 +10,8 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let coreDataStack = CoreDataStack()
 
     var window: UIWindow?
 
