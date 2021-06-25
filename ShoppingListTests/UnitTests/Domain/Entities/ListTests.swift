@@ -30,17 +30,17 @@ class ListTests: XCTestCase {
     func testAddItemToList() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
         
         try! list.addItemToList(itemOnList)
         
-        XCTAssertTrue(list.getItemsFromList().contains { $0.itemUUID == item.uuid })
+        XCTAssertTrue(list.getItemsFromList().contains { $0.item.uuid == item.uuid })
     }
     
     func testAddItemToListWithInvalidListUUID() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: UUID().uuidString, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item, on: UUID().uuidString, quantity: 1, unitPrice: nil, uuid: nil)
         
         do {
             try list.addItemToList(itemOnList)
@@ -62,7 +62,7 @@ class ListTests: XCTestCase {
     func testAddItemAlreadyOnList() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
         
         try! list.addItemToList(itemOnList)
         
@@ -86,7 +86,7 @@ class ListTests: XCTestCase {
     func testAddItemAlreadyOnCart() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
         
         try! list.addItemToList(itemOnList)
         try! list.moveItemToCart(itemUUID: item.uuid)
@@ -111,7 +111,7 @@ class ListTests: XCTestCase {
     func testMoveItemToCart() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
         
         try! list.addItemToList(itemOnList)
         
@@ -122,13 +122,13 @@ class ListTests: XCTestCase {
         }
         
         XCTAssertTrue(!list.getItemsFromCart().isEmpty)
-        XCTAssertTrue(list.getItemsFromCart().contains { $0.itemUUID == item.uuid })
+        XCTAssertTrue(list.getItemsFromCart().contains { $0.item.uuid == item.uuid })
     }
     
     func testMoveItemToCartThatDoesExistOnList() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        _ = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        _ = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
                 
         do {
             try list.moveItemToCart(itemUUID: item.uuid)
@@ -145,7 +145,7 @@ class ListTests: XCTestCase {
     func testMoveItemToCartThatIsAlreadyOnCart() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
                 
         try! list.addItemToList(itemOnList)
         try! list.moveItemToCart(itemUUID: item.uuid)
@@ -165,7 +165,7 @@ class ListTests: XCTestCase {
     func testMoveItemOutOfCart() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        let itemOnList = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
                 
         try! list.addItemToList(itemOnList)
         try! list.moveItemToCart(itemUUID: item.uuid)
@@ -176,14 +176,14 @@ class ListTests: XCTestCase {
             XCTFail()
         }
         
-        XCTAssertTrue(!list.getItemsFromCart().contains { $0.itemUUID == item.uuid })
-        XCTAssertTrue(list.getItemsFromList().contains { $0.itemUUID == item.uuid })
+        XCTAssertTrue(!list.getItemsFromCart().contains { $0.item.uuid == item.uuid })
+        XCTAssertTrue(list.getItemsFromList().contains { $0.item.uuid == item.uuid })
     }
     
     func testMoveItemOutOfCartThatIsNotOnCart() {
         let item = Item(name: "My Item", initialPrice: nil)
         let list = List("My list")
-        _ = ItemOnList(item: item.uuid, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        _ = ItemOnList(item: item, on: list.uuid, quantity: 1, unitPrice: nil, uuid: nil)
                         
         do {
             try list.moveItemOutOfCart(itemUUID: item.uuid)

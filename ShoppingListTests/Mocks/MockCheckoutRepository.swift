@@ -10,11 +10,11 @@ import Promises
 @testable import ShoppingList
 
 class MockCheckoutRepository: ICRUDRepository {
-
+    
     var errorMock = false
     var checkouts: [Checkout] = [
         Checkout(listUUID: "myList",
-                 items: [ItemOnList(item: "item1",
+                 items: [ItemOnList(item: Item(name: "item1", isBulk: true, prices: [], uuid: "item1"),
                                     on: "myList",
                                     quantity: 1,
                                     unitPrice: nil,
@@ -23,7 +23,7 @@ class MockCheckoutRepository: ICRUDRepository {
                  date: Date(),
                  location: nil),
         Checkout(listUUID: "myList2",
-                 items: [ItemOnList(item: "item1",
+                 items: [ItemOnList(item: Item(name: "item1", isBulk: true, prices: [], uuid: "item1"),
                                     on: "myList",
                                     quantity: 1,
                                     unitPrice: nil,
@@ -32,7 +32,7 @@ class MockCheckoutRepository: ICRUDRepository {
                  date: Date(),
                  location: nil),
         Checkout(listUUID: "myList3",
-                 items: [ItemOnList(item: "item1",
+                 items: [ItemOnList(item: Item(name: "item1", isBulk: true, prices: [], uuid: "item1"),
                                     on: "myList",
                                     quantity: 1,
                                     unitPrice: nil,

@@ -90,7 +90,7 @@ class AddItemOnCartUseCaseTest: XCTestCase {
     func testAddExistingItemOnCart() {
         let expectation = XCTestExpectation(description: "List with name")
         let useCase = AddItemOnCartUseCase(repository: mockRepository!)
-        let itemOnList = ItemOnList(item: item!.uuid, on: list!.uuid, quantity: 1, unitPrice: nil, uuid: nil)
+        let itemOnList = ItemOnList(item: item!, on: list!.uuid, quantity: 1, unitPrice: nil, uuid: nil)
         
         
         try! list?.addItemToList(itemOnList)
@@ -101,7 +101,7 @@ class AddItemOnCartUseCaseTest: XCTestCase {
             
             useCase.execute(request: request).then { (response: IAddItemOnCartUseCaseResponse) in
                 
-                let cartContainsItem = response.list.getItemsFromCart().contains { $0.itemUUID == self.item?.uuid }
+                let cartContainsItem = response.list.getItemsFromCart().contains { $0.item.uuid == self.item?.uuid }
                 
                 XCTAssertTrue(cartContainsItem)
                 expectation.fulfill()

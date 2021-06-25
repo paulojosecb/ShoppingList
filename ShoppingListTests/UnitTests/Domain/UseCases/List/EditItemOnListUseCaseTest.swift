@@ -20,9 +20,11 @@ class EditItemOnListUseCaseTest: XCTestCase {
     override func setUp() {
         mockListRepository = MockListRepository()
         mockItemOnListRepository = MockItemOnListRepository()
+        
+        
                 
         mockItemOnListRepository?.items = [
-            ItemOnList(item: "myItemID",
+            ItemOnList(item: Item(name: "item1", isBulk: true, prices: [], uuid: "myItemID"),
                        on: "myListID",
                        quantity: 1, unitPrice: nil,
                                         uuid: "myItemOnListID")

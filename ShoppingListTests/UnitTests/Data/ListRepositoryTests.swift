@@ -76,11 +76,11 @@ class ListRepositoryTests: XCTestCase {
         let item = Item(name: "My Item", initialPrice: nil)
         let itemTwo = Item(name: "My Item Two", initialPrice: nil)
         
-        let itemOnList = ItemOnList(item: item.uuid,
+        let itemOnList = ItemOnList(item: item,
                                     on: list.uuid,
                                     quantity: 1,
                                     unitPrice: nil, uuid: nil)
-        let itemOnListTwo = ItemOnList(item: itemTwo.uuid,
+        let itemOnListTwo = ItemOnList(item: itemTwo,
                                        on: list.uuid,
                                        quantity: 1,
                                        unitPrice: nil,
@@ -99,10 +99,10 @@ class ListRepositoryTests: XCTestCase {
             XCTAssertTrue(fetchedList.getItemsFromList().count == 1)
             XCTAssertTrue(fetchedList.getItemsFromCart().count == 1)
             
-            XCTAssertTrue(fetchedList.getItemsFromList().first?.itemUUID == itemOnList.itemUUID)
+                XCTAssertTrue(fetchedList.getItemsFromList().first?.item.uuid == itemOnList.item.uuid)
             XCTAssertTrue(fetchedList.getItemsFromList().first?.listUUID == itemOnList.listUUID)
 
-            XCTAssertTrue(fetchedList.getItemsFromCart().first?.itemUUID == itemOnListTwo.itemUUID)
+                XCTAssertTrue(fetchedList.getItemsFromCart().first?.item.uuid == itemOnListTwo.item.uuid)
             XCTAssertTrue(fetchedList.getItemsFromList().first?.listUUID == itemOnListTwo.listUUID)
             
             XCTAssertTrue(fetchedList.uuid == list.uuid)

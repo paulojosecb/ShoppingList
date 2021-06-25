@@ -12,10 +12,11 @@ import Promises
 class RemoveItemFromListUseCaseTest: XCTestCase {
     
     var repository: MockListRepository? = nil
+    let item = Item(name: "ItemUUID", initialPrice: nil, uuid: "ItemUUID")
     
     override func setUp() {
         repository = MockListRepository()
-        try! repository?.list.first?.addItemToList(ItemOnList(item: "itemUUID",
+        try! repository?.list.first?.addItemToList(ItemOnList(item: item,
                                                          on: repository!.list.first!.uuid,
                                                          quantity: 1,
                                                          unitPrice: nil,
@@ -31,9 +32,9 @@ class RemoveItemFromListUseCaseTest: XCTestCase {
         let useCase = RemoveItemFromListUseCase(listRepository: repository!)
         
         useCase.execute(request: .init(listUUID: repository!.list.first!.uuid,
-                                       itemUUID: "itemUUID"))
+                                       itemUUID: "ItemUUID"))
             .then { response in
-                let containsItem = response.list.getItemsFromList().contains { $0.itemUUID == "itemUUID"}
+                let containsItem = response.list.getItemsFromList().contains { $0.item.uuid == "itemUUID"}
                 XCTAssertTrue(!containsItem)
                 expectaction.fulfill()
             }

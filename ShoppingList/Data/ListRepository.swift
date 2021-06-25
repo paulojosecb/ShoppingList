@@ -79,7 +79,7 @@ class ListRepository: ICRUDRepository {
                 
                 _ = list.getItemsFromList().map { itemOnList -> CDItemOnList in
                     let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
-                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid)!
+                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid) ?? CDItem(context: self.coreDataStack.mainContext)
                     return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList, cdItem: cdItem)
                 }
  
@@ -90,7 +90,7 @@ class ListRepository: ICRUDRepository {
             
                 _ = list.getItemsFromCart().map { itemOnList -> CDItemOnList in
                     let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
-                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid)!
+                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid) ?? CDItem(context: self.coreDataStack.mainContext)
                     return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList, cdItem: cdItem)
                 }
                 

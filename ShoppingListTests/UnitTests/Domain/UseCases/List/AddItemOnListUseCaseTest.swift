@@ -95,10 +95,10 @@ class AddItemOnListUseCaseTest: XCTestCase {
         let item = mockItemRepository!.items.first!
         
         useCase.execute(request: .init(listUUID: list.uuid,
-                                       itemUUID: item.uuid,
+                                       item: item,
                                        quantity: 1))
         .then { (response) in
-            let listContaisItem = response.list.getItemsFromList().contains { $0.itemUUID == item.uuid }
+            let listContaisItem = response.list.getItemsFromList().contains { $0.item.uuid == item.uuid }
             
             XCTAssertTrue(response.list.getItemsFromList().count == 1)
             XCTAssertTrue(listContaisItem)
@@ -119,10 +119,10 @@ class AddItemOnListUseCaseTest: XCTestCase {
                                            itemRepository: mockItemRepository!)
         
         let list =  mockListRepository!.list.first!
-        let item = mockItemRepository!.items.first!
+        _ = mockItemRepository!.items.first!
         
         useCase.execute(request: .init(listUUID: list.uuid,
-                                       itemUUID: UUID().uuidString,
+                                       item: Item(name: "", initialPrice: nil),
                                        quantity: 1))
         .then { (response) in
             XCTFail()
@@ -150,11 +150,11 @@ class AddItemOnListUseCaseTest: XCTestCase {
     
         
         useCase.execute(request: .init(listUUID: list.uuid,
-                                       itemUUID: item.uuid,
+                                       item: item,
                                        quantity: 1))
         .then { (response) -> Promise<IAddItemOnListUseCaseResponse> in
             return useCase.execute(request: .init(listUUID: list.uuid,
-                                                  itemUUID: item.uuid,
+                                                  item: item,
                                                   quantity: 2))
         }.then { (response) in
             XCTFail()
