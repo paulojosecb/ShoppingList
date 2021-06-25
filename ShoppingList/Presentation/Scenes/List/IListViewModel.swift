@@ -9,6 +9,6 @@ import Foundation
 
 protocol IListViewModel {
     
-    var items: [ItemOnList: Item] { get }
+//    var items: [ItemOnList: Item] { get }
     
 }
