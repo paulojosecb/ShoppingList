@@ -20,11 +20,11 @@
         <attribute name="uuid" attributeType="String"/>
     </entity>
     <entity name="CDItemOnList" representedClassName="CDItemOnList" syncable="YES" codeGenerationType="class">
-        <attribute name="itemUUID" attributeType="String"/>
         <attribute name="listUUID" attributeType="String"/>
         <attribute name="quantity" attributeType="Integer 16" minValueString="1" defaultValueString="1" usesScalarValueType="YES"/>
         <attribute name="unitPrice" optional="YES" attributeType="Transformable"/>
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
+        <relationship name="item" maxCount="1" deletionRule="Cascade" destinationEntity="CDItem"/>
     </entity>
     <entity name="CDItemPrice" representedClassName="CDItemPrice" syncable="YES" codeGenerationType="class">
         <attribute name="itemUUID" attributeType="String"/>
@@ -46,11 +46,11 @@
     </entity>
     <elements>
         <element name="CDCart" positionX="-54" positionY="9" width="128" height="88"/>
+        <element name="CDCheckout" positionX="-27" positionY="54" width="128" height="133"/>
         <element name="CDItem" positionX="-27" positionY="54" width="128" height="103"/>
         <element name="CDItemOnList" positionX="-36" positionY="18" width="128" height="118"/>
         <element name="CDItemPrice" positionX="-9" positionY="72" width="128" height="103"/>
         <element name="CDList" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="CDLocation" positionX="0" positionY="81" width="128" height="88"/>
-        <element name="CDCheckout" positionX="-27" positionY="54" width="128" height="133"/>
     </elements>
 </model>
