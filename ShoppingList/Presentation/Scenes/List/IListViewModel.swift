@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import Promises
 
 protocol IListViewModel {
+    var list: List { get }
+    var itensOnList: [ItemOnList] { get }
     
-//    var items: [ItemOnList: Item] { get }
-    
+    func create(item: Item) -> Promise<Item>
+    func fetch(list: List) -> Promise<List>
+    func checkout(list: List) -> Promise<Checkout>
 }
