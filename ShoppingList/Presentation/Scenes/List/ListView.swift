@@ -18,7 +18,9 @@ class ListView: UIView {
         tableView.delegate = self.tableViewDelegate
         tableView.dataSource = self.tableViewDataSource
         tableView.separatorStyle = .none
-        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
+        tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: ItemTableViewCell.identifier)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = ItemTableViewCell.height
         tableView.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         return tableView
     }()
