@@ -66,7 +66,7 @@ class List: Fetchable {
     public func addItemToList(_ item: ItemOnList) throws {
         if (item.listUUID == self.uuid) {
             
-            if (!doesListContain(itemUUID: item.itemUUID) && !doesCartContain(itemUUID: item.itemUUID)) {
+            if (!doesListContain(itemUUID: item.item.uuid) && !doesCartContain(itemUUID: item.item.uuid)) {
                 self.items.append(item)
             } else {
                 throw List.CustomError.itemAlreadyOnList
@@ -111,8 +111,8 @@ class List: Fetchable {
     }
     
     public func removeItemFromList(itemUUID: String) throws {
-        if (self.items.contains { $0.itemUUID == itemUUID}) {
-            self.items = self.items.filter { $0.itemUUID != itemUUID }
+        if (self.items.contains { $0.item.uuid == itemUUID}) {
+            self.items = self.items.filter { $0.item.uuid != itemUUID }
         } else {
             throw List.CustomError.itemNotFoundOnList
         }
@@ -127,23 +127,23 @@ class List: Fetchable {
     }
     
     private func removeItemFromCart(itemUUID: String) {
-        self.cart.items = self.cart.items.filter { $0.itemUUID != itemUUID }
+        self.cart.items = self.cart.items.filter { $0.item.uuid != itemUUID }
     }
     
     private func doesListContain(itemUUID: String) -> Bool {
-        return self.items.filter { $0.itemUUID == itemUUID }.count > 0
+        return self.items.filter { $0.item.uuid == itemUUID }.count > 0
     }
     
     private func doesCartContain(itemUUID: String) -> Bool {
-        return self.cart.items.filter { $0.itemUUID == itemUUID }.count > 0
+        return self.cart.items.filter { $0.item.uuid == itemUUID }.count > 0
     }
     
     private func getItemFromList(itemUUID: String) -> ItemOnList? {
-        return self.items.first { $0.itemUUID == itemUUID }
+        return self.items.first { $0.item.uuid == itemUUID }
     }
     
     private func getItemFromCart(itemUUID: String) -> ItemOnList? {
-        return self.cart.items.first { $0.itemUUID == itemUUID }
+        return self.cart.items.first { $0.item.uuid == itemUUID }
     }
     
 }
