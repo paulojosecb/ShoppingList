@@ -17,7 +17,9 @@ class HomeViewModel: IHomeViewModel {
     ]
     
     init() {
-        let coreDataStack = CoreDataStack()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let coreDataStack = appDelegate.coreDataStack
+        
         let repository = ListRepository(managedObjectContext: coreDataStack.mainContext, coreDataStack: coreDataStack)
         
         self.createListUseCase = CreateListUseCase(repository: repository)
