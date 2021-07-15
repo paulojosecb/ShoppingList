@@ -29,21 +29,8 @@ class ListRepository: ICRUDRepository {
                 reject(ICRUDRepositoryError.notFound)
                 return
             }
-            
-            let cdCart: CDCart? = self.coreDataStack.fetch(by: cdList.uuid!)
-            
-            let cdItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdList.items as? [String]) ?? [])
-            let cartItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdCart?.items as? [String]) ?? [])
-            
-            let itemsOnList = cdItemsOnList?.map { ItemOnList.make(from: $0)} ?? []
-            
-            let cart = Cart.make(from: cdCart!, and: cartItemsOnList ?? [])
-            
-            let list = List(uuid: cdList.uuid!,
-                            name: cdList.name!,
-                            items: itemsOnList,
-                            cart: cart,
-                            isTempl: cdList.isTemplate)
+                                
+            let list = List.make(from: cdList)
             
             fulfill(list as! T)
         }
@@ -73,26 +60,9 @@ class ListRepository: ICRUDRepository {
                 let cdList = CDList(context: self.managedObjectContext)
                 cdList.name = list.name
                 cdList.uuid = list.uuid
-                cdList.items = list.getItemsFromList().map { $0.uuid } as NSObject
-                cdList.cartUUID = list.cart.uuid
                 cdList.isTemplate = list.isTemplate
-                
-                _ = list.getItemsFromList().map { itemOnList -> CDItemOnList in
-                    let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
-                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid) ?? CDItem(context: self.coreDataStack.mainContext)
-                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList, cdItem: cdItem)
-                }
- 
-                let cdCart = CDCart(context: self.managedObjectContext)
-                cdCart.uuid = list.cart.uuid
-                cdCart.listUUID = list.uuid
-                cdCart.items = list.getItemsFromCart().map { $0.uuid } as NSObject
-            
-                _ = list.getItemsFromCart().map { itemOnList -> CDItemOnList in
-                    let cdItemOnList = CDItemOnList(context: self.managedObjectContext)
-                    let cdItem: CDItem = self.coreDataStack.fetch(by: itemOnList.item.uuid) ?? CDItem(context: self.coreDataStack.mainContext)
-                    return ItemOnList.make(from: itemOnList, cdItemOnList: cdItemOnList, cdItem: cdItem)
-                }
+                cdList.items = []
+                cdList.cart = []
                 
                 try self.managedObjectContext.save()
                 

@@ -55,9 +55,13 @@ class ItemOnListRepository: ICRUDRepository {
             
             let cdItemOnList = CDItemOnList(context: self.coreDataStack.mainContext)
             
-            let cdItem: CDItem = self.coreDataStack.fetch(by: item.item.uuid)!
+            guard let cdItem: CDItem = self.coreDataStack.fetch(by: item.item.uuid),
+                  let cdList: CDList = self.coreDataStack.fetch(by: item.listUUID) else {
+                reject(ICRUDRepositoryError.errorOnOperaration)
+                return
+            }
             
-            let _ = ItemOnList.make(from: item, cdItemOnList: cdItemOnList, cdItem: cdItem)
+            let _ = ItemOnList.make(from: item, cdItemOnList: cdItemOnList, cdItem: cdItem, cdList: cdList)
             
             do {
                 try self.coreDataStack.mainContext.save()

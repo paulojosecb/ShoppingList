@@ -10,22 +10,19 @@ import Foundation
 extension Item {
     
     static func make(from cdItem: CDItem) -> Item {
+        
+        guard let cdPrices = cdItem.prices?.array as? [CDItemPrice] else {
+            fatalError()
+        }
+        
+        let prices: [ItemPrice] = cdPrices.map { ItemPrice.make(from: $0)! }
                 
         let item = Item(name: cdItem.name ?? "",
                         isBulk: cdItem.isBulk,
-                        prices: cdItem.prices as? [ItemPrice] ?? [],
+                        prices: prices,
                         uuid: cdItem.uuid ?? "")
         
         return item
     }
-    
-    static func make(from item: Item, cdItem: CDItem) -> CDItem {
-        
-        cdItem.uuid = item.uuid
-        cdItem.isBulk = item.isBulk
-        cdItem.name = item.name
-        cdItem.prices = item.prices as NSObject
 
-        return cdItem
-    }
 }

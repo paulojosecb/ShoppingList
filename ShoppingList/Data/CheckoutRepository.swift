@@ -24,18 +24,21 @@ class CheckoutRepository: ICRUDRepository {
     
     func fetch<T>(uuid: String) -> Promise<T> where T : Fetchable {
         return Promise { fulfill, reject in
-            
-            let cdCheckout: CDCheckout? = self.coreDataStack.fetch(by: uuid)
-            
-            let cdItemsOnList = self.coreDataStack.fetchItemsOnList(by: (cdCheckout?.items as? [String]) ?? [])
-            
-            let itemsOnList = cdItemsOnList?.map { ItemOnList.make(from: $0)} ?? []
                         
-            let checkOut = Checkout(listUUID: cdCheckout!.listUUID!,
+            guard let cdCheckout: CDCheckout = self.coreDataStack.fetch(by: uuid),
+                  let items = cdCheckout.items?.array as? [CDItemOnList] else {
+                reject(ICRUDRepositoryError.errorOnOperaration)
+                return
+            }
+            
+            
+            let itemsOnList = items.map { ItemOnList.make(from: $0)}
+                        
+            let checkOut = Checkout(listUUID: cdCheckout.list!.uuid!,
                                     items: itemsOnList,
-                                    total: cdCheckout!.total,
-                                    date: cdCheckout!.date!,
-                                    location: cdCheckout!.location as? Location)
+                                    total: cdCheckout.total,
+                                    date: cdCheckout.date!,
+                                    location: Location.make(from: cdCheckout.location))
             
             fulfill(checkOut as! T)
         }
@@ -61,14 +64,31 @@ class CheckoutRepository: ICRUDRepository {
                 return
             }
             
+            guard let list: CDList = self.coreDataStack.fetch(by: checkout.uuid) else {
+                reject(ICRUDRepositoryError.errorOnOperaration)
+                return
+            }
+            
+            let cdItemsOnList: [CDItemOnList]? = self.coreDataStack.fetchItemsOnList(by: checkout.items.map {$0.uuid} )
+            
+
+
+            
             do {
                 let cdCheckOut = CDCheckout(context: self.managedObjectContext)
                 cdCheckOut.date = checkout.date
-                cdCheckOut.items = checkout.items.map { $0.uuid } as NSObject
-                cdCheckOut.listUUID = checkout.listUUID
-                cdCheckOut.location = checkout.location
+                cdCheckOut.items = NSOrderedSet(array: cdItemsOnList ?? [])
+                cdCheckOut.list = list
                 cdCheckOut.total = checkout.total
                 cdCheckOut.uuid = checkout.uuid
+                
+                if (checkout.location != nil) {
+                    let cdLocation = CDLocation(context: self.managedObjectContext)
+                    cdLocation.latitude = checkout.location!.latitude
+                    cdLocation.longitude = checkout.location!.longitude
+                    
+                    cdCheckOut.location = cdLocation
+                }
 
                 try self.managedObjectContext.save()
                 
@@ -92,12 +112,25 @@ class CheckoutRepository: ICRUDRepository {
                 return
             }
             
+            guard let cdList: CDList = self.coreDataStack.fetch(by: checkout.listUUID) else {
+                reject(ICRUDRepositoryError.errorOnOperaration)
+                return
+            }
+            
+            let itemsOnList = self.coreDataStack.fetchItemsOnList(by: checkout.items.map { $0.uuid })
+
+            
             cdCheckOut.date = checkout.date
-            cdCheckOut.items = checkout.items.map { $0.uuid } as NSObject
-            cdCheckOut.listUUID = checkout.listUUID
-            cdCheckOut.location = checkout.location
+            cdCheckOut.items = NSOrderedSet(array: itemsOnList ?? [])
+            cdCheckOut.list = cdList
             cdCheckOut.total = checkout.total
             cdCheckOut.uuid = checkout.uuid
+            
+            if checkout.location != nil {
+                cdCheckOut.location = CDLocation(context: self.managedObjectContext)
+                cdCheckOut.location?.latitude = checkout.location!.latitude
+                cdCheckOut.location?.longitude = checkout.location!.longitude
+            }
                         
             fulfill(checkout as! T)
         }

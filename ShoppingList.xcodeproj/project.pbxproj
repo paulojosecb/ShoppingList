@@ -103,7 +103,6 @@
 		7BE8CE2226457A550090955D /* ListRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CE2126457A550090955D /* ListRepositoryTests.swift */; };
 		7BE8CE3026457D4A0090955D /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CE2F26457D4A0090955D /* TestCoreDataStack.swift */; };
 		7BE8CE39264581870090955D /* List+CDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CE38264581870090955D /* List+CDList.swift */; };
-		7BE8CE3E264587E80090955D /* Cart+CDCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CE3D264587E80090955D /* Cart+CDCart.swift */; };
 		7BE8CE492645884B0090955D /* ItemOnList+CDItemOnList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8CE482645884B0090955D /* ItemOnList+CDItemOnList.swift */; };
 		7BFF1EE0265C32310004F766 /* ICreateItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EDF265C32310004F766 /* ICreateItemUseCase.swift */; };
 		7BFF1EE5265C32F20004F766 /* CreateItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */; };
@@ -235,7 +234,6 @@
 		7BE8CE2126457A550090955D /* ListRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepositoryTests.swift; sourceTree = "<group>"; };
 		7BE8CE2F26457D4A0090955D /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		7BE8CE38264581870090955D /* List+CDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+CDList.swift"; sourceTree = "<group>"; };
-		7BE8CE3D264587E80090955D /* Cart+CDCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CDCart.swift"; sourceTree = "<group>"; };
 		7BE8CE482645884B0090955D /* ItemOnList+CDItemOnList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemOnList+CDItemOnList.swift"; sourceTree = "<group>"; };
 		7BFF1EDF265C32310004F766 /* ICreateItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICreateItemUseCase.swift; sourceTree = "<group>"; };
 		7BFF1EE4265C32F20004F766 /* CreateItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateItemUseCase.swift; path = ShoppingList/Domain/UseCases/Interfaces/Item/CreateItemUseCase.swift; sourceTree = SOURCE_ROOT; };
@@ -699,7 +697,6 @@
 			isa = PBXGroup;
 			children = (
 				7BE8CE38264581870090955D /* List+CDList.swift */,
-				7BE8CE3D264587E80090955D /* Cart+CDCart.swift */,
 				7BE8CE482645884B0090955D /* ItemOnList+CDItemOnList.swift */,
 				7BD954892656AB8600ED2EF2 /* Item+CDItem.swift */,
 			);
@@ -967,7 +964,6 @@
 				7BD9546A26569C8D00ED2EF2 /* SearchForItemsUseCase.swift in Sources */,
 				7BB1BADA25E00153007FA08B /* IAddItemOnCartUseCase.swift in Sources */,
 				7B95C5BB265D7D8A00778B03 /* AddItemPriceUseCase.swift in Sources */,
-				7BE8CE3E264587E80090955D /* Cart+CDCart.swift in Sources */,
 				7BE8CE39264581870090955D /* List+CDList.swift in Sources */,
 				7BD9547226569D6100ED2EF2 /* ItemRepository.swift in Sources */,
 				7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */,

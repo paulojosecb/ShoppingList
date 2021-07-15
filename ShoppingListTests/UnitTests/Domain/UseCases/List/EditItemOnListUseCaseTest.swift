@@ -33,7 +33,8 @@ class EditItemOnListUseCaseTest: XCTestCase {
         mockListRepository?.list = [
             List(uuid: "myListID",
                  name: "List 1",
-                 items: [self.mockItemOnListRepository!.items.first!], cart: Cart(listUUID: "myListID"))
+                 items: [self.mockItemOnListRepository!.items.first!],
+                 cart: [])
         ]
     }
     

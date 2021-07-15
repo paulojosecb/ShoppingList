@@ -46,20 +46,19 @@ class ListRepositoryTests: XCTestCase {
             return Promise<CDList> { fulfill, reject in
                 XCTAssertTrue(cdList.name == list.name)
                 XCTAssertTrue(cdList.uuid == list.uuid)
-                XCTAssertTrue(cdList.cartUUID == list.cart.uuid)
+                XCTAssertTrue(cdList.cart?.array.count == list.getItemsFromCart().count)
                 
                 fulfill(cdList)
             }
         }.then { (cdList) in
-            return self.fetchCartWith(listUUID: list.uuid)
+            return cdList.cart?.array as? [CDItemOnList]
         }.then { cart in
-            guard let items = cart.items as? [String] else {
+            guard let cart = cart else {
                 XCTFail()
                 return
             }
             
-            XCTAssertTrue(items.isEmpty)
-            XCTAssertTrue(cart.listUUID == list.uuid)
+            XCTAssertTrue(cart.isEmpty)
             
             expectation.fulfill()
         }.catch { _ in
@@ -183,15 +182,4 @@ class ListRepositoryTests: XCTestCase {
         }
     }
     
-    private func fetchCartWith(listUUID: String) -> Promise<CDCart> {
-        return Promise<CDCart> { fulfill, reject in
-            let request: NSFetchRequest<CDCart> = CDCart.fetchRequest()
-            request.predicate = NSPredicate(format: "listUUID == %@", listUUID)
-            
-            let cdCart = try? self.coreDataStack.mainContext.fetch(request).first
-            
-            fulfill(cdCart!)
-        }
-    }
-
 }

@@ -22,7 +22,7 @@ class List: Fetchable {
     var name: String
     
     private var items: [ItemOnList]
-    var cart: Cart
+    private var cart: [ItemOnList]
     
     var total: Double {
         get {
@@ -40,12 +40,12 @@ class List: Fetchable {
     init(_ nam: String) {
         self.uuid = UUID().uuidString
         self.items = []
-        self.cart = Cart(listUUID: self.uuid)
+        self.cart = []
         self.name = nam
         self.isTemplate = false
     }
     
-    init(uuid: String, name: String, items: [ItemOnList], cart: Cart, isTempl: Bool? = false) {
+    init(uuid: String, name: String, items: [ItemOnList], cart: [ItemOnList], isTempl: Bool? = false) {
         self.uuid = uuid
         self.name = name
         self.items = items
@@ -92,7 +92,7 @@ class List: Fetchable {
         }
         
         try? self.removeItemFromList(itemUUID: itemUUID)
-        self.cart.items.append(item)
+        self.cart.append(item)
 
     }
     
@@ -123,11 +123,11 @@ class List: Fetchable {
     }
     
     public func getItemsFromCart() -> [ItemOnList] {
-        self.cart.items
+        self.cart
     }
     
     private func removeItemFromCart(itemUUID: String) {
-        self.cart.items = self.cart.items.filter { $0.item.uuid != itemUUID }
+        self.cart = self.cart.filter { $0.item.uuid != itemUUID }
     }
     
     private func doesListContain(itemUUID: String) -> Bool {
@@ -135,7 +135,7 @@ class List: Fetchable {
     }
     
     private func doesCartContain(itemUUID: String) -> Bool {
-        return self.cart.items.filter { $0.item.uuid == itemUUID }.count > 0
+        return self.cart.filter { $0.item.uuid == itemUUID }.count > 0
     }
     
     private func getItemFromList(itemUUID: String) -> ItemOnList? {
@@ -143,7 +143,7 @@ class List: Fetchable {
     }
     
     private func getItemFromCart(itemUUID: String) -> ItemOnList? {
-        return self.cart.items.first { $0.item.uuid == itemUUID }
+        return self.cart.first { $0.item.uuid == itemUUID }
     }
     
 }
