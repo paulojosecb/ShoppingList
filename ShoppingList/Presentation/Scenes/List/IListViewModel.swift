@@ -8,9 +8,8 @@
 import Foundation
 import Promises
 
-protocol IListViewModel {
+protocol IListPresenter {
     var list: List { get }
-    var itensOnList: [ItemOnList] { get }
     
     func create(item: Item) -> Promise<Item>
     func fetch(list: List) -> Promise<List>

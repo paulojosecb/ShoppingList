@@ -24,7 +24,7 @@ class AddItemOnCartUseCase: IAddItemOnCartUseCase {
                 
                 do {
                     try list.moveItemToCart(itemUUID: request.itemUUID)
-                } catch let error {
+                } catch let _ {
                     reject(IAddItemOnCartUseCaseError.itemNotInList)
                 }
                 

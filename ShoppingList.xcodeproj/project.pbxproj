@@ -24,6 +24,7 @@
 		7B0BC821267BE68D003E3130 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0BC820267BE68D003E3130 /* ItemTableViewCell.swift */; };
 		7B134949266685110057D4DD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B134948266685110057D4DD /* ListTableViewCell.swift */; };
 		7B13495426668A190057D4DD /* IHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B13495326668A180057D4DD /* IHomeViewModel.swift */; };
+		7B18528B26A7100000E9EAE9 /* Double+rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18528A26A7100000E9EAE9 /* Double+rounded.swift */; };
 		7B2398F226861BE000FD7776 /* FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2398F126861BE000FD7776 /* FloatButton.swift */; };
 		7B507D67263313DB000EE3B2 /* CreateListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */; };
 		7B77DD36265C2628000A4A76 /* MockItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77DD35265C2628000A4A76 /* MockItemRepository.swift */; };
@@ -49,6 +50,7 @@
 		7B95C5C0265D7FBF00778B03 /* AddItemPriceUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5BF265D7FBF00778B03 /* AddItemPriceUseCaseTest.swift */; };
 		7B95C5CD265D831100778B03 /* GetListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5CC265D831100778B03 /* GetListUseCase.swift */; };
 		7B95C5D2265D838B00778B03 /* GetListUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */; };
+		7B973CD226861F420048FBAF /* CheckoutBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B973CD126861F420048FBAF /* CheckoutBarView.swift */; };
 		7B9807BB2657FF5400D5E74C /* AddItemOnListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */; };
 		7BA33B9626616E340014F2C2 /* GetCheckoutsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA33B9526616E340014F2C2 /* GetCheckoutsUseCaseTest.swift */; };
 		7BB1BA1325DFEECC007FA08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1BA1225DFEECC007FA08B /* AppDelegate.swift */; };
@@ -149,6 +151,7 @@
 		7B0BC820267BE68D003E3130 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		7B134948266685110057D4DD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		7B13495326668A180057D4DD /* IHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHomeViewModel.swift; sourceTree = "<group>"; };
+		7B18528A26A7100000E9EAE9 /* Double+rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+rounded.swift"; sourceTree = "<group>"; };
 		7B2398F126861BE000FD7776 /* FloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButton.swift; sourceTree = "<group>"; };
 		7B507D66263313DB000EE3B2 /* CreateListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListUseCaseTest.swift; sourceTree = "<group>"; };
 		7B77DD35265C2628000A4A76 /* MockItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemRepository.swift; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 		7B95C5BF265D7FBF00778B03 /* AddItemPriceUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPriceUseCaseTest.swift; sourceTree = "<group>"; };
 		7B95C5CC265D831100778B03 /* GetListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListUseCase.swift; sourceTree = "<group>"; };
 		7B95C5D1265D838B00778B03 /* GetListUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListUseCaseTest.swift; sourceTree = "<group>"; };
+		7B973CD126861F420048FBAF /* CheckoutBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutBarView.swift; sourceTree = "<group>"; };
 		7B9807BA2657FF5400D5E74C /* AddItemOnListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemOnListUseCase.swift; sourceTree = "<group>"; };
 		7BA33B9526616E340014F2C2 /* GetCheckoutsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCheckoutsUseCaseTest.swift; sourceTree = "<group>"; };
 		7BB1BA0F25DFEECC007FA08B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -639,6 +643,7 @@
 			children = (
 				7BD222FB2645B600006938BD /* ViewCode.swift */,
 				7B06C7162666C6E9001E5762 /* UIView+Utils.swift */,
+				7B18528A26A7100000E9EAE9 /* Double+rounded.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				7B0BC81E267BE670003E3130 /* Item */,
 				7B134947266684DE0057D4DD /* List */,
 				7BD223062645BB8D006938BD /* CustomTabBarView.swift */,
+				7B973CD126861F420048FBAF /* CheckoutBarView.swift */,
 				7B2398F126861BE000FD7776 /* FloatButton.swift */,
 				7BB361A1267D1E2000E38494 /* BulletPointView.swift */,
 			);
@@ -987,6 +993,7 @@
 				7BD222EB2645B41B006938BD /* HomeView.swift in Sources */,
 				7BB1BA4D25DFEF2B007FA08B /* List.swift in Sources */,
 				7BD9546226569C1B00ED2EF2 /* ISearchForItemsUseCase.swift in Sources */,
+				7B973CD226861F420048FBAF /* CheckoutBarView.swift in Sources */,
 				7BB1BAB325DFF84A007FA08B /* IEditItemOnListUseCase.swift in Sources */,
 				7B915C0826583EFB0016BEAB /* EditItemOnListUseCase.swift in Sources */,
 				7BCD9D8C263096AC001E7354 /* Location.swift in Sources */,
@@ -1019,6 +1026,7 @@
 				7B9807BB2657FF5400D5E74C /* AddItemOnListUseCase.swift in Sources */,
 				7BD222FC2645B600006938BD /* ViewCode.swift in Sources */,
 				7BB1BAD025E00070007FA08B /* ISaveListAsTemplateUseCase.swift in Sources */,
+				7B18528B26A7100000E9EAE9 /* Double+rounded.swift in Sources */,
 				7BB1BABE25DFF929007FA08B /* IDeleteListUseCase.swift in Sources */,
 				7BB3619D267D169900E38494 /* ItemPriceView.swift in Sources */,
 				7BB1BADF25E0019F007FA08B /* IRemoveItemFromCartUseCase.swift in Sources */,

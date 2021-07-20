@@ -8,8 +8,15 @@
 import UIKit
 
 class FloatButton: UIButton {
-
-    init() {
+    
+    enum CustomType {
+        case add
+    }
+    
+    let type: CustomType
+    
+    init(type: CustomType = .add) {
+        self.type = type
         super.init(frame: .zero)
         self.setupView()
     }
@@ -19,7 +26,7 @@ class FloatButton: UIButton {
     }
     
     override func layoutSubviews() {
-        self.layoutSubviews()
+        super.layoutSubviews()
         makeRounded()
     }
     
@@ -27,7 +34,7 @@ class FloatButton: UIButton {
 
 extension FloatButton: ViewCode {
     func buildViewHierarchy() {
-        self.setImage(.add, for: .normal)
+        self.backgroundColor = .darkGray
     }
     
     func setupConstraints() {
@@ -35,6 +42,9 @@ extension FloatButton: ViewCode {
     }
     
     func setupAdditionalConfiguration() {
-        
+        switch type {
+        case .add:
+            self.setImage(.add, for: .normal)
+        }
     }
 }

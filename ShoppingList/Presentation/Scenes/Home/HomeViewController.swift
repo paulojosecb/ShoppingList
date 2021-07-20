@@ -21,6 +21,11 @@ class HomeViewController: UIViewController {
         self.setupNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func setupNavigationBar() {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -107,6 +112,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                                price: list.total)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let navigationController = self.navigationController else {
+            return
+        }
+        
+        let list = self.viewModel.lists[indexPath.row]
+
+        let listViewController = ListViewController(presenter: ListPresenter(list: list))
+        
+        navigationController.pushViewController(listViewController, animated: true)
     }
     
 

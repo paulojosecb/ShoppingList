@@ -9,6 +9,18 @@ import UIKit
 
 class ListHeaderView: UIView, ShadowedView {
     
+    struct ViewModel {
+        let name: String
+        let description: String
+    }
+    
+    private var viewModel: ViewModel {
+        didSet {
+            self.listNameLabel.text = viewModel.name
+            self.descriptionLabel.text = viewModel.description
+        }
+    }
+    
     var fillBackgroundColor: CGColor
     var hasSetupShadow: Bool
     
@@ -16,7 +28,7 @@ class ListHeaderView: UIView, ShadowedView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "List name"
-        label.font = .preferredFont(forTextStyle: .caption1)
+        label.font = .preferredFont(forTextStyle: .title1)
         return label
     }()
     
@@ -27,12 +39,13 @@ class ListHeaderView: UIView, ShadowedView {
         label.font = .preferredFont(forTextStyle: .footnote)
         return label
     }()
-
-    override init(frame: CGRect) {
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
         self.hasSetupShadow = false
         self.fillBackgroundColor = UIColor.clear.cgColor
         
-        super.init(frame: frame)
+        super.init(frame: .zero)
         self.setupView()
     }
     
@@ -40,14 +53,13 @@ class ListHeaderView: UIView, ShadowedView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.setupShadow()
-    }
-    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
+    }
+    
+    public func update(_ viewModel: ViewModel) {
+        self.viewModel = viewModel
     }
 
 }
@@ -62,7 +74,7 @@ extension ListHeaderView: ViewCode {
         listNameLabel.topAnchor.constraint(equalTo: self.topAnchor,constant: 8).isActive = true
         listNameLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
         listNameLabel.heightAnchor.constraint(equalToConstant: self.listNameLabel.intrinsicContentSize.height).isActive = true
-        listNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
+        listNameLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -8).isActive = true
         
         descriptionLabel.topAnchor.constraint(equalTo: listNameLabel.bottomAnchor, constant: 8).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: listNameLabel.leadingAnchor).isActive = true

@@ -8,7 +8,7 @@
 import Foundation
 import Promises
 
-class ListViewModel: IListViewModel {
+class ListPresenter: IListPresenter {
 
     let list: List
     let itensOnList: [ItemOnList]
